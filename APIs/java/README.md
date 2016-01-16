@@ -52,7 +52,7 @@
        and freeling_javaAPI.dll in freeling\APIs\java directory.
 
 
- ### HOW TO USE THE API FROM A JAVA PROGRAM IN WINDOWS
+### HOW TO USE THE API FROM A JAVA PROGRAM IN WINDOWS
  
     1.- Make sure libfreeling.dll, libboost, and libicu are in a path where 
         they will be found.
