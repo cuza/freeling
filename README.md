@@ -6,4 +6,4 @@
 
  For details on the included linguistic data, installation, requirements, 
  licenses, etc. please visit http://nlp.lsi.upc.edu/freeling
- or see the manual in doc/userman
+ or see the manual in [docs/userman](doc/userman/)
