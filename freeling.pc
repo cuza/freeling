@@ -1,0 +1,13 @@
+
+prefix=/home/padro/Software/install/FL-3.1
+exec_prefix=${prefix}/bin
+libdir=${prefix}/lib
+includedir=${prefix}/include/freeling
+
+Name: FreeLing
+Description: Open source library of natural language analyzers
+Version: 3.1
+Requires: 
+Libs: -L${libdir} -lfreeling
+Cflags: -I${includedir} 
+DataDir=${prefix}/share/freeling

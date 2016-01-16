@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classsafe__map.html" title="safe_map\&lt; std::wstring, const feature_function * \&gt;" alt="" coords="21,181,339,211"/>
+<area shape="rect" id="node4" href="$classstd_1_1map.html" title="std::map\&lt;std::wstring ,const feature_function * \&gt;" alt="" coords="5,85,312,115"/>
+<area shape="rect" id="node6" href="$classsafe__map.html" title="This class provides a map with thread_safe writing acces." alt="" coords="336,85,477,115"/>
+<area shape="rect" id="node8" href="$classstd_1_1map.html" title="std::map\&lt; T1, T2 \&gt;" alt="" coords="340,5,473,35"/>
+<area shape="rect" id="node10" href="$classfreeling_1_1regexp.html" title="freeling::regexp" alt="" coords="363,181,472,211"/>
+<area shape="rect" id="node12" href="$classint.html" title="int" alt="" coords="508,181,545,211"/>
+</map>

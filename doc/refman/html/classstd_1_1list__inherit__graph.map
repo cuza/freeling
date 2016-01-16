@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classfreeling_1_1adaboost.html" title="Class AdaBoost implement a generic AB learner/classifier, which may be based on any kind of weak rule..." alt="" coords="137,5,353,35"/>
+<area shape="rect" id="node5" href="$classfreeling_1_1cell.html" title="Class cell stores all information in a chart cell." alt="" coords="173,59,317,88"/>
+<area shape="rect" id="node7" href="$classfreeling_1_1dataset.html" title="Class dataset stores a set of examples uset to train adaboost models." alt="" coords="95,112,396,141"/>
+<area shape="rect" id="node9" href="$classfreeling_1_1document.html" title="Class document is a list of paragraphs." alt="" coords="140,165,351,195"/>
+<area shape="rect" id="node11" href="$classfreeling_1_1paragraph.html" title="Class paragraph is just a list of sentences that someone has validated it as a paragraph." alt="" coords="143,219,348,248"/>
+<area shape="rect" id="node13" href="$classfreeling_1_1ruleCG.html" title="Class rule implements a rule of a CG." alt="" coords="151,272,340,301"/>
+<area shape="rect" id="node15" href="$classfreeling_1_1sentence.html" title="Class sentence is just a list of words that someone (the splitter) has validated it as a complete sen..." alt="" coords="157,325,333,355"/>
+<area shape="rect" id="node17" href="$classfreeling_1_1word.html" title="Class word stores all info related to a word: form, list of analysis, list of tokens (if multiword)..." alt="" coords="160,379,331,408"/>
+</map>

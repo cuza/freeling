@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Install from SVN repositories</TITLE>
+<META NAME="description" CONTENT="Install from SVN repositories">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="next" HREF="node14.html">
+<LINK REL="previous" HREF="node12.html">
+<LINK REL="up" HREF="node10.html">
+<LINK REL="next" HREF="node14.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html392"
+  HREF="node14.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html388"
+  HREF="node10.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html382"
+  HREF="node12.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html390"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html393"
+  HREF="node14.html">Locale-related problems when installing</A>
+<B> Up:</B> <A NAME="tex2html389"
+  HREF="node10.html">Installation</A>
+<B> Previous:</B> <A NAME="tex2html383"
+  HREF="node12.html">Install from .tar.gz source</A>
+ &nbsp; <B>  <A NAME="tex2html391"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00323000000000000000"></A>
+<A NAME="sec-install-svn"></A>
+<BR>
+Install from <TT>SVN</TT> repositories
+</H2>
+
+<P>
+Installing from the SVN is very similar to installing from source,
+  but you'll have the chance to easily update your FreeLing to the
+  latest development version.
+
+<P>
+
+<DL COMPACT>
+<DT><B><SPAN CLASS="arabic">1</SPAN>.</B>
+<DD><B>Install development tools</B>
+
+<P>
+You'll need to install the C++ compiler, the GNU autotools, and a SVN client.
+<PRE>
+ sudo apt-get install build-essential automake autoconf libtool subversion
+</PRE>
+
+<P>
+If you use a distribution different than Debian or Ubuntu, these packages
+  may have different names. Use your package manager to locate and install
+  the appropriate ones.
+
+<P>
+<DT><B><SPAN CLASS="arabic">2</SPAN>.</B>
+<DD><B>Install packaged requirements</B>
+
+<P>
+Follow the same procedure described in section <A HREF="node12.html#sec-install-tgz">2.2.2</A> for
+  this step.
+
+<P>
+<DT><B><SPAN CLASS="arabic">3</SPAN>.</B>
+<DD><B>Checkout FreeLing sources</B>
+
+<P>
+If you want the latest development version, do:
+<PRE>
+ svn checkout http://devel.cpl.upc.edu/freeling/svn/trunk myfreeling
+</PRE>
+(you can replace myfreeling with the directory name of your choice).
+
+<P>
+Alternatively, you can get any previous release with a command like:
+<PRE>
+ svn checkout http://devel.cpl.upc.edu/freeling/svn/versions/freeling-3.0-alfa1 myfreeling
+</PRE>
+(just replace <code>3.0-alfa1</code> with the right version
+number). You can see which versions are available by pointing your web
+browser to <code>http://devel.cpl.upc.edu/freeling/svn/versions</code><A NAME="tex2html2"
+  HREF="footnode.html#foot1776"><SUP><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">1</SPAN></SUP></A>.
+
+<P>
+<DT><B><SPAN CLASS="arabic">4</SPAN>.</B>
+<DD><B>Prepare local repositories for compilation</B>
+<PRE>
+ cd myfreeling
+ aclocal; libtoolize; autoconf; automake -a
+</PRE>
+
+<P>
+<DT><B><SPAN CLASS="arabic">5</SPAN>.</B>
+<DD><B>Build and install FreeLing</B>
+<PRE>
+ ./configure
+ make
+ sudo make install
+</PRE>
+
+<P>
+</DD>
+</DL>
+
+<P>
+If you keep the svn directories, you will be able to update
+to newer versions at any moment:
+<PRE>
+ cd myfreeling
+ svn update
+ ./configure
+ make
+ sudo make install
+</PRE>
+ Depending on what changed in the repository, you may need to issue
+ <code>aclocal; autoconf; automake -a</code> after <code>svn update</code>.  You
+ may also need to issue <code>make distclean</code> and repeat the process
+ from <code>./configure</code> onwards.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html392"
+  HREF="node14.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html388"
+  HREF="node10.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html382"
+  HREF="node12.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html390"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html393"
+  HREF="node14.html">Locale-related problems when installing</A>
+<B> Up:</B> <A NAME="tex2html389"
+  HREF="node10.html">Installation</A>
+<B> Previous:</B> <A NAME="tex2html383"
+  HREF="node12.html">Install from .tar.gz source</A>
+ &nbsp; <B>  <A NAME="tex2html391"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

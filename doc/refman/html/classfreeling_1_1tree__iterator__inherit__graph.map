@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classfreeling_1_1tree__iterator.html" title="freeling::tree_iterator\&lt; T, const tree\&lt; T \&gt; \&gt;" alt="" coords="383,59,652,88"/>
+<area shape="rect" id="node11" href="$classfreeling_1_1tree__iterator.html" title="freeling::tree_iterator\&lt; T, tree\&lt; T \&gt; \&gt;" alt="" coords="400,112,635,141"/>
+<area shape="rect" id="node5" href="$classfreeling_1_1generic__const__iterator.html" title="freeling::generic_const_iterator\&lt; T \&gt;" alt="" coords="704,59,936,88"/>
+<area shape="rect" id="node7" href="$classfreeling_1_1const__preorder__iterator.html" title="freeling::const_preorder_iterator\&lt; T \&gt;" alt="" coords="987,5,1224,35"/>
+<area shape="rect" id="node9" href="$classfreeling_1_1const__sibling__iterator.html" title="freeling::const_sibling_iterator\&lt; T \&gt;" alt="" coords="992,59,1219,88"/>
+<area shape="rect" id="node13" href="$classfreeling_1_1generic__iterator.html" title="freeling::generic_iterator\&lt; T \&gt;" alt="" coords="724,112,916,141"/>
+<area shape="rect" id="node15" href="$classfreeling_1_1preorder__iterator.html" title="traverse the tree in preorder (parent first, then children)" alt="" coords="1007,112,1204,141"/>
+<area shape="rect" id="node17" href="$classfreeling_1_1sibling__iterator.html" title="sibling iterator: traverse all children of the same node" alt="" coords="1012,165,1199,195"/>
+</map>

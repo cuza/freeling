@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>PoS mapping rules</TITLE>
+<META NAME="description" CONTENT="PoS mapping rules">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="next" HREF="node72.html">
+<LINK REL="previous" HREF="node70.html">
+<LINK REL="up" HREF="node70.html">
+<LINK REL="next" HREF="node72.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1144"
+  HREF="node72.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1140"
+  HREF="node70.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1134"
+  HREF="node70.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1142"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1145"
+  HREF="node72.html">Sense Dictionary File</A>
+<B> Up:</B> <A NAME="tex2html1141"
+  HREF="node70.html">Semantic Database Module</A>
+<B> Previous:</B> <A NAME="tex2html1135"
+  HREF="node70.html">Semantic Database Module</A>
+ &nbsp; <B>  <A NAME="tex2html1143"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00521000000000000000"></A> 
+<A NAME="wnmap"></A>
+<BR>
+PoS mapping rules
+</H2>
+
+<P>
+Each line in section <code>&lt;WNPosMap&gt;</code> defines a mapping rule, with
+  the format <code>FreeLing-PoS WN-PoS search-key</code>, where
+  <code>FreeLing-PoS</code> is a prefix for a FreeLing PoS tag,
+  <code>WN-Pos</code> must be one of <TT>n</TT>, <TT>a</TT>, <TT>r</TT>, or <TT>v</TT>,
+  and <code>search-key</code> defines what should be used as a lemma to
+  search the word in WN files.
+
+<P>
+The given <code>search-key</code> may be one of <TT>L</TT>, <TT>F</TT>, or a
+   FreeLing PoS tag.  If <TT>L</TT> (<TT>F</TT>) is given, the word lemma
+   (form) will be searched in WN to find candidate senses.  If a
+   FreeLing PoS tag is given, the form for that lemma with the given
+   tag will be used.
+  
+<P>
+<BR>
+
+<P>
+<SPAN  CLASS="textbf">Example 1:</SPAN> For English, we could have a mapping like:
+   <PRE>
+    &lt;WNposMap&gt;
+    N n L
+    J a L
+    R r L
+    V v L
+    VBG a F
+    &lt;/WNposMap&gt;
+</PRE>
+   which states that for words with FreeLing tags starting with <TT>     N</TT>, <TT>J</TT>, <TT>R</TT>, and <TT>V</TT>, lemma will be searched in
+   wordnet with PoS <TT>n</TT>, <TT>a</TT>, <TT>r</TT>, and <TT>v</TT>
+   respectively.  It also states that words with tag <TT>VBG</TT>
+   (e.g. <I CLASS="slanted">boring</I>) must be searched as adjectives (<TT>a</TT>) using
+   their form (that is, <I CLASS="slanted">boring</I> instead of lemma <I CLASS="slanted">bore</I>).
+   This may be useful, for instance, if FreeLing English dictionary
+   assigns to that form a gerund analysis (<I CLASS="slanted">bore VBG</I>) but not an 
+   adjective one.
+  
+<P>
+<BR>
+
+<P>
+<SPAN  CLASS="textbf">Example 2:</SPAN> A similar example for Spanish, could be:
+   <PRE>
+     &lt;WNposMap&gt;
+     N n L
+     A a L
+     R r L
+     V v L
+     VMP a VMP00SM
+     &lt;/WNposMap&gt;
+</PRE>
+   which states that for words with FreeLing tags starting with <TT>     N</TT>, <TT>A</TT>, <TT>R</TT>, and <TT>V</TT>, lemma will be searched in
+   wordnet with PoS <TT>n</TT>, <TT>a</TT>, <TT>r</TT>, and <TT>v</TT>
+   respectively.  It also states that words with tag starting with
+   <TT>VMP</TT> (e.g. <I CLASS="slanted">cansadas</I>) must be searched as adjectives
+   (<TT>a</TT>) using the form for the same lema (i.e. <I CLASS="slanted">cansar</I>) that
+   matches the tag <TT>VMP00SM</TT> (resulting in <I CLASS="slanted">cansado</I>).  This
+   is useful to have participles searched as adjectives, since
+   FreeLing Spanish dictionary doesn't contain any participle as adjective, 
+   but esWN does.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1144"
+  HREF="node72.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1140"
+  HREF="node70.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1134"
+  HREF="node70.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1142"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1145"
+  HREF="node72.html">Sense Dictionary File</A>
+<B> Up:</B> <A NAME="tex2html1141"
+  HREF="node70.html">Semantic Database Module</A>
+<B> Previous:</B> <A NAME="tex2html1135"
+  HREF="node70.html">Semantic Database Module</A>
+ &nbsp; <B>  <A NAME="tex2html1143"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

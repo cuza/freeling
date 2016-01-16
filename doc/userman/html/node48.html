@@ -1,0 +1,238 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Part-of-Speech Tagger Module</TITLE>
+<META NAME="description" CONTENT="Part-of-Speech Tagger Module">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="next" HREF="node54.html">
+<LINK REL="previous" HREF="node47.html">
+<LINK REL="up" HREF="node18.html">
+<LINK REL="next" HREF="node49.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html849"
+  HREF="node49.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html845"
+  HREF="node18.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html839"
+  HREF="node47.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html847"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html850"
+  HREF="node49.html">HMM-Tagger Parameter File</A>
+<B> Up:</B> <A NAME="tex2html846"
+  HREF="node18.html">Analysis Modules</A>
+<B> Previous:</B> <A NAME="tex2html840"
+  HREF="node47.html">Word Sense Disambiguation Module</A>
+ &nbsp; <B>  <A NAME="tex2html848"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION004170000000000000000"></A>
+<A NAME="sec-pos"></A>
+<BR>
+Part-of-Speech Tagger Module
+</H1>
+
+<P>
+There are two different modules able to perform PoS tagging. The
+  application should decide which method is to be used, and
+  instantiate the right class.
+
+<P>
+The first PoS tagger is the <TT>hmm_tagger</TT> class, which is a
+  classical trigam Markovian tagger, following [<A
+ HREF="node110.html#brants00">Bra00</A>].
+
+<P>
+The second module, named <TT>relax_tagger</TT>, is a hybrid system
+  capable to integrate statistical and hand-coded knowledge, following
+  [<A
+ HREF="node110.html#padro98a">Pad98</A>].
+
+<P>
+The <TT>hmm_tagger</TT> module is somewhat faster than <TT>    relax_tagger</TT>, but the later allows you to add manual constraints
+  to the model. Its API is the following:
+<PRE>
+class hmm_tagger: public POS_tagger {
+  public:
+    /// Constructor
+    hmm_tagger(const std::string &amp;, bool, unsigned int, unsigned int kb=1);
+
+    /// analyze given sentence.
+    void analyze(sentence &amp;) const;
+    /// analyze given sentences.
+    void analyze(std::list&lt;sentence&gt; &amp;) const;
+    /// return analyzed copy of given sentence
+    sentence analyze(const sentence &amp;) const;
+    /// return analyzed copy of given sentences
+    std::list&lt;sentence&gt; analyze(const std::list&lt;sentence&gt; &amp;) const;
+
+    /// given an analyzed sentence find out probability 
+    /// of the k-th best sequence
+    double SequenceProb_log(const sentence &amp;, int k=0) const;
+
+};
+</PRE>
+
+<P>
+The <TT>hmm_tagger</TT> constructor receives the following parameters:
+
+<UL>
+<LI>The HMM file, which containts the model parameters. 
+<BR>
+The format
+  of the file is described below. This file can be generated from a
+  tagged corpus using the script  <TT>src/utilities/train-tagger/bin/TRAIN.sh</TT>
+   provided in FreeLing package. See  <TT>src/utilities/train-tagger/README</TT>
+  to find out the details.
+</LI>
+<LI>A boolean stating whether words that carry retokenization
+  information (e.g. set by the dictionary or affix handling modules)
+  must be retokenized (that is, splitted in two or more words) after
+  the tagging.
+</LI>
+<LI>An integer stating whether and when the tagger must select only
+  one analysis in case of ambiguity. Possbile values are: <TT>    FORCE_NONE (or 0)</TT>: no selection forced, words ambiguous after
+  the tagger, remain ambiguous.  <TT>FORCE_TAGGER (or 1)</TT>: force
+  selection immediately after tagging, and before retokenization. <TT>    FORCE_RETOK (or 2)</TT>: force selection after retokenization.
+</LI>
+<LI>An integer stating how many best tag sequences the tagger must
+  try to compute. If not specified, this parameter defaults to 1.
+  Since a sentence may have less possible tag sequences than the given
+  <TT>k</TT> value, the results may contain a number of sequences smaller
+  than <TT>k</TT>.
+</LI>
+</UL>
+
+<P>
+The <TT>relax_tagger</TT> module can be tuned with hand written
+  constraint, but is about 2 times slower than <TT>hmm_tagger</TT>.
+  It is not able to produce <TT>k</TT> best sequences either.
+<PRE>
+class relax_tagger : public POS_tagger {
+  public:
+    /// Constructor, given the constraint file and config parameters
+    relax_tagger(const std::string &amp;, int, double, double, bool, unsigned int);
+
+    /// analyze given sentence.
+    void analyze(sentence &amp;) const;
+    /// analyze given sentences.
+    void analyze(std::list&lt;sentence&gt; &amp;) const;
+    /// return analyzed copy of given sentence
+    sentence analyze(const sentence &amp;) const;
+    /// return analyzed copy of given sentences
+    std::list&lt;sentence&gt; analyze(const std::list&lt;sentence&gt; &amp;) const;
+};
+</PRE>
+
+<P>
+The <TT>relax_tagger</TT> constructor receives the following parameters:
+
+<UL>
+<LI>The constraint file. The format of the file is described
+  below. This file can be generated from a tagged corpus using the
+  script <TT>src/utilities/train-tagger/bin/TRAIN.sh</TT> provided in
+  FreeLing package. See <TT>src/utilities/train-tagger/README</TT> for details.
+</LI>
+<LI>An integer stating the maximum number of iterations to wait for
+   convergence before stopping the disambiguation algorithm.
+</LI>
+<LI>A real number representing the scale factor of the constraint weights.
+</LI>
+<LI>A real number representing the threshold under which any changes
+  will be considered too small. Used to detect convergence.
+</LI>
+<LI>A boolean stating whether words that carry retokenization
+  information (e.g. set by the dictionary or affix handling modules)
+  must be retokenized (that is, splitted in two or more words) after
+  the tagging.
+</LI>
+<LI>An integer stating whether and when the tagger must select only
+  one analysis in case of ambiguity. Possbile values are: <TT>    FORCE_NONE (or 0)</TT>: no selection forced, words ambiguous after
+  the tagger, remain ambiguous.  <TT>FORCE_TAGGER (or 1)</TT>: force
+  selection immediately after tagging, and before retokenization. <TT>    FORCE_RETOK (or 2)</TT>: force selection after retokenization.
+</LI>
+</UL>
+
+<P>
+The iteration number, scale factor, and threshold parameters are
+  very specific of the relaxation labelling algorithm. Refer to
+  [<A
+ HREF="node110.html#padro98a">Pad98</A>] for details.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html851"
+  HREF="node49.html">HMM-Tagger Parameter File</A>
+<LI><A NAME="tex2html852"
+  HREF="node50.html">Relaxation-Labelling Constraint Grammar File</A>
+<UL>
+<LI><A NAME="tex2html853"
+  HREF="node51.html">Set definition</A>
+<LI><A NAME="tex2html854"
+  HREF="node52.html">Constraint definition</A>
+<LI><A NAME="tex2html855"
+  HREF="node53.html">Examples</A>
+</UL></UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html849"
+  HREF="node49.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html845"
+  HREF="node18.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html839"
+  HREF="node47.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html847"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html850"
+  HREF="node49.html">HMM-Tagger Parameter File</A>
+<B> Up:</B> <A NAME="tex2html846"
+  HREF="node18.html">Analysis Modules</A>
+<B> Previous:</B> <A NAME="tex2html840"
+  HREF="node47.html">Word Sense Disambiguation Module</A>
+ &nbsp; <B>  <A NAME="tex2html848"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

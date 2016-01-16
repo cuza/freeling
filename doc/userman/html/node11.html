@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Install from .deb binary packages</TITLE>
+<META NAME="description" CONTENT="Install from .deb binary packages">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="next" HREF="node12.html">
+<LINK REL="previous" HREF="node10.html">
+<LINK REL="up" HREF="node10.html">
+<LINK REL="next" HREF="node12.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html368"
+  HREF="node12.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html364"
+  HREF="node10.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html358"
+  HREF="node10.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html366"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html369"
+  HREF="node12.html">Install from .tar.gz source</A>
+<B> Up:</B> <A NAME="tex2html365"
+  HREF="node10.html">Installation</A>
+<B> Previous:</B> <A NAME="tex2html359"
+  HREF="node10.html">Installation</A>
+ &nbsp; <B>  <A NAME="tex2html367"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00321000000000000000"></A>
+<A NAME="sec-install-deb"></A>
+<BR>
+Install from <TT>.deb</TT> binary packages
+</H2>
+
+<P>
+This installation procedure is the fastest and easiest. 
+If you do not plan to modify the code, this is the option you should take.
+
+<P>
+Binary packages are available <B>only for stable FreeLing versions</B>. 
+If you want to install an alpha or beta version, please see sections
+<A HREF="node12.html#sec-install-tgz">2.2.2</A> and <A HREF="node13.html#sec-install-svn">2.2.3</A>.
+
+<P>
+The provided packages will only work on debian-based distributions.
+They have been tested in Ubuntu (10.04LTS Lucid, 11.04 Natty, 12.04
+Precise, 12.10 Quantal) and Debian (6.0.2 Squeeze, 7.0 Wheezy).
+
+<P>
+Most debian-bawsed systems will launch the apropriate installer if you
+just double click on the package file. The installer should solve the
+dependencies and install all required packages.
+
+<P>
+If that doesn't work, you can install it by hand (in Ubuntu or Debian) 
+with the following procedure (will probably work for other debian-based distros):
+
+<P>
+
+<OL>
+<LI>Install required system libraries.
+
+<P>
+The following commands should install *both* header packages and
+binary libraries. If they don't, use your package manager as described
+in section Section&nbsp;<A HREF="node9.html#sec-requirements">2.1</A> to install all required packages.
+<PRE>
+ sudo apt-get install libboost-regex-dev libicu-dev zlib1g-dev
+ sudo apt-get install libboost-system-dev libboost-program-options-dev
+</PRE>
+
+<P>
+</LI>
+<LI>Install freeling package:
+<PRE>
+ sudo dpkg -i freeling-3.0.deb
+</PRE>
+</LI>
+</OL>
+
+<P>
+In a Debian system, the above commands must be issued as
+root and without <TT>sudo</TT>.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html368"
+  HREF="node12.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html364"
+  HREF="node10.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html358"
+  HREF="node10.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html366"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html369"
+  HREF="node12.html">Install from .tar.gz source</A>
+<B> Up:</B> <A NAME="tex2html365"
+  HREF="node10.html">Installation</A>
+<B> Previous:</B> <A NAME="tex2html359"
+  HREF="node10.html">Installation</A>
+ &nbsp; <B>  <A NAME="tex2html367"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

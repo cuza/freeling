@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classint.html" title="int" alt="" coords="19,117,56,147"/>
+<area shape="rect" id="node6" href="$classfreeling_1_1database.html" title="Class to wrap a berkeley DB database and unify access." alt="" coords="89,213,215,243"/>
+<area shape="rect" id="node4" href="$classfreeling_1_1semanticDB.html" title="Class semanticDB implements a semantic DB interface." alt="" coords="72,344,216,373"/>
+<area shape="rect" id="node9" href="$classfreeling_1_1PrefTree.html" title="freeling::PrefTree" alt="" coords="91,117,213,147"/>
+<area shape="rect" id="node11" href="$classfreeling_1_1List.html" title="freeling::List" alt="" coords="197,5,291,35"/>
+<area shape="rect" id="node13" href="$structfreeling_1_1List_1_1ListRecBase.html" title="freeling::List::ListRecBase" alt="" coords="237,117,413,147"/>
+</map>

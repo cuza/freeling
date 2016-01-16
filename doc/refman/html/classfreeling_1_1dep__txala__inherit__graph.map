@@ -1,0 +1,4 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classfreeling_1_1dependency__parser.html" title="The class dependency_parser is just an abstract class generalizing any dependency parser..." alt="" coords="5,83,189,112"/>
+<area shape="rect" id="node4" href="$classfreeling_1_1processor.html" title="Abstract class to define the common API of any FreeLing processing module." alt="" coords="33,5,161,35"/>
+</map>

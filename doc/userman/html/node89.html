@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Client/server mode</TITLE>
+<META NAME="description" CONTENT="Client/server mode">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="previous" HREF="node88.html">
+<LINK REL="up" HREF="node87.html">
+<LINK REL="next" HREF="node90.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1369"
+  HREF="node90.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1365"
+  HREF="node87.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1361"
+  HREF="node88.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1367"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1370"
+  HREF="node90.html">Using a threaded analyzer</A>
+<B> Up:</B> <A NAME="tex2html1366"
+  HREF="node87.html">The easy way: Using</A>
+<B> Previous:</B> <A NAME="tex2html1362"
+  HREF="node88.html">Stand-alone mode</A>
+ &nbsp; <B>  <A NAME="tex2html1368"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00712000000000000000">
+Client/server mode</A>
+</H2>
+
+<P>
+If <code>--server</code> and <code>--port</code> options are specified, a server 
+  will be launched which starts listening for incoming
+  requests.
+<BR>
+E.g.:
+<PRE>
+ analyze -f en.cfg  --server --port 50005 &amp;
+</PRE>
+ To launch the server, the script follows the same steps described in
+ previous section, but with the options <code>--server --port 50005</code>
+ passed to the final call to the <code>analyzer</code> executable.
+
+<P>
+<BR>
+
+<P>
+Once the server is launched, clients can request analysis to
+the server, with:
+<PRE>
+ analyzer_client 50005  &lt;myinput  &gt;myoutput
+ analyzer_client localhost:50005  &lt;myinput  &gt;myoutput
+</PRE>
+or, from a remote machine:
+<PRE>
+ analyzer_client my.server.com:50005  &lt;myinput  &gt;myoutput
+ analyzer_client 192.168.10.11:50005  &lt;myinput  &gt;myoutput
+</PRE>
+
+<P>
+The server will fork a new process to attend each new client,
+ so you can have many clients being served at the same time.
+
+<P>
+You can control the maximum amount of clients being attended
+ simutaneously (in order to prevent a flood in your server) with the
+ option <code>--workers</code>.  You can control the size of the queue of
+ pending clients with option <code>--queue</code>. Clients trying to connect
+ when the queue is full will receive a connection error.
+ See section <A HREF="node93.html#ss-options">6.4.1</A> for details on these options.
+
+<P>
+<BR>
+
+<P>
+<BR><HR>
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

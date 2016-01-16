@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classsafe__map.html" title="safe_map\&lt; std::wstring, WR_constructor \&gt;" alt="" coords="67,181,341,211"/>
+<area shape="rect" id="node4" href="$classstd_1_1map.html" title="std::map\&lt; std::wstring,WR_constructor \&gt;" alt="" coords="5,85,269,115"/>
+<area shape="rect" id="node6" href="$classsafe__map.html" title="This class provides a map with thread_safe writing acces." alt="" coords="293,85,435,115"/>
+<area shape="rect" id="node8" href="$classstd_1_1map.html" title="std::map\&lt; T1, T2 \&gt;" alt="" coords="297,5,431,35"/>
+</map>

@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Install from .tar.gz source packages</TITLE>
+<META NAME="description" CONTENT="Install from .tar.gz source packages">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="next" HREF="node13.html">
+<LINK REL="previous" HREF="node11.html">
+<LINK REL="up" HREF="node10.html">
+<LINK REL="next" HREF="node13.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html380"
+  HREF="node13.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html376"
+  HREF="node10.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html370"
+  HREF="node11.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html378"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html381"
+  HREF="node13.html">Install from SVN repositories</A>
+<B> Up:</B> <A NAME="tex2html377"
+  HREF="node10.html">Installation</A>
+<B> Previous:</B> <A NAME="tex2html371"
+  HREF="node11.html">Install from .deb binary</A>
+ &nbsp; <B>  <A NAME="tex2html379"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00322000000000000000"></A>
+<A NAME="sec-install-tgz"></A>
+<BR>
+Install from <TT>.tar.gz</TT> source packages
+</H2>
+
+<P>
+Installation from source follows standard GNU autoconfigure
+ installation procedures (that is, the usual
+ <code>./configure &amp;&amp; make &amp;&amp; make install</code> stuff).
+
+<P>
+Installing from source is slower and harder, but it will work in any
+ Linux box, even if you have library versions different than those
+ required by the <TT>.deb</TT> package.
+
+<P>
+
+<DL COMPACT>
+<DT><B><SPAN CLASS="arabic">1</SPAN>.</B>
+<DD><B>Install development tools</B>
+
+<P>
+You'll need to install the C++ compiler:
+<PRE>
+ sudo apt-get install build-essential automake autoconf
+</PRE>
+  In Debian, use the same command as root, without <I CLASS="slanted">sudo</I>.  In
+  other distributions, check the distribution package manager to
+  install a working C++ compiler.
+
+<P>
+<DT><B><SPAN CLASS="arabic">2</SPAN>.</B>
+<DD><B>Install packaged requirements</B>
+
+<P>
+All required libraries are standard packages in all Linux
+ distributions.  Just open your favorite software package manager and
+ install them.
+
+<P>
+Package names may vary slightly in different distributions. See
+  section <A HREF="node9.html#sec-requirements">2.1</A> for some hints on possible package
+  names.
+
+<P>
+As an example, commands to install the packages from command line in
+  Ubuntu and Debian are provided, though you can do the same using
+  synaptic, or aptitude.
+  If you have another distribution, use your package manager to locate
+  and install the appropriate library packages (see section
+  <A HREF="node9.html#sec-requirements">2.1</A>).
+
+<P>
+Both in Debian (squeeze or wheezy) and in Ubuntu (Lucid or later)
+  you need to do:
+<PRE>
+ sudo apt-get install libboost-regex-dev libicu-dev
+ sudo apt-get install libboost-system-dev libboost-program-options-dev
+</PRE>
+
+<P>
+<DT><B><SPAN CLASS="arabic">3</SPAN>.</B>
+<DD><B>Install FreeLing</B>
+
+<P>
+<PRE>
+ tar xzvf freeling-3.0.tar.gz
+ cd freeling-3.0
+ ./configure
+ make
+ sudo make install
+</PRE>
+
+<P>
+FreeLing library is entirely contained in the file <TT>libfreeling.so</TT>
+ installed in <TT>/usr/local/lib</TT> by default.
+
+<P>
+Sample program <TT>analyze</TT> is installed in <TT>/usr/local/bin</TT>. 
+ See sections <A HREF="node16.html#sec-execute">2.3</A> and <A HREF="node86.html#cap-analyzer">6</A> for details.
+</DD>
+</DL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html380"
+  HREF="node13.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html376"
+  HREF="node10.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html370"
+  HREF="node11.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html378"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html381"
+  HREF="node13.html">Install from SVN repositories</A>
+<B> Up:</B> <A NAME="tex2html377"
+  HREF="node10.html">Installation</A>
+<B> Previous:</B> <A NAME="tex2html371"
+  HREF="node11.html">Install from .deb binary</A>
+ &nbsp; <B>  <A NAME="tex2html379"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

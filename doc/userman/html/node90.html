@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Using a threaded analyzer</TITLE>
+<META NAME="description" CONTENT="Using a threaded analyzer">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="next" HREF="node91.html">
+<LINK REL="previous" HREF="node87.html">
+<LINK REL="up" HREF="node86.html">
+<LINK REL="next" HREF="node91.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1381"
+  HREF="node91.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1377"
+  HREF="node86.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1371"
+  HREF="node89.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1379"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1382"
+  HREF="node91.html">Usage example</A>
+<B> Up:</B> <A NAME="tex2html1378"
+  HREF="node86.html">Using the sample main</A>
+<B> Previous:</B> <A NAME="tex2html1372"
+  HREF="node89.html">Client/server mode</A>
+ &nbsp; <B>  <A NAME="tex2html1380"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00720000000000000000">
+Using a threaded analyzer</A>
+</H1>
+
+<P>
+If <code>libboost_thread</code> is installed, the installation process will
+ build the program <code>threaded_analyzer</code>. This program behaves 
+ like <code>analyzer</code>, and has almost the same options. 
+
+<P>
+The program <code>threaded_analyzer</code> launches each processor in a
+ separate thread, so while one sentece is being parsed, the next is
+ being tagged, and the following one is running through the
+ morphological analyzer.
+ In this way, the multi-core capabilities of the host are better
+ exploited and the analyzer runs faster.
+
+<P>
+Although it is intended mainly as an example for developers wanting
+ to build their own threaded applications, this program can also be 
+ used to analyze texts, in the same way than <code>analyzer</code>.
+
+<P>
+Nevertheless, notice that this example program does <I CLASS="slanted">not</I> include
+ modules that are not token- or sentence-oriented, namely, language 
+ identification and coreference resolution.
+
+<P>
+<BR><HR>
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

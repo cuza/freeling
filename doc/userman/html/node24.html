@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Splitter Options File</TITLE>
+<META NAME="description" CONTENT="Splitter Options File">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="previous" HREF="node23.html">
+<LINK REL="up" HREF="node23.html">
+<LINK REL="next" HREF="node25.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html565"
+  HREF="node25.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html561"
+  HREF="node23.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html557"
+  HREF="node23.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html563"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html566"
+  HREF="node25.html">Morphological Analyzer Module</A>
+<B> Up:</B> <A NAME="tex2html562"
+  HREF="node23.html">Splitter Module</A>
+<B> Previous:</B> <A NAME="tex2html558"
+  HREF="node23.html">Splitter Module</A>
+ &nbsp; <B>  <A NAME="tex2html564"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00431000000000000000">
+Splitter Options File</A>
+</H2>
+
+<P>
+The splitter options file contains four sections: <code>&lt;General&gt;</code>, <code>&lt;Markers&gt;</code>,
+<code>&lt;SentenceEnd&gt;</code>, and <code>&lt;SentenceStart&gt;</code>.
+
+<P>
+The <code>&lt;General&gt;</code> section contains general options for the
+splitter: Namely, <TT>AllowBetweenMarkers</TT> and <TT>MaxWords</TT>
+options. The former may take values 1 or 0 (on/off). The
+later may be any integer. An example of the  <code>&lt;General&gt;</code> section is:
+<PRE>
+&lt;General&gt;
+AllowBetweenMarkers 0
+MaxWords 0
+&lt;/General&gt;
+</PRE>
+
+<P>
+If <TT>AllowBetweenMarkers</TT> is off (<TT>0</TT>), a sentence split will never be
+introduced inside a pair of parenthesis-like markers, which is useful
+to prevent splitting in sentences such as <EM>``I hate'' (Mary
+said. Angryly.) ``apple pie''.</EM>
+ If this option is on (<TT>1</TT>), sentence splits will be introduced as if 
+they had happened outside the markers.
+
+<P>
+<TT>MaxWords</TT> states how many words are processed before forcing a
+sentence split inside parenthesis-like markers (this option is
+intended to avoid memory fillups in case the markers are not properly
+closed in the text).  A value of zero means ``Never split, I'll risk
+to a memory fillup''.  This option is less aggressive than
+unconditionally activating <TT>AllowBetweenMarkers</TT>, since it will
+introduce a sentence split between markers only after a sentence of
+length <TT>MaxWords</TT> has been accumulated. Setting <TT>MaxWords</TT> to 
+a large value will prevent memory fillups, while keeping at a minimum the 
+splittings inside markers.
+
+<P>
+The <code>&lt;Markers&gt;</code> section lists the pairs of characters (or
+character groups) that have to be considered open-close markers. For instance:
+<PRE>
+&lt;Markers&gt;
+" "
+( )
+{ }
+/* */
+&lt;/Markers&gt;
+</PRE>
+
+<P>
+The <code>&lt;SentenceEnd&gt;</code> section lists which characters are considered
+as possible sentence endings. Each character is followed by a binary
+value stating whether the character is an unambiguous sentence ending
+or not. For instance, in the following example, ``?'' is an unambiguous
+sentence marker, so a sentence split will be introduced
+unconditionally after each ``?''.  The other two characters are not
+unambiguous, so a sentence split will only be introduced if they are
+followed by a capitalized word or a sentence start character.
+<PRE>
+&lt;SentenceEnd&gt;
+. 0
+? 1
+! 0
+&lt;/SentenceEnd&gt;
+</PRE>
+
+<P>
+The <code>&lt;SentenceStart&gt;</code> section lists characters known to appear
+only at sentence beggining. For instance, open question/exclamation
+marks in Spanish:
+<BR><code>&lt;SentenceStart&gt;</code>
+<BR><TT>&#191; </TT>
+<BR><TT>&#161; </TT>
+<BR><code>&lt;/SentenceStart&gt;</code>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html565"
+  HREF="node25.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html561"
+  HREF="node23.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html557"
+  HREF="node23.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html563"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html566"
+  HREF="node25.html">Morphological Analyzer Module</A>
+<B> Up:</B> <A NAME="tex2html562"
+  HREF="node23.html">Splitter Module</A>
+<B> Previous:</B> <A NAME="tex2html558"
+  HREF="node23.html">Splitter Module</A>
+ &nbsp; <B>  <A NAME="tex2html564"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

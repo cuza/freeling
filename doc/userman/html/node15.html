@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Installing on MacOS</TITLE>
+<META NAME="description" CONTENT="Installing on MacOS">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="previous" HREF="node14.html">
+<LINK REL="up" HREF="node10.html">
+<LINK REL="next" HREF="node16.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html414"
+  HREF="node16.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html410"
+  HREF="node10.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html406"
+  HREF="node14.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html412"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html415"
+  HREF="node16.html">Executing</A>
+<B> Up:</B> <A NAME="tex2html411"
+  HREF="node10.html">Installation</A>
+<B> Previous:</B> <A NAME="tex2html407"
+  HREF="node14.html">Locale-related problems when installing</A>
+ &nbsp; <B>  <A NAME="tex2html413"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00325000000000000000">
+Installing on MacOS</A>
+</H2>
+
+<P>
+Installing on MacOS is very similar to installing on Linux. The main
+  difference is how to install the dependencies and required
+  development tools, which is greatly eased by MacPorts.
+
+<P>
+
+<UL>
+<LI>Download and install MacPorts following the instructions in
+   <TT>www.macports.org/install.php</TT>.  Note that you will need to
+   install Apple XCode too, as described in the same page.
+</LI>
+<LI>Use MacPorts to install required developer tools:
+ <PRE>
+  sudo port install automake
+  sudo port install libtoool
+  sudo port install subversion
+</PRE>
+</LI>
+<LI>Use MacPorts to install required dependencies
+ <PRE>
+  sudo port install boost
+</PRE>
+  This will install also libicu. Note that zlib is already installed
+  in MacOS.  If configure complains about it not being there, you can
+  install it with <TT>sudo port install zlib</TT>.
+
+<P>
+</LI>
+<LI>Compile and install FreeLing using the procedures described
+   above (either ``install from source'' or ``install from SVN''), but
+   skipping the steps about installing development tools and
+   dependencies.
+
+<P>
+Important: libraries in MacOS are installed in <TT>/opt/local</TT>
+  instead of <TT>/usr/local</TT>. So, when running <TT>configure</TT>,
+  you need to specify the right library paths.  Also, locales need
+  some specific handling which requires the use of
+  <TT>libboost-locale</TT>
+
+<P>
+In summary, you need to run <TT>./configure</TT> with the command:
+ <PRE>
+./configure --enable-boost-locale CPPFLAGS="-I/opt/local/include" 
+                                               LDFLAGS="-L/opt/local/lib"
+</PRE>
+   You can add to this command any extra options you wish
+   (<TT>-enable-traces</TT>, <TT>-prefix</TT>, etc).  Use
+   <TT>./configure -help</TT> to find out available options.
+
+<P>
+</LI>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html414"
+  HREF="node16.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html410"
+  HREF="node10.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html406"
+  HREF="node14.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html412"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html415"
+  HREF="node16.html">Executing</A>
+<B> Up:</B> <A NAME="tex2html411"
+  HREF="node10.html">Installation</A>
+<B> Previous:</B> <A NAME="tex2html407"
+  HREF="node14.html">Locale-related problems when installing</A>
+ &nbsp; <B>  <A NAME="tex2html413"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

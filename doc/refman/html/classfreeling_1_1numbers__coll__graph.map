@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classfreeling_1_1factory.html" title="freeling::factory\&lt; numbers_module \&gt;" alt="" coords="300,483,535,512"/>
+<area shape="rect" id="node4" href="$classfreeling_1_1numbers__module.html" title="The abstract class numbers_module generalizes nummeric expression recognizer for different languages..." alt="" coords="196,387,367,416"/>
+<area shape="rect" id="node6" href="$classfreeling_1_1automat.html" title="freeling::automat\&lt; numbers_status \&gt;" alt="" coords="17,256,252,285"/>
+<area shape="rect" id="node8" href="$classfreeling_1_1processor.html" title="Abstract class to define the common API of any FreeLing processing module." alt="" coords="5,5,133,35"/>
+<area shape="rect" id="node12" href="$classfreeling_1_1automat.html" title="Abstract class to implement a Finite&#45;State Automaton which is used by modules recognizing multiwords ..." alt="" coords="79,148,228,177"/>
+<area shape="rect" id="node10" href="$classint.html" title="int" alt="" coords="185,5,223,35"/>
+<area shape="rect" id="node16" href="$classfreeling_1_1regexp.html" title="freeling::regexp" alt="" coords="276,256,385,285"/>
+<area shape="rect" id="node18" href="$classfreeling_1_1factory.html" title="This template is used by numbers, quantities, dates, and ner classes to dinamycally create the approp..." alt="" coords="391,387,535,416"/>
+</map>

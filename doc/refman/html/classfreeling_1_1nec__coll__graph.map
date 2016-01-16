@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classfreeling_1_1processor.html" title="Abstract class to define the common API of any FreeLing processing module." alt="" coords="72,213,200,243"/>
+<area shape="rect" id="node4" href="$classfreeling_1_1fex.html" title="Class fex implements a feature extractor." alt="" coords="224,213,315,243"/>
+<area shape="rect" id="node6" href="$classfreeling_1_1fex__lexicon.html" title="Feature lexicon." alt="" coords="127,117,265,147"/>
+<area shape="rect" id="node8" href="$classstd_1_1map.html" title="std::map\&lt; std::wstring, lex_entry \&gt;" alt="" coords="5,5,232,35"/>
+<area shape="rect" id="node10" href="$classint.html" title="int" alt="" coords="256,5,293,35"/>
+<area shape="rect" id="node12" href="$classfreeling_1_1tagset.html" title="The class tagset handles PoS tags long to short conversion and morphosintactic feature decomposition..." alt="" coords="289,117,396,147"/>
+<area shape="rect" id="node14" href="$classfreeling_1_1classifier.html" title="The class classifier is an abstract class that implements a general ML classifier." alt="" coords="339,213,461,243"/>
+</map>

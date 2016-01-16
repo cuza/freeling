@@ -1,0 +1,202 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Feature Name Pattern Syntax</TITLE>
+<META NAME="description" CONTENT="Feature Name Pattern Syntax">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="next" HREF="node79.html">
+<LINK REL="previous" HREF="node77.html">
+<LINK REL="up" HREF="node75.html">
+<LINK REL="next" HREF="node79.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1229"
+  HREF="node79.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1225"
+  HREF="node75.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1219"
+  HREF="node77.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1227"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1230"
+  HREF="node79.html">Feature Rules Condition Syntax</A>
+<B> Up:</B> <A NAME="tex2html1226"
+  HREF="node75.html">Feature Extraction Module</A>
+<B> Previous:</B> <A NAME="tex2html1220"
+  HREF="node77.html">Rule Syntax</A>
+ &nbsp; <B>  <A NAME="tex2html1228"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00543000000000000000"></A>
+ <A NAME="s:fex-pattern"></A>
+<BR>
+Feature Name Pattern Syntax
+</H2>
+
+<P>
+Each feature rule has a <code>feature-name-pattern</code> that describes how
+  the generated feature name will be.
+
+<P>
+The following characters are
+  special and are interpreted as variables, and replaced by the
+  corresponding values:
+  
+<UL>
+<LI>Character <code>@</code>: will be replaced with the relative
+      position of the matching word with respect to the target
+      word.  Thus, the rule
+<BR>      <code>punct_mark@ [-2,2] t matches ^F</code> 
+<BR>
+will generate a different feature for each word in the window 
+      that is a punctuation sign (e.g.  <TT>punct_mark@-2</TT> and
+      <TT>punct_mark@1</TT> for the word <SPAN  CLASS="textit">John</SPAN> in the
+      avobe example).
+
+<P>
+But the rule <code>punct_mark [-2,2] t matches ^F</code> 
+<BR>
+will
+      generate the same feature for all words in the window that
+      are punctuation signs (e.g. it will generate <TT>punct_mark</TT> 
+      twice for the word <SPAN  CLASS="textit">John</SPAN> in the avobe example).
+      Repeated features are stored only once.
+
+<P>
+</LI>
+<LI>Character <code>$</code> introduces a variable that must have
+      the format: <code>$var(position)</code>. 
+
+<P>
+Allowed variable names
+      are: <code>W</code> (word form, in its original casing), <code>w</code>
+      (word form, lowercased), <code>l</code> (word lemma), <code>T</code>
+      (word full PoS tag), <code>t</code> (word short PoS tag), <code>a</code>
+      (word lemma+Pos tag).  All above variables refer to the
+      analysis selected by the tagger.  Variable names may be
+      prefixed with <code>p</code> (e.g. <code>pT</code>, <code>pl</code>, <code>pa</code>,
+      etc.)  which will generate the feature for all
+      <SPAN  CLASS="textit">possible</SPAN> analysis of the word, not just the one selected
+      by the tagger.
+
+<P>
+The <code>position)</code> indicates from which word (relative to
+      the focus word) the value for the variable must be taken.
+
+<P>
+For instance, the pattern: <code>pbig@:$w(0)_$pt(1)</code> will
+      extract features that will contain the relative position
+      (<code>@</code>), plus a bigram made of the word form of the
+      current word in the window (<code>$w(0)</code>) plus each possible
+      PoS tag of the word right of it (<code>$pt(1)</code>).
+
+<P>
+In the sentence <SPAN  CLASS="textit">John lives here.</SPAN>, the features for
+      word <SPAN  CLASS="textit">here</SPAN> in a window of [-2,0] with the above
+      pattern would be: <code>pbig@-2:john_VBZ</code>,
+      <code>pbig@-2:john_NNS</code>, <code>pbig@-1:lives_RB</code>, and
+      <code>pbig@0:here_Fp</code>. Note that there are two features
+      generated for window position <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$-2$"></SPAN> because the word 
+      <SPAN  CLASS="textit">lives</SPAN> has two possible PoS tags.
+
+<P>
+</LI>
+<LI>Curly brackets <TT>{ }</TT> have two possible
+      interpretations, depending on what they contain:
+      
+<OL>
+<LI>If the brackets enclose a regex match variable (e.g
+         $0,$1,$2,...), then they are replaced with the strig
+         matching the corresponding (sub)expression.  This only makes
+         sense if the condition of the rule included a regular
+         expression match (see section&nbsp;<A HREF="node79.html#s:fex-cond">4.4.4</A>). If it is not
+         the case, results are undefined (probably a segmentation
+         violation).
+</LI>
+<LI>If the bracket content is not a regex match variable,
+         then it is interpreted as call to a custom feature
+         function. It must have the format <code>{functname(position)}</code>,
+         where <code>functname</code> is the name of the function as
+         declared in the custom feature functions map (see section
+         <A HREF="node80.html#s:fex-custom">4.4.5</A>). The <code>position</code> parameter is the relative
+         position to the focus word, and is interpreted in the same 
+         way than in the primitive features <code>$w(position)</code>, 
+         <code>$t(position)</code>, etc., described above.
+<BR>
+E.g., the pattern:
+<BR>         <code>   {quoted(-1)}_{quoted(0)}</code>
+<BR>
+would generate a feature similar to that of the pattern:
+<BR>         <code>   t(-1)_t(0)</code>
+<BR>
+but using the result of the custom function <code>quoted</code>
+         instead of the PoS tag for the corresponding word.
+      
+</LI>
+</OL>
+
+<P>
+</LI>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1229"
+  HREF="node79.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1225"
+  HREF="node75.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1219"
+  HREF="node77.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1227"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1230"
+  HREF="node79.html">Feature Rules Condition Syntax</A>
+<B> Up:</B> <A NAME="tex2html1226"
+  HREF="node75.html">Feature Extraction Module</A>
+<B> Previous:</B> <A NAME="tex2html1220"
+  HREF="node77.html">Rule Syntax</A>
+ &nbsp; <B>  <A NAME="tex2html1228"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

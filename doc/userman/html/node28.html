@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Punctuation Tags File</TITLE>
+<META NAME="description" CONTENT="Punctuation Tags File">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="previous" HREF="node27.html">
+<LINK REL="up" HREF="node27.html">
+<LINK REL="next" HREF="node29.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html612"
+  HREF="node29.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html608"
+  HREF="node27.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html604"
+  HREF="node27.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html610"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html613"
+  HREF="node29.html">User Map Module</A>
+<B> Up:</B> <A NAME="tex2html609"
+  HREF="node27.html">Punctuation Detection Module</A>
+<B> Previous:</B> <A NAME="tex2html605"
+  HREF="node27.html">Punctuation Detection Module</A>
+ &nbsp; <B>  <A NAME="tex2html611"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00461000000000000000">
+Punctuation Tags File</A>
+</H2>
+
+<P>
+The format of the file listing the PoS for punctuation symbols is one
+ punctuation symbol per line, each line with the format: <TT>   punctuation-symbol lemma tag</TT>.
+<BR>
+E.g.: 
+<PRE>  
+   ! ! Fat
+   , , Fc
+   : : Fd
+   ... ... Fs
+</PRE>
+
+<P>
+One special line may be included defining the tag that will be assigned to any other 
+  punctuation symbol not found in the list. Any token containing no alphanumeric character 
+  is considered a punctuation symbol.
+  This special line has the format: <code>&lt;Other&gt; tag</code>.
+<BR>
+E.g.
+<BR>    <code>&lt;Other&gt; Fz</code>
+
+<P>
+<BR><HR>
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

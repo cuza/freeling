@@ -1,0 +1,11 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classfreeling_1_1POS__tagger.html" title="The class POS_tagger is just an abstract class generalizing a PoS tagger." alt="" coords="64,181,205,211"/>
+<area shape="rect" id="node4" href="$classfreeling_1_1processor.html" title="Abstract class to define the common API of any FreeLing processing module." alt="" coords="75,85,203,115"/>
+<area shape="rect" id="node6" href="$classint.html" title="int" alt="" coords="229,85,267,115"/>
+<area shape="rect" id="node8" href="$classbool.html" title="bool" alt="" coords="5,85,51,115"/>
+<area shape="rect" id="node11" href="$classsafe__map.html" title="safe_map\&lt; std::wstring, double \&gt;" alt="" coords="315,181,531,211"/>
+<area shape="rect" id="node13" href="$classstd_1_1map.html" title="std::map\&lt; std::wstring,double \&gt;" alt="" coords="305,85,511,115"/>
+<area shape="rect" id="node15" href="$classsafe__map.html" title="This class provides a map with thread_safe writing acces." alt="" coords="535,85,676,115"/>
+<area shape="rect" id="node17" href="$classstd_1_1map.html" title="std::map\&lt; T1, T2 \&gt;" alt="" coords="539,5,672,35"/>
+<area shape="rect" id="node19" href="$classfreeling_1_1tagset.html" title="The class tagset handles PoS tags long to short conversion and morphosintactic feature decomposition..." alt="" coords="555,181,661,211"/>
+</map>

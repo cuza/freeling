@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Locale-related problems when installing</TITLE>
+<META NAME="description" CONTENT="Locale-related problems when installing">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="next" HREF="node15.html">
+<LINK REL="previous" HREF="node13.html">
+<LINK REL="up" HREF="node10.html">
+<LINK REL="next" HREF="node15.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html404"
+  HREF="node15.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html400"
+  HREF="node10.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html394"
+  HREF="node13.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html402"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html405"
+  HREF="node15.html">Installing on MacOS</A>
+<B> Up:</B> <A NAME="tex2html401"
+  HREF="node10.html">Installation</A>
+<B> Previous:</B> <A NAME="tex2html395"
+  HREF="node13.html">Install from SVN repositories</A>
+ &nbsp; <B>  <A NAME="tex2html403"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00324000000000000000">
+Locale-related problems when installing</A>
+</H2>
+
+<P>
+If you get an error about <TT>bad locale</TT> when you enter <TT>make
+    install</TT> or when you try to execute the <TT>analyzer</TT> sample
+  program, you probably need to generate some locales in your system.
+
+<P>
+FreeLing uses <code>en_US.UTF8</code> locale as default during
+  installation. If this locale is not installed in your system, you'll
+  get an error during dictionary installation.
+
+<P>
+Most languages in FreeLing will work with this locale, but Russian
+  will need to have its own locale installed in the system.
+
+<P>
+The procedure to install a locale in your system varies depending on
+  your distribution. For instance:
+ 
+<UL>
+<LI>In Ubuntu, you must use the <code>locale-get</code> command. E.g.: 
+<BR>&nbsp;&nbsp; <code>sudo locale-gen en_US.UTF8</code>
+<BR>&nbsp;&nbsp; <code>sudo locale-gen pt_BR.UTF8</code>
+<BR>&nbsp;&nbsp; <code>sudo locale-gen ru_RU.UTF8</code>
+<BR>&nbsp;&nbsp; ...
+
+<P>
+</LI>
+<LI>In Debian, you need to run the command: 
+<BR>&nbsp;&nbsp; <code>dpkg-reconfigure locales</code>
+<BR>&nbsp;&nbsp; and select the desired locales from the list.
+  
+</LI>
+</UL>
+
+<P>
+<BR><HR>
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

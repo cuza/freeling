@@ -1,0 +1,38 @@
+<map id="G" name="G">
+<area shape="rect" id="node5" href="$classfreeling_1_1automat.html" title="freeling::automat\&lt; dates_status \&gt;" alt="" coords="527,325,745,355"/>
+<area shape="rect" id="node23" href="$classfreeling_1_1automat.html" title="freeling::automat\&lt; ner_status \&gt;" alt="" coords="535,512,737,541"/>
+<area shape="rect" id="node31" href="$classfreeling_1_1automat.html" title="freeling::automat\&lt; numbers_status \&gt;" alt="" coords="519,672,753,701"/>
+<area shape="rect" id="node53" href="$classfreeling_1_1automat.html" title="freeling::automat\&lt; locutions_status \&gt;" alt="" coords="517,725,755,755"/>
+<area shape="rect" id="node57" href="$classfreeling_1_1automat.html" title="freeling::automat\&lt; quantities_status \&gt;" alt="" coords="515,912,757,941"/>
+<area shape="rect" id="node2" href="$classfreeling_1_1processor.html" title="Abstract class to define the common API of any FreeLing processing module." alt="" coords="7,672,135,701"/>
+<area shape="rect" id="node7" href="$classfreeling_1_1dates__module.html" title="The abstract class dates_module generalizes temporal expression recognizer for different languages..." alt="" coords="821,192,973,221"/>
+<area shape="rect" id="node9" href="$classfreeling_1_1dates__ca.html" title="The derived class dates_ca implements a Catalan date/time recognizer." alt="" coords="1063,5,1188,35"/>
+<area shape="rect" id="node11" href="$classfreeling_1_1dates__default.html" title="The derived class dates_default implements a default date/time recognizer (only simple patterns are r..." alt="" coords="1051,59,1200,88"/>
+<area shape="rect" id="node13" href="$classfreeling_1_1dates__en.html" title="The derived class dates_en implements an English date/time recognizer." alt="" coords="1063,112,1188,141"/>
+<area shape="rect" id="node15" href="$classfreeling_1_1dates__es.html" title="The derived class dates_es implements a Spanish date/time recognizer." alt="" coords="1063,165,1188,195"/>
+<area shape="rect" id="node17" href="$classfreeling_1_1dates__gl.html" title="The derived class dates_gl implements a Galician date/time recognizer." alt="" coords="1065,219,1185,248"/>
+<area shape="rect" id="node19" href="$classfreeling_1_1dates__pt.html" title="The derived class dates_pt implements a Portuguese date/time recognizer." alt="" coords="1064,272,1187,301"/>
+<area shape="rect" id="node21" href="$classfreeling_1_1dates__ru.html" title="The derived class dates_ru implements Russian date/time recognizer." alt="" coords="1064,325,1187,355"/>
+<area shape="rect" id="node25" href="$classfreeling_1_1ner__module.html" title="The class ner is an abstract class that implements a general NE Recognizer." alt="" coords="828,432,967,461"/>
+<area shape="rect" id="node27" href="$classfreeling_1_1bioner.html" title="The class bioner implements an AdaBoost&#45;Based NE recognizer." alt="" coords="1072,379,1179,408"/>
+<area shape="rect" id="node29" href="$classfreeling_1_1np.html" title="The class np implements a simple proper noun recognizer." alt="" coords="1083,432,1168,461"/>
+<area shape="rect" id="node33" href="$classfreeling_1_1numbers__module.html" title="The abstract class numbers_module generalizes nummeric expression recognizer for different languages..." alt="" coords="812,672,983,701"/>
+<area shape="rect" id="node35" href="$classfreeling_1_1numbers__ca.html" title="The derived class numbers_ca implements a Catalan number recognizer." alt="" coords="1055,485,1196,515"/>
+<area shape="rect" id="node37" href="$classfreeling_1_1numbers__cs.html" title="The derived class numbers_cs implements a Czeck number recognizer." alt="" coords="1055,539,1196,568"/>
+<area shape="rect" id="node39" href="$classfreeling_1_1numbers__default.html" title="The derived class numbers_default implements a default number recognizer (only numbers in digits are ..." alt="" coords="1041,592,1209,621"/>
+<area shape="rect" id="node41" href="$classfreeling_1_1numbers__en.html" title="The derived class numbers_en implements an English number recognizer." alt="" coords="1055,645,1196,675"/>
+<area shape="rect" id="node43" href="$classfreeling_1_1numbers__es.html" title="The derived class numbers_es implements a Spanish number recognizer." alt="" coords="1055,699,1196,728"/>
+<area shape="rect" id="node45" href="$classfreeling_1_1numbers__gl.html" title="The derived class numbers_gl implements a Galician number recognizer." alt="" coords="1056,752,1195,781"/>
+<area shape="rect" id="node47" href="$classfreeling_1_1numbers__it.html" title="The derived class numbers_it implements a Italian number recognizer." alt="" coords="1057,805,1193,835"/>
+<area shape="rect" id="node49" href="$classfreeling_1_1numbers__pt.html" title="The derived class numbers_pt implements a Portuguese number recognizer." alt="" coords="1056,859,1195,888"/>
+<area shape="rect" id="node51" href="$classfreeling_1_1numbers__ru.html" title="The derived class numbers_ru implements an Russian number recognizer." alt="" coords="1056,912,1195,941"/>
+<area shape="rect" id="node55" href="$classfreeling_1_1locutions.html" title="Class locutions recognizes multiwords belonging to a list obtained from a configuration file..." alt="" coords="836,725,959,755"/>
+<area shape="rect" id="node59" href="$classfreeling_1_1quantities__module.html" title="The abstract class quantities_module generalizes a percentage, ratios, and currency expression recogn..." alt="" coords="809,1099,985,1128"/>
+<area shape="rect" id="node61" href="$classfreeling_1_1quantities__ca.html" title="The derived class quantities_ca implements a Catalan quantities recognizer." alt="" coords="1051,965,1200,995"/>
+<area shape="rect" id="node63" href="$classfreeling_1_1quantities__default.html" title="The derived class quantities_default implements a default quantities recognizer (only percentages are..." alt="" coords="1039,1019,1212,1048"/>
+<area shape="rect" id="node65" href="$classfreeling_1_1quantities__en.html" title="The derived class quantities_en implements an English quantities recognizer." alt="" coords="1051,1072,1200,1101"/>
+<area shape="rect" id="node67" href="$classfreeling_1_1quantities__es.html" title="The derived class quantities_es implements a Spanish quantities recognizer." alt="" coords="1051,1125,1200,1155"/>
+<area shape="rect" id="node69" href="$classfreeling_1_1quantities__gl.html" title="The derived class quantities_gl implements a Galician quantities recognizer." alt="" coords="1053,1179,1197,1208"/>
+<area shape="rect" id="node71" href="$classfreeling_1_1quantities__pt.html" title="The derived class quantities_pt implements a Portuguese quantities recognizer." alt="" coords="1052,1232,1199,1261"/>
+<area shape="rect" id="node73" href="$classfreeling_1_1quantities__ru.html" title="The derived class quantities_ru implements a Russian quantities recognizer." alt="" coords="1052,1285,1199,1315"/>
+</map>

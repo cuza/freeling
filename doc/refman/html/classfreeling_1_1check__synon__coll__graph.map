@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classfreeling_1_1rule__expression.html" title="The class rule_expression is an abstract class (interface) for building dynamic restriction on a rule..." alt="" coords="5,344,168,373"/>
+<area shape="rect" id="node4" href="$classfreeling_1_1semanticDB.html" title="Class semanticDB implements a semantic DB interface." alt="" coords="192,344,336,373"/>
+<area shape="rect" id="node6" href="$classfreeling_1_1database.html" title="Class to wrap a berkeley DB database and unify access." alt="" coords="201,213,327,243"/>
+<area shape="rect" id="node8" href="$classint.html" title="int" alt="" coords="200,117,237,147"/>
+<area shape="rect" id="node10" href="$classfreeling_1_1PrefTree.html" title="freeling::PrefTree" alt="" coords="261,117,384,147"/>
+<area shape="rect" id="node12" href="$classfreeling_1_1List.html" title="freeling::List" alt="" coords="368,5,461,35"/>
+<area shape="rect" id="node14" href="$structfreeling_1_1List_1_1ListRecBase.html" title="freeling::List::ListRecBase" alt="" coords="408,117,584,147"/>
+</map>

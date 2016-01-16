@@ -1,0 +1,14 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classfreeling_1_1ner__module.html" title="The class ner is an abstract class that implements a general NE Recognizer." alt="" coords="187,368,325,397"/>
+<area shape="rect" id="node4" href="$classfreeling_1_1automat.html" title="freeling::automat\&lt; ner_status \&gt;" alt="" coords="331,272,533,301"/>
+<area shape="rect" id="node6" href="$classfreeling_1_1processor.html" title="Abstract class to define the common API of any FreeLing processing module." alt="" coords="413,5,541,35"/>
+<area shape="rect" id="node10" href="$classfreeling_1_1automat.html" title="Abstract class to implement a Finite&#45;State Automaton which is used by modules recognizing multiwords ..." alt="" coords="403,148,552,177"/>
+<area shape="rect" id="node8" href="$classint.html" title="int" alt="" coords="299,5,336,35"/>
+<area shape="rect" id="node19" href="$classfreeling_1_1fex__lexicon.html" title="Feature lexicon." alt="" coords="627,148,765,177"/>
+<area shape="rect" id="node26" href="$classfreeling_1_1vis__viterbi.html" title="The class vis_viterbi implements the viterbi algorithm given the weights of different labels..." alt="" coords="5,368,136,397"/>
+<area shape="rect" id="node15" href="$classbool.html" title="bool" alt="" coords="112,272,157,301"/>
+<area shape="rect" id="node17" href="$classfreeling_1_1fex.html" title="Class fex implements a feature extractor." alt="" coords="651,272,741,301"/>
+<area shape="rect" id="node21" href="$classstd_1_1map.html" title="std::map\&lt; std::wstring, lex_entry \&gt;" alt="" coords="583,5,809,35"/>
+<area shape="rect" id="node24" href="$classfreeling_1_1tagset.html" title="The class tagset handles PoS tags long to short conversion and morphosintactic feature decomposition..." alt="" coords="789,148,896,177"/>
+<area shape="rect" id="node30" href="$classfreeling_1_1classifier.html" title="The class classifier is an abstract class that implements a general ML classifier." alt="" coords="453,368,576,397"/>
+</map>

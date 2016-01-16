@@ -1,0 +1,4 @@
+<map id="G" name="G">
+<area shape="rect" id="node1" href="$classfreeling_1_1weak__rule.html" title="Class weak_rule is an abstract class generalizing any kind of weak rule that adaboost can use..." alt="" coords="5,5,136,35"/>
+<area shape="rect" id="node3" href="$classfreeling_1_1mlDTree.html" title="Class mlDTree implements a multilabel decision tree that can be used by adaboost as a weak rules..." alt="" coords="184,5,307,35"/>
+</map>

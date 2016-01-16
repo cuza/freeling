@@ -1,0 +1,11 @@
+<map id="G" name="G">
+<area shape="rect" id="node1" href="$classfreeling_1_1processor__status.html" title="Virtual class to store the processing state of a sentence." alt="" coords="7,165,177,195"/>
+<area shape="rect" id="node3" href="$classfreeling_1_1automat__status.html" title="Class to store status information." alt="" coords="231,112,393,141"/>
+<area shape="rect" id="node15" href="$classfreeling_1_1dep__txala__status.html" title="Store parsing status information." alt="" coords="227,165,397,195"/>
+<area shape="rect" id="node17" href="$classfreeling_1_1fex__status.html" title="Store status about extracted features." alt="" coords="245,219,379,248"/>
+<area shape="rect" id="node5" href="$classfreeling_1_1dates__status.html" title="Class to store status information." alt="" coords="457,5,604,35"/>
+<area shape="rect" id="node7" href="$classfreeling_1_1locutions__status.html" title="Class to store status information." alt="" coords="448,59,613,88"/>
+<area shape="rect" id="node9" href="$classfreeling_1_1ner__status.html" title="Class to store status information." alt="" coords="464,112,597,141"/>
+<area shape="rect" id="node11" href="$classfreeling_1_1numbers__status.html" title="Class to store status information." alt="" coords="448,165,613,195"/>
+<area shape="rect" id="node13" href="$classfreeling_1_1quantities__status.html" title="Class to store status information." alt="" coords="445,219,616,248"/>
+</map>

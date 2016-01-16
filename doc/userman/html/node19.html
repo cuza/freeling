@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Language Identifier Module</TITLE>
+<META NAME="description" CONTENT="Language Identifier Module">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="next" HREF="node21.html">
+<LINK REL="previous" HREF="node18.html">
+<LINK REL="up" HREF="node18.html">
+<LINK REL="next" HREF="node20.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html508"
+  HREF="node20.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html504"
+  HREF="node18.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html498"
+  HREF="node18.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html506"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html509"
+  HREF="node20.html">Language Identifier Options File</A>
+<B> Up:</B> <A NAME="tex2html505"
+  HREF="node18.html">Analysis Modules</A>
+<B> Previous:</B> <A NAME="tex2html499"
+  HREF="node18.html">Analysis Modules</A>
+ &nbsp; <B>  <A NAME="tex2html507"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00410000000000000000"></A>
+<A NAME="lang-ident"></A>
+<BR>
+Language Identifier Module
+</H1>
+
+<P>
+This module is somehow different of the other modules, since it
+  doesn't enrich the given text.  It compares the given text with
+  available models for different languages, and returns the most
+  likely language the text is written in.
+  It can be used as a preprocess to determine which data files are to
+  be used to analyze the text.
+
+<P>
+The API of the language identifier is the following:
+
+<P>
+<PRE>
+class lang_ident {
+  public:
+    /// Build an empty language identifier.
+    lang_ident();
+    /// Build a language identifier, read options from given file.
+    lang_ident(const std::wstring &amp;);
+    /// load given language from given model file, add to existing languages.
+    void add_language(const std::wstring&amp;);
+    /// train a model for a language, store in modelFile, and add 
+    /// it to the known languages list.
+    void train_language(const std::wstring &amp;, const std::wstring &amp;, 
+                        const std::wstring &amp;);
+    /// Classify the input text and return the code of the best language (or "none")
+    std::wstring identify_language (
+                    const std::wstring&amp;, 
+                    const std::set&lt;std::wstring&gt; &amp;ls=std::set&lt;std::wstring&gt;()) const; 
+    /// fill a vector with sorted probabilities for each language
+    void rank_languages (
+               std::vector&lt;std::pair&lt;double,std::wstring&gt; &gt; &amp;, 
+               const std::wstring &amp;,
+               const std::set&lt;std::wstring&gt; &amp;ls=std::set&lt;std::wstring&gt;()) const;
+};
+</PRE>
+
+<P>
+Once created, the language identifier may be used to get the most
+  likely language of a text (<code>identify_language</code>) or to return a
+  sorted vector of probabilities for each language
+  (<code>rank_languages</code>).  In both cases, a set of languages to be
+  considered may be supplied, telling the identifier to apply to the
+  input text only models for those languages in the list. An empty
+  list is interpreted as ``use all available language models''.
+  The language list parameter is optional in both identification methods, 
+  and defaults to the empty list.
+
+<P>
+The same <code>lang_ident</code> class may be used to train models for new
+  languages. The method <code>train_language</code> will use a plain text
+  file to create a new model, which will enlarge the identifier's
+  language repertoire, and will be stored for its use in future
+  instances of the class.
+
+<P>
+The constructor expects a configuration file name, containing
+  information about where are the language models located, and some
+  parameters. The contents of that file are described below.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html510"
+  HREF="node20.html">Language Identifier Options File</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html508"
+  HREF="node20.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html504"
+  HREF="node18.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html498"
+  HREF="node18.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html506"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html509"
+  HREF="node20.html">Language Identifier Options File</A>
+<B> Up:</B> <A NAME="tex2html505"
+  HREF="node18.html">Analysis Modules</A>
+<B> Previous:</B> <A NAME="tex2html499"
+  HREF="node18.html">Analysis Modules</A>
+ &nbsp; <B>  <A NAME="tex2html507"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

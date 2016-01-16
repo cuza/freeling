@@ -1,0 +1,25 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$prefTree_8cc.html" title="prefTree.cc" alt="" coords="512,83,600,112"/>
+<area shape="rect" id="node5" href="$database_8h.html" title="database.h" alt="" coords="624,83,709,112"/>
+<area shape="rect" id="node7" href="$database_8cc.html" title="database.cc" alt="" coords="297,160,391,189"/>
+<area shape="rect" id="node9" href="$semdb_8h.html" title="semdb.h" alt="" coords="415,160,487,189"/>
+<area shape="rect" id="node36" href="$dictionary_8h.html" title="dictionary.h" alt="" coords="844,160,932,189"/>
+<area shape="rect" id="node53" href="$punts_8h.html" title="punts.h" alt="" coords="1068,160,1132,189"/>
+<area shape="rect" id="node11" href="$semdb_8cc.html" title="semdb.cc" alt="" coords="564,237,641,267"/>
+<area shape="rect" id="node13" href="$senses_8h.html" title="senses.h" alt="" coords="465,237,540,267"/>
+<area shape="rect" id="node17" href="$freeling_8h.html" title="freeling.h" alt="" coords="395,392,469,421"/>
+<area shape="rect" id="node20" href="$dependencies_8h.html" title="dependencies.h" alt="" coords="176,315,288,344"/>
+<area shape="rect" id="node25" href="$coref__fex_8h.html" title="coref_fex.h" alt="" coords="356,237,441,267"/>
+<area shape="rect" id="node30" href="$dep__rules_8h.html" title="dep_rules.h" alt="" coords="100,237,188,267"/>
+<area shape="rect" id="node15" href="$senses_8cc.html" title="senses.cc" alt="" coords="504,315,587,344"/>
+<area shape="rect" id="node22" href="$dependencies_8cc.html" title="dependencies.cc" alt="" coords="125,392,245,421"/>
+<area shape="rect" id="node27" href="$coref_8h.html" title="coref.h" alt="" coords="368,315,429,344"/>
+<area shape="rect" id="node32" href="$dep__rules_8cc.html" title="dep_rules.cc" alt="" coords="5,315,101,344"/>
+<area shape="rect" id="node38" href="$alternatives_8cc.html" title="alternatives.cc" alt="" coords="784,315,891,344"/>
+<area shape="rect" id="node40" href="$dictionary_8cc.html" title="dictionary.cc" alt="" coords="897,237,993,267"/>
+<area shape="rect" id="node42" href="$suffixes_8cc.html" title="suffixes.cc" alt="" coords="788,237,873,267"/>
+<area shape="rect" id="node44" href="$maco_8h.html" title="maco.h" alt="" coords="1068,237,1132,267"/>
+<area shape="rect" id="node49" href="$alternatives_8h.html" title="alternatives.h" alt="" coords="665,237,764,267"/>
+<area shape="rect" id="node46" href="$maco_8cc.html" title="maco.cc" alt="" coords="991,315,1063,344"/>
+<area shape="rect" id="node55" href="$punts_8cc.html" title="punts.cc" alt="" coords="1156,237,1228,267"/>
+</map>

@@ -1,0 +1,233 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Alternatives Suggestion Module</TITLE>
+<META NAME="description" CONTENT="Alternatives Suggestion Module">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="next" HREF="node46.html">
+<LINK REL="previous" HREF="node43.html">
+<LINK REL="up" HREF="node18.html">
+<LINK REL="next" HREF="node46.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html813"
+  HREF="node46.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html809"
+  HREF="node18.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html803"
+  HREF="node44.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html811"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html814"
+  HREF="node46.html">Sense Labelling Module</A>
+<B> Up:</B> <A NAME="tex2html810"
+  HREF="node18.html">Analysis Modules</A>
+<B> Previous:</B> <A NAME="tex2html804"
+  HREF="node44.html">Lexical Probabilities File</A>
+ &nbsp; <B>  <A NAME="tex2html812"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION004140000000000000000"></A>
+<A NAME="file-alter"></A>
+<BR>
+Alternatives Suggestion Module
+</H1>
+
+<P>
+This module is able to retrieve from its dictionary the entries most
+ similar to the input form.  
+  The similarity is computed according to a configurable string edit 
+ distance (SED) measure.
+
+<P>
+The alternatives module can be created to perform a direct search 
+ of the form in a dictionary, or either to perform a search of the phonetic
+ transcription of the form in a dictionary of phonetic transcriptions.
+   In the later case, the orthographic forms corresponding to the phonetically
+ similar words are returned.
+  For instance, if a mispelled word such as <EM>spid</EM> is found,
+  this module will find out that it sounds very close to a correct
+  word in the dictionary (<EM>speed</EM>), and return the correctly 
+  spelled alternatives.
+  This module is based on the fast search algorithms on FSMs included 
+  in the finite-state libray FOMA (<TT>http://code.google.com/p/foma</TT>).
+
+<P>
+The API for this module is the following:
+
+<P>
+<PRE>
+class alternatives {
+  public:
+    /// Constructor
+    alternatives(const std::wstring &amp;);
+    /// Destructor
+    ~alternatives();
+
+    /// direct access to results of underlying FSM
+    void get_similar_words(const std::wstring &amp;, 
+                           std::list&lt;std::pair&lt;std::wstring,int&gt; &gt; &amp;) const;
+    
+    /// analyze given sentence.
+    void analyze(sentence &amp;) const;
+    /// analyze given sentences.
+    void analyze(std::list&lt;sentence&gt; &amp;) const;
+    /// return analyzed copy of given sentence
+    sentence analyze(const sentence &amp;) const;
+    /// return analyzed copy of given sentences
+    std::list&lt;sentence&gt; analyze(const std::list&lt;sentence&gt; &amp;) const;
+</PRE>
+
+<P>
+This module will find alternatives for words in the sentences, and enrich
+ them with a list of forms, each with the corresponding SED value.
+  The forms are added to the <TT>alternatives</TT> member of class <TT>word</TT>,
+ which is a <TT>std::list&lt;pair&lt;std::wstring,int&#187;</TT>.  The list can
+ be traversed using the iterators <TT>word::alternatives_begin()</TT> and
+ <TT>word::alternatives_end()</TT>.
+
+<P>
+The constructor of this module expects a configuration file
+ containing the following sections:
+
+<P>
+
+<UL>
+<LI>Section <code>&lt;General&gt;</code> contains values for general parameters, expressed
+    in lines of the form <code>key value</code>.
+
+<P>
+More specifically, it must contain a line
+<BR>    <code>Type (orthographic|phonetic)</code>
+<BR>
+stating whether the similar words must be searched using direct SED between
+    of orthographic forms, or between their phonetic encoding.
+
+<P>
+This section must also contain one line
+<BR>    <code>Dictionary filename</code>
+<BR>
+or either a line
+<BR>    <code>PhoneticDictionary filename</code>
+<BR>
+stating the dictionary where the 
+    similar words are going to be searched.
+    If <code>PhoneticDictionary</code> is stated, then an additional line
+<BR>    <code>PhoneticRule filename</code>
+<BR>
+is expected, detailing the configuration file 
+    for a phonetic encoding module (see section&nbsp;<A HREF="node54.html#file-phon">3.18</A>) that
+    will be used to encode the input forms before the search.
+
+<P>
+The <code>Dictionary</code> can be any file containing one form per line. 
+    Only first field in the line will be considered, which makes it possible
+    to use a basic FreeLing dictionary (see section&nbsp;<A HREF="node32.html#file-dict">3.9</A>), since
+    the morphological information will be ignored.
+
+<P>
+The <code>PhoneticDictionary</code> must contain one phonetic form per line, followed
+    by a list of orthographic forms mapping to that sound. E.g., valid lines are:
+    <PRE>
+    f@Ur fore four
+    tu too two
+</PRE>
+
+<P>
+</LI>
+<LI>Section <code>&lt;Distance&gt;</code> contains <code>key value</code> lines stating
+    parameters related to the SED measure to use.
+
+<P>
+A line <code>CostMatrix filename</code> is expected, stating the file where
+    the SED cost matrix to be used. The <code>CostMatrix</code> file must comply
+    with FOMA requirements for cost matrices (see FOMA documentation, or
+    examples provided in <code>data/common/alternatives</code> in FreeLing tarball).
+
+<P>
+A line <code>Threshold int-value</code> can be provided stating the maximum distance
+    of desired alternatives.  Note that a very high value will cause the module 
+    to produce a long list of similar words, and a too low value may result in no
+    similar forms found.
+
+<P>
+A line <code>MaxSizeDiff int-value</code> may also be provided. Similar strings with 
+    a length difference greater than this parameter will be filtered out of the 
+    result. To deactivate this feature, just set the value to a large number (e.g. 99).
+
+<P>
+</LI>
+<LI>Section <code>&lt;Target&gt;</code> contains <code>key value</code> lines describing 
+    which words in the sentence must be checked for similar forms.
+
+<P>
+The line <code>UnknownWords (yes|no)</code> states whether similar forms are 
+    to be searched for unknown words (i.e. words
+    that didn't receive any analysis from any module so far).
+
+<P>
+The line <code>KnownWords regular-expression</code> states which words with analysis
+    have to be checked.  The regular expression is matched against the PoS tag of the
+    words.  If the regular-expression is <code>none</code>, no known word is checked for
+    similar forms.
+</LI>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html813"
+  HREF="node46.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html809"
+  HREF="node18.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html803"
+  HREF="node44.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html811"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html814"
+  HREF="node46.html">Sense Labelling Module</A>
+<B> Up:</B> <A NAME="tex2html810"
+  HREF="node18.html">Analysis Modules</A>
+<B> Previous:</B> <A NAME="tex2html804"
+  HREF="node44.html">Lexical Probabilities File</A>
+ &nbsp; <B>  <A NAME="tex2html812"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

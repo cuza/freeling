@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classfreeling_1_1factory.html" title="freeling::factory\&lt; ner_module \&gt;" alt="" coords="351,5,553,35"/>
+<area shape="rect" id="node7" href="$classfreeling_1_1factory.html" title="freeling::factory\&lt; dates_module \&gt;" alt="" coords="344,59,560,88"/>
+<area shape="rect" id="node11" href="$classfreeling_1_1factory.html" title="freeling::factory\&lt; numbers_module \&gt;" alt="" coords="335,112,569,141"/>
+<area shape="rect" id="node15" href="$classfreeling_1_1factory.html" title="freeling::factory\&lt; quantities_module \&gt;" alt="" coords="332,165,572,195"/>
+<area shape="rect" id="node5" href="$classfreeling_1_1ner.html" title="Class ner implements a wrapper to transparently create and access a ner_module named entity recognize..." alt="" coords="643,5,733,35"/>
+<area shape="rect" id="node9" href="$classfreeling_1_1dates.html" title="The class dates provides a wrapper to transparently create and access a dates_module, a temporal expression recognizer for the appropriate language." alt="" coords="636,59,740,88"/>
+<area shape="rect" id="node13" href="$classfreeling_1_1numbers.html" title="Class numbers implements a wrapper to transparently create and access a numbers_module number recogni..." alt="" coords="627,112,749,141"/>
+<area shape="rect" id="node17" href="$classfreeling_1_1quantities.html" title="Class quantities implements a wrapper to transparently create and access a quantities_module monetary..." alt="" coords="624,165,752,195"/>
+</map>

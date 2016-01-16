@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Multiword Definition File</TITLE>
+<META NAME="description" CONTENT="Multiword Definition File">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="previous" HREF="node36.html">
+<LINK REL="up" HREF="node36.html">
+<LINK REL="next" HREF="node38.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html719"
+  HREF="node38.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html715"
+  HREF="node36.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html711"
+  HREF="node36.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html717"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html720"
+  HREF="node38.html">Named Entity Recognition Module</A>
+<B> Up:</B> <A NAME="tex2html716"
+  HREF="node36.html">Multiword Recognition Module</A>
+<B> Previous:</B> <A NAME="tex2html712"
+  HREF="node36.html">Multiword Recognition Module</A>
+ &nbsp; <B>  <A NAME="tex2html718"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION004101000000000000000">
+Multiword Definition File</A>
+</H2>
+
+<P>
+The file contains a list of multiwords to be recognized. The format of
+the file is one multiword per line. Each line has the format: 
+<BR><code>form lemma1 pos1 lemma2 pos2 ... [A|I]</code>
+
+<P>
+The multiword form may contain lemmas in angle brackets, meaning that
+any form with that lemma will be considered a valid component for the
+multiword.
+
+<P>
+The form may also contain PoS tags. Any uppercase component in the form
+will be treated as a PoS tag.
+
+<P>
+Any number of pairs lemma-tag may be assigned to the multiword. The
+ PoS tagger will select the most probable given the context, as with
+ any other word.
+
+<P>
+For instance:
+<PRE>
+a_buenas_horas a_buenas_horas RG A
+a_causa_de a_causa_de SPS00 I
+&lt;accidente&gt;_de_trabajo accidente_de_trabajo $1:NC I
+&lt;acabar&gt;_de_VMN0000 acabar_de_$L3 $1:VMI I
+Z_&lt;vez&gt; TIMES:$L1 Zu I
+</PRE>
+
+<P>
+The tag may be specified directly, or as a reference to the tag of
+some of the multiword components. In the previous example, the third
+multiword specification will build a multiword with any of the forms <TT> accidente de trabajo</TT> or <TT>accidentes de trabajo</TT>. The tag of the
+multiword will be that of its first form (<TT>$1</TT>) which starts with
+<TT>NC</TT>.  This will assign the right singular/plural tag to the
+multiword, depending on whether the form was ``accidente'' or ``accidentes''.
+
+<P>
+The lemma of the multiword may be specified directly, or as a reference to the 
+form of lemma of some of the multiword components.  In the previous example, the 
+fourth multiword specification will build a multiword with phrases such as 
+<TT>acabo de comer</TT>, <TT>acababa de salir</TT>, etc.  The lemma will be 
+<TT>acabar_de_XXX</TT> where <TT>XXX</TT> will be replaced with the lemma of the 
+third multiword component (<TT>$L3</TT>). 
+
+<P>
+Lemma replacement strings can be <TT>$F1</TT>, <TT>$F2</TT>, <TT>$F3</TT>,
+ etc. to select the lowercased <I CLASS="slanted">form</I> of any component, or <TT>   $L1</TT>, <TT>$L2</TT>, <TT>$L3</TT>, etc. to select the <I CLASS="slanted">lemma</I> of
+ any component. Component numbers can range from 1 to 9.
+
+<P>
+The last field states whether the multiword is ambiguous <TT>A</TT> or
+ not <TT>I</TT> with respect to its segmentation (i.e. that it may be a
+ multiword or not, depending on the context). The multiword is built
+in any case, but the ambiguity information is stored in the <TT>word</TT>
+object, so the calling applicacion can consult it and take the necessary
+decisions (e.g. un-glue the multiword) if needed.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html719"
+  HREF="node38.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html715"
+  HREF="node36.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html711"
+  HREF="node36.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html717"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html720"
+  HREF="node38.html">Named Entity Recognition Module</A>
+<B> Up:</B> <A NAME="tex2html716"
+  HREF="node36.html">Multiword Recognition Module</A>
+<B> Previous:</B> <A NAME="tex2html712"
+  HREF="node36.html">Multiword Recognition Module</A>
+ &nbsp; <B>  <A NAME="tex2html718"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

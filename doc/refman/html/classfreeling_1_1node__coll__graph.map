@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classfreeling_1_1word.html" title="Class word stores all info related to a word: form, list of analysis, list of tokens (if multiword)..." alt="" coords="112,136,211,165"/>
+<area shape="rect" id="node4" href="$classstd_1_1list.html" title="std::list\&lt;analysis\&gt;" alt="" coords="97,5,225,35"/>
+<area shape="rect" id="node6" href="$classint.html" title="int" alt="" coords="5,5,43,35"/>
+<area shape="rect" id="node8" href="$classbool.html" title="bool" alt="" coords="273,5,319,35"/>
+</map>

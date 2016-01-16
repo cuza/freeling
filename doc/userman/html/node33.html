@@ -1,0 +1,217 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Form Dictionary File</TITLE>
+<META NAME="description" CONTENT="Form Dictionary File">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="next" HREF="node34.html">
+<LINK REL="previous" HREF="node32.html">
+<LINK REL="up" HREF="node32.html">
+<LINK REL="next" HREF="node34.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html674"
+  HREF="node34.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html670"
+  HREF="node32.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html664"
+  HREF="node32.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html672"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html675"
+  HREF="node34.html">Affixation Rules File</A>
+<B> Up:</B> <A NAME="tex2html671"
+  HREF="node32.html">Dictionary Search Module</A>
+<B> Previous:</B> <A NAME="tex2html665"
+  HREF="node32.html">Dictionary Search Module</A>
+ &nbsp; <B>  <A NAME="tex2html673"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00491000000000000000">
+Form Dictionary File</A>
+</H2>
+
+<P>
+The form dictionary contais two required sections:
+  <code>&lt;IndexType&gt;</code> and <code>&lt;Entries&gt;</code>, and two optional sections:
+  <code>&lt;LemmaPreferences&gt;</code> and <code>&lt;PosPreferences&gt;</code>
+
+<P>
+Section <code>&lt;IndexType&gt;</code> conatins a single line, that may be either
+  <code>DB_PREFTREE</code> or <code>DB_MAP</code>.  With <code>DB_MAP</code> the dictionary is
+  stored in a C++ STL <TT>map</TT> container. With <code>DB_PREFTREE</code>
+  it is stored in a prefix-tree structure.
+  Depending on the size of the dictionary and on the morphological
+  variation of the language, one structure may yield slightly better
+  access times than the other.
+
+<P>
+Optional sections <code>&lt;LemmaPreferences&gt;</code> and
+  <code>&lt;PosPreferences&gt;</code> contain a list of pairs of lemmas or PoS
+  tags, respectively.
+  The meaning of each pair is that the first element is prefereble to
+  the second in case the tagger can not decide between them and is asked to.
+
+<P>
+For instance, the section:
+  <PRE>
+    &lt;LemmaPreferences&gt;
+    salir salgar
+    &lt;/LemmaPreferences&gt;
+</PRE>
+  solves the ambiguity for Spanish word <SPAN  CLASS="textsl">salgo</SPAN>, which may correspond to 
+  indicative first person singular of verb <SPAN  CLASS="textsl">salir</SPAN> (go out), or to exactly the
+  same tense of verb <SPAN  CLASS="textsl">salgar</SPAN> (feed salt to cattle). 
+  Since the PoS tag is the same for both lemmas, the tagger can not decide which is
+  the right one. This preference solves the dilemma in favour of <SPAN  CLASS="textsl">salir</SPAN> (go out).
+
+<P>
+The section
+  <PRE>
+    &lt;PosPreferences&gt;
+    VMII3S0 VMII1S0
+    &lt;/PosPreferences&gt;
+</PRE>
+  helps solving cases as the past tense for Spanish verbs such as <SPAN  CLASS="textsl">cantaba</SPAN> 
+  (I/he sung), which are shared by first and third person. 
+  In this case, if the tagger is not able to make a decision (it may be it doesn't 
+  take into account the person as a feature), a preference is set for 3rd person 
+  (which is more frequent in standard text).
+
+<P>
+Section <code>&lt;Entries&gt;</code> contains lines with one form per line.  
+  Each form line has format: <TT>form lemma1 PoS1 lemma2 PoS2 ...</TT>.  
+<BR>
+E.g.:
+  <PRE>
+  casa casa NCFS000 casar VMIP3S0 casar VMM02S0
+  backs back NNS back VBZ
+</PRE>
+  Lines corresponding to words that are contractions may have an
+  alternative format if the contraction is to be splitted. The format
+  is <TT>form form1+form2+... PoS1+PoS2+...</TT>
+<BR>
+where <TT>form1,form2,...</TT> are the forms (not the lemmas) of the contracted words.
+  For instance:
+<BR>  <code>del de+el SP+DA</code>
+
+<P>
+This line expresses that whenever the form <I CLASS="slanted">del</I> is found, it is
+  replaced with two words: <I CLASS="slanted">de</I> and <I CLASS="slanted">el</I>. Each of the new two
+  word forms are searched in the dictionary, and assigned any tag
+  matching their correspondig tag in the third field. So, <I CLASS="slanted">de</I>
+  will be assigned all tags starting with <TT>SP</TT> that this
+  entry may have in the dictionary, and <I CLASS="slanted">el</I> will get any
+  tag starting with <TT>DA</TT>.
+
+<P>
+Note that a contraction included in the dictionary cannot be 
+  splitted in two different ways corresponding to different 
+  forms (e.g. <TT>he's = he+is | he+has</TT>),
+  so only a combination of forms and a combination of tags may appear
+  in the dictionary.
+
+<P>
+Nevertheless, a set of tags may be specified for a given form, e.g.:
+<BR>  <code>he'd he+'d PRP+VB/MD</code>
+
+<P>
+This will produce two words: <I CLASS="slanted">he</I> with <TT>PRP</TT> analysis, and
+   <I CLASS="slanted">'d</I> with its analysis matching any of the two given tags
+   (i.e. <TT>have_VBZ</TT> and <TT>would_MD</TT>).  Note that this will
+   work only if the form <I CLASS="slanted">'d</I> is found in the dictionary with
+   those possible analysis.
+
+<P>
+If all tags for one of the new forms are to be used, a wildcard may
+   be written as a tag. e.g.:
+<BR>  <code>pal para+el SP+*</code>
+
+<P>
+This will replace <I CLASS="slanted">pal</I> with two words, <I CLASS="slanted">para</I> with only its
+   <TT>SP</TT> analysis, plus <I CLASS="slanted">el</I> with all its possible tags.  
+
+<P>
+The contraction entries in the dictionary are intended for
+  inambiguous contractions, or for cases such that it is not worth (or
+  it is too difficult) to handle otherwise.  For splitting more
+  sophisticated compound words, such as verb clitic pronouns in
+  Spanish or Italian (e.g <I CLASS="slanted">dale <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$"></SPAN> dar+&#233;l</I>), derivation (e.g. <I CLASS="slanted">    quick <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$"></SPAN> quickly</I>, <I CLASS="slanted">r&#225;pida <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$"></SPAN> r&#225;pidamente</I>),
+  diminutive/augmentative sufixes, prefixes, or other similar
+  behaviours, the affixation module should be used (see section
+  <A HREF="node34.html#file-suf">3.9.2</A> for details).
+
+<P>
+An optional parameter in the constructor enables to control whether
+  contractions are splitted by the dictionary module itself (thus
+  passing two words instead of one to later modules) or the decision
+  is left to later modules (which will receive a single word carrying
+  retokenization information).
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html674"
+  HREF="node34.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html670"
+  HREF="node32.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html664"
+  HREF="node32.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html672"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html675"
+  HREF="node34.html">Affixation Rules File</A>
+<B> Up:</B> <A NAME="tex2html671"
+  HREF="node32.html">Dictionary Search Module</A>
+<B> Previous:</B> <A NAME="tex2html665"
+  HREF="node32.html">Dictionary Search Module</A>
+ &nbsp; <B>  <A NAME="tex2html673"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

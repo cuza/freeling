@@ -1,0 +1,22 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$phonetics_8h.html" title="phonetics.h" alt="" coords="111,237,199,267"/>
+<area shape="rect" id="node14" href="$hmm__tagger_8h.html" title="hmm_tagger.h" alt="" coords="229,83,333,112"/>
+<area shape="rect" id="node19" href="$weakrule_8h.html" title="weakrule.h" alt="" coords="357,83,443,112"/>
+<area shape="rect" id="node41" href="$fex__rule_8h.html" title="fex_rule.h" alt="" coords="591,83,668,112"/>
+<area shape="rect" id="node5" href="$phonetics_8cc.html" title="phonetics.cc" alt="" coords="132,315,228,344"/>
+<area shape="rect" id="node7" href="$freeling_8h.html" title="freeling.h" alt="" coords="397,392,472,421"/>
+<area shape="rect" id="node9" href="$alternatives_8h.html" title="alternatives.h" alt="" coords="9,315,108,344"/>
+<area shape="rect" id="node11" href="$alternatives_8cc.html" title="alternatives.cc" alt="" coords="5,392,112,421"/>
+<area shape="rect" id="node16" href="$hmm__tagger_8cc.html" title="hmm_tagger.cc" alt="" coords="167,160,279,189"/>
+<area shape="rect" id="node21" href="$adaboost_8h.html" title="adaboost.h" alt="" coords="460,160,545,189"/>
+<area shape="rect" id="node23" href="$nec_8cc.html" title="nec.cc" alt="" coords="859,315,920,344"/>
+<area shape="rect" id="node25" href="$coref_8h.html" title="coref.h" alt="" coords="404,237,465,267"/>
+<area shape="rect" id="node29" href="$bioner_8h.html" title="bioner.h" alt="" coords="596,237,663,267"/>
+<area shape="rect" id="node31" href="$bioner_8cc.html" title="bioner.cc" alt="" coords="760,315,835,344"/>
+<area shape="rect" id="node33" href="$ner_8cc.html" title="ner.cc" alt="" coords="589,315,648,344"/>
+<area shape="rect" id="node35" href="$maco_8h.html" title="maco.h" alt="" coords="672,315,736,344"/>
+<area shape="rect" id="node37" href="$maco_8cc.html" title="maco.cc" alt="" coords="668,392,740,421"/>
+<area shape="rect" id="node43" href="$fex_8h.html" title="fex.h" alt="" coords="604,160,655,189"/>
+<area shape="rect" id="node51" href="$nerc__features_8h.html" title="nerc_features.h" alt="" coords="741,237,853,267"/>
+<area shape="rect" id="node45" href="$nec_8h.html" title="nec.h" alt="" coords="877,237,931,267"/>
+</map>

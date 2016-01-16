@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Rule Syntax</TITLE>
+<META NAME="description" CONTENT="Rule Syntax">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="next" HREF="node78.html">
+<LINK REL="previous" HREF="node76.html">
+<LINK REL="up" HREF="node75.html">
+<LINK REL="next" HREF="node78.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1217"
+  HREF="node78.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1213"
+  HREF="node75.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1207"
+  HREF="node76.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1215"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1218"
+  HREF="node78.html">Feature Name Pattern Syntax</A>
+<B> Up:</B> <A NAME="tex2html1214"
+  HREF="node75.html">Feature Extraction Module</A>
+<B> Previous:</B> <A NAME="tex2html1208"
+  HREF="node76.html">Feature Extraction Rule File</A>
+ &nbsp; <B>  <A NAME="tex2html1216"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00542000000000000000"></A>
+<A NAME="s:fex-rules"></A>
+<BR>
+Rule Syntax
+</H2>
+
+<P>
+Each rule has following syntax:
+<PRE>
+ feature-name-pattern window condition
+</PRE>
+
+<P>
+
+<UL>
+<LI><code>feature-name-pattern</code> is a string that describes what
+     the generated feature name will be.  Some special characters
+     allow the insertion of variable values in the feature name. See
+     section <A HREF="node78.html#s:fex-pattern">4.4.3</A> for a description of the syntax of
+     feature name patterns.
+
+<P>
+</LI>
+<LI><code>window</code> is a range in the format <code>[num,num]</code>, and
+     states the words around the target word for which the feature has
+     to be computed.  A window of <code>[0,0]</code> means that the feaure
+     is only checked for the target word.
+
+<P>
+</LI>
+<LI><code>condition</code> is the condition that a word has to satisfy
+     in order to get the features extracted by the rule. See section
+     <A HREF="node79.html#s:fex-cond">4.4.4</A> for a description of condition syntax.
+
+<P>
+</LI>
+</UL>
+
+<P>
+<BR><HR>
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node1" href="$classfreeling_1_1accents__module.html" title="The abstract class accents_module generalizes accentuation rules for different languages." alt="" coords="7,59,172,88"/>
+<area shape="rect" id="node3" href="$classfreeling_1_1accents__default.html" title="Derived accents_module for null accentuation (eg english)." alt="" coords="223,5,385,35"/>
+<area shape="rect" id="node5" href="$classfreeling_1_1accents__es.html" title="Derived accents_module for Spanish accentuation." alt="" coords="235,59,373,88"/>
+<area shape="rect" id="node7" href="$classfreeling_1_1accents__gl.html" title="Derived accents_module for Galician accentuation." alt="" coords="237,112,371,141"/>
+</map>

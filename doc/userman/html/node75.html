@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Feature Extraction Module</TITLE>
+<META NAME="description" CONTENT="Feature Extraction Module">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="previous" HREF="node74.html">
+<LINK REL="up" HREF="node67.html">
+<LINK REL="next" HREF="node76.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1188"
+  HREF="node76.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1184"
+  HREF="node67.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1180"
+  HREF="node74.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1186"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1189"
+  HREF="node76.html">Feature Extraction Rule File</A>
+<B> Up:</B> <A NAME="tex2html1185"
+  HREF="node67.html">Other useful modules</A>
+<B> Previous:</B> <A NAME="tex2html1181"
+  HREF="node74.html">Approximate search dictionary</A>
+ &nbsp; <B>  <A NAME="tex2html1187"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00540000000000000000"></A>
+<A NAME="sec-rgf"></A>
+<BR>
+Feature Extraction Module
+</H1>
+
+<P>
+Machine Learning based modules (such as BIO named entity recognition
+  or classification modules) require the encoding of each word to
+  classify as a feature vector.  The conversion of words in a sentence
+  to feature vectors, is performed by this module. The features are
+  task-oriented, so they vary depending on what is being
+  classified. For this reason, the encoding is not hard-wired in the
+  code, but dinamically performed interpreting a set of feature rules.
+
+<P>
+Thus, the Feature Extraction Module converts words in a sentence to
+  feature vectors, using a given set of rules.
+
+<P>
+The API of this module is the following:
+<PRE>
+class fex {
+  private:
+
+  public:
+    /// constructor, given rule file, lexicon file (may be empty), and custom functions
+    fex(const std::wstring&amp;, const std::wstring&amp;, 
+        const std::map&lt;std::wstring,const feature_function *&gt; &amp;);
+
+    /// encode given sentence in features as feature names. 
+    void encode_name(const sentence &amp;, std::vector&lt;std::set&lt;std::wstring&gt; &gt; &amp;);
+    /// encode given sentence in features as integer feature codes
+    void encode_int(const sentence &amp;, std::vector&lt;std::set&lt;int&gt; &gt; &amp;);
+    /// encode given sentence in features as integer feature codes and as features names
+    void encode_all(const sentence &amp;, std::vector&lt;std::set&lt;std::wstring&gt; &gt; &amp;, 
+                    std::vector&lt;std::set&lt;int&gt; &gt; &amp;);
+
+    /// encode given sentence in features as feature names. 
+    /// Return result suitable for Java/perl APIs
+    std::vector&lt;std::list&lt;std::wstring&gt; &gt; encode_name(const sentence &amp;);
+    /// encode given sentence in features as integer feature codes.
+    /// Return result suitable for Java/perl APIs
+    std::vector&lt;std::set&lt;int&gt; &gt; encode_int(const sentence &amp;);
+
+    /// clear lexicon
+    void clear_lexicon(); 
+    /// encode sentence and add features to current lexicon
+    void encode_to_lexicon(const sentence &amp;);
+    /// save lexicon to a file, filtering features with low occurrence rate
+    void save_lexicon(const std::wstring &amp;, double) const;
+};
+</PRE>
+
+<P>
+The class may be used to encode a corpus and generate a feature lexicon,
+  or to encode a corpus filtering the obtained features using a previously 
+  generated feature lexicon.
+
+<P>
+The used feature rules must follow the format described in 
+  section <A HREF="node76.html#fex-file">4.4.1</A>. The rules may call custom feature functions, provided
+  the instantianting program provides pointers to call the apropriate code
+  to compute them.
+
+<P>
+Once the class is instantiated, it can ben used to encode sentences
+  in feature vectors.  Features may be obtained as strings (feature
+  names) or integers (feature codes).
+
+<P>
+The constructor of the class receives a <TT>.rgf</TT> file
+  containing feature extraction rules, a feature lexicon (mapping
+  feature names to integer codes), and a map used to define 
+  custom feature functions, with associations between
+  <TT>feature_function</TT> objects and function names (see section <A HREF="node80.html#s:fex-custom">4.4.5</A>).
+
+<P>
+If the lexicon file name is empty, features will be assigned an integer
+  code, and the generated lexicon can be saved. This is useful when
+  encoding training corpus and feature codes have not been set yet.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html1190"
+  HREF="node76.html">Feature Extraction Rule File</A>
+<LI><A NAME="tex2html1191"
+  HREF="node77.html">Rule Syntax</A>
+<LI><A NAME="tex2html1192"
+  HREF="node78.html">Feature Name Pattern Syntax</A>
+<LI><A NAME="tex2html1193"
+  HREF="node79.html">Feature Rules Condition Syntax</A>
+<LI><A NAME="tex2html1194"
+  HREF="node80.html">Adding custom feature functions</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1188"
+  HREF="node76.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1184"
+  HREF="node67.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1180"
+  HREF="node74.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1186"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1189"
+  HREF="node76.html">Feature Extraction Rule File</A>
+<B> Up:</B> <A NAME="tex2html1185"
+  HREF="node67.html">Other useful modules</A>
+<B> Previous:</B> <A NAME="tex2html1181"
+  HREF="node74.html">Approximate search dictionary</A>
+ &nbsp; <B>  <A NAME="tex2html1187"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

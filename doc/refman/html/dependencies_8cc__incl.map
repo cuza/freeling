@@ -1,0 +1,16 @@
+<map id="G" name="G">
+<area shape="rect" id="node13" href="$traces_8h.html" title="freeling/morfo/traces.h" alt="" coords="960,237,1112,267"/>
+<area shape="rect" id="node42" href="$util_8h.html" title="freeling/morfo/util.h" alt="" coords="476,160,609,189"/>
+<area shape="rect" id="node58" href="$dep__rules_8h.html" title="freeling/morfo/dep_rules.h" alt="" coords="1064,160,1235,189"/>
+<area shape="rect" id="node81" href="$dependencies_8h.html" title="freeling/morfo/dependencies.h" alt="" coords="1401,83,1596,112"/>
+<area shape="rect" id="node102" href="$configfile_8h.html" title="freeling/morfo/configfile.h" alt="" coords="2176,160,2344,189"/>
+<area shape="rect" id="node22" href="$windll_8h.html" title="freeling/windll.h" alt="" coords="1583,392,1695,421"/>
+<area shape="rect" id="node24" href="$language_8h.html" title="freeling/morfo/language.h" alt="" coords="1336,315,1504,344"/>
+<area shape="rect" id="node33" href="$regexp_8h.html" title="freeling/regexp.h" alt="" coords="363,392,480,421"/>
+<area shape="rect" id="node40" href="$tree_8h.html" title="freeling/tree.h" alt="" coords="1369,392,1471,421"/>
+<area shape="rect" id="node66" href="$semdb_8h.html" title="freeling/morfo/semdb.h" alt="" coords="1731,237,1885,267"/>
+<area shape="rect" id="node71" href="$database_8h.html" title="freeling/morfo/database.h" alt="" coords="1832,315,2000,344"/>
+<area shape="rect" id="node75" href="$prefTree_8h.html" title="freeling/morfo/prefTree.h" alt="" coords="1719,392,1881,421"/>
+<area shape="rect" id="node89" href="$processor_8h.html" title="freeling/morfo/processor.h" alt="" coords="1483,237,1656,267"/>
+<area shape="rect" id="node96" href="$dependency__parser_8h.html" title="freeling/morfo/dependency_parser.h" alt="" coords="1536,160,1765,189"/>
+</map>

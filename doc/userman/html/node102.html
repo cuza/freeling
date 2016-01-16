@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Dictionary search</TITLE>
+<META NAME="description" CONTENT="Dictionary search">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="next" HREF="node103.html">
+<LINK REL="previous" HREF="node101.html">
+<LINK REL="up" HREF="node97.html">
+<LINK REL="next" HREF="node103.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1544"
+  HREF="node103.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1540"
+  HREF="node97.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1534"
+  HREF="node101.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1542"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1545"
+  HREF="node103.html">Affixed forms search</A>
+<B> Up:</B> <A NAME="tex2html1541"
+  HREF="node97.html">Morphological analyzer</A>
+<B> Previous:</B> <A NAME="tex2html1535"
+  HREF="node101.html">Currency/ratio expression detection</A>
+ &nbsp; <B>  <A NAME="tex2html1543"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00825000000000000000">
+Dictionary search</A>
+</H2> 
+    The lexical forms for each language are sought in a database.
+    You only have to specify in which file it is found
+    with the DictionaryFile option.
+
+<P>
+The dictionary file can be build with the <TT>indexdict</TT> program
+    you'll find in the binaries directory of FreeLing. This program
+    reads data from stdin and indexes them into a DB file with the
+    name given as a parameter.
+
+<P>
+The input data is expected to contain one word form per line, each line
+    with the format: 
+<BR>    <TT>form lemma1 tag1 lemma2 tag2 ...</TT>
+<BR>
+E.g.
+<BR>    <TT>abalanzar&#225; abalanzar VMIC1S0 abalanzar VMIC3S0
+<BR>
+bajo bajar VMIP1S0 bajo AQ0MS0 bajo NCMS000 bajo SPS00
+<BR>
+efusivas efusivo AQ0FP0</TT>
+
+<P>
+<BR><HR>
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

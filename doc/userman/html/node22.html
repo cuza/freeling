@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Tokenizer Rules File</TITLE>
+<META NAME="description" CONTENT="Tokenizer Rules File">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="previous" HREF="node21.html">
+<LINK REL="up" HREF="node21.html">
+<LINK REL="next" HREF="node23.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html542"
+  HREF="node23.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html538"
+  HREF="node21.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html534"
+  HREF="node21.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html540"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html543"
+  HREF="node23.html">Splitter Module</A>
+<B> Up:</B> <A NAME="tex2html539"
+  HREF="node21.html">Tokenizer Module</A>
+<B> Previous:</B> <A NAME="tex2html535"
+  HREF="node21.html">Tokenizer Module</A>
+ &nbsp; <B>  <A NAME="tex2html541"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00421000000000000000">
+Tokenizer Rules File</A>
+</H2>
+
+<P>
+The tokenizer rules file is divided in three sections
+  <code>&lt;Macros&gt;</code>, <code>&lt;RegExps&gt;</code> and <code>&lt;Abbreviations&gt;</code>.  Each
+  section is closed by <code>&lt;/Macros&gt;</code>, <code>&lt;/RegExps&gt;</code> and
+  <code>&lt;/Abbreviations&gt;</code> tags respectively.
+
+<P>
+The <code>&lt;Macros&gt;</code> section allows the user to define regexp macros
+   that will be used later in the rules. Macros are defined with a name and
+   a POSIX regexp. E.g.:
+<BR>   <code>  MYALPHA  [A-Za-z]</code>
+<BR>   <code>  ALPHA    [[:alpha:]]</code>
+
+<P>
+The <code>&lt;RegExps&gt;</code> section defines the tokenization
+   rules. Previously defined macros may be referred to with their name
+   in curly brackets. E.g.:
+<BR>   <code>  *ABREVIATIONS1  0  ((\{ALPHA\}+\.)+)(?!\.\.)</code>
+
+<P>
+Rules are regular expressions, and are applied in the order of definition. 
+   The first rule matching the <EM>beginning</EM> of the line is applied,
+   a token is built, and the rest of the rules are ignored.
+   The process is repeated until the line has been completely processed.
+
+<P>
+The format of each rule is:
+  
+<UL>
+<LI>The first field in the rule is the rule name. If it starts
+      with a <TT>*</TT>, the RegExp will only produce a token if the
+      match is found in the abbreviation list (<code>&lt;Abbreviations&gt;</code>
+      section).  Apart from that, the rule name is only for
+      informative/readability purposes.
+
+<P>
+</LI>
+<LI>The second field in the rule is the substring to form the
+      token/s with.  It may be 0 (the match of the whole expression)
+      or any number from 1 to the number of subexpression (up to 9). A
+      token will be created for each subexpression from 1 to the
+      specified value.
+
+<P>
+</LI>
+<LI>The third field is the regexp to match against the input.
+      line. Any POSIX regexp convention may be used.
+
+<P>
+</LI>
+<LI>An optional fourth field may be added, containing the string
+      <TT>CI</TT> (standing for <I CLASS="slanted">Case Insensitive</I>). In this case,
+      the input text will be matched case-insensitively against the
+      regexp.  If the fourth field is not present, or it is different
+      than <TT>CI</TT>, the rule is matched case-sensitively.
+  
+</LI>
+</UL>
+
+<P>
+The <code>&lt;Abbreviations&gt;</code> section defines common abbreviations (one
+  per line) that must not be separated of their following dot
+  (e.g. <TT>etc.</TT>, <TT>mrs.</TT>). They must be lowercased, even if
+  they are expected to appear uppercased in the text.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html542"
+  HREF="node23.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html538"
+  HREF="node21.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html534"
+  HREF="node21.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html540"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html543"
+  HREF="node23.html">Splitter Module</A>
+<B> Up:</B> <A NAME="tex2html539"
+  HREF="node21.html">Tokenizer Module</A>
+<B> Previous:</B> <A NAME="tex2html535"
+  HREF="node21.html">Tokenizer Module</A>
+ &nbsp; <B>  <A NAME="tex2html541"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

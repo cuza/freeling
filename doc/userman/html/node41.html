@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Quantity Recognition Module</TITLE>
+<META NAME="description" CONTENT="Quantity Recognition Module">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="next" HREF="node43.html">
+<LINK REL="previous" HREF="node38.html">
+<LINK REL="up" HREF="node18.html">
+<LINK REL="next" HREF="node42.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html767"
+  HREF="node42.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html763"
+  HREF="node18.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html757"
+  HREF="node40.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html765"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html768"
+  HREF="node42.html">Quantity Recognition Data File</A>
+<B> Up:</B> <A NAME="tex2html764"
+  HREF="node18.html">Analysis Modules</A>
+<B> Previous:</B> <A NAME="tex2html758"
+  HREF="node40.html">BIO NER module (bioner)</A>
+ &nbsp; <B>  <A NAME="tex2html766"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION004120000000000000000"></A>
+<A NAME="file-quant"></A>
+<BR>
+Quantity Recognition Module
+</H1>
+
+<P>
+The <TT>quantities</TT> class is a FSA that recognizes ratios,
+  percentages, and physical or currency magnitudes (e.g. <EM>twenty
+    per cent</EM>, <EM>20%</EM>, <EM>one out of five</EM>, <EM>1/5</EM>, <EM>one
+    hundred miles per hour</EM>, etc.
+
+<P>
+This module depends on the numbers detection module (section
+  <A HREF="node26.html#file-numb">3.5</A>). If numbers are not previously detected and
+  annotated in the sentence, quantities will not be recognized.
+
+<P>
+This module, similarly to number recognition, is language
+   dependent: That is, a FSA has to be programmed to match the
+   patterns of ratio expressions in that language.
+
+<P>
+Currency and physical magnitudes can be recognized in any language,
+   given the appropriate data file.
+<PRE>
+class quantities {
+  public:
+    /// Constructor: receives the language code, and the data file.
+    quantities(const std::string &amp;, const std::string &amp;); 
+
+    /// Detect magnitude expressions starting at given sentence position
+    bool matching(sentence &amp;, sentence::iterator &amp;) const;
+
+    /// analyze given sentence.
+    void analyze(sentence &amp;) const;
+    /// analyze given sentences.
+    void analyze(std::list&lt;sentence&gt; &amp;) const;
+    /// return analyzed copy of given sentence
+    sentence analyze(const sentence &amp;) const;
+    /// return analyzed copy of given sentences
+    std::list&lt;sentence&gt; analyze(const std::list&lt;sentence&gt; &amp;) const;
+};
+</PRE>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html769"
+  HREF="node42.html">Quantity Recognition Data File</A>
+</UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

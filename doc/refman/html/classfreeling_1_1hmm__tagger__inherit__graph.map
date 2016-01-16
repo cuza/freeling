@@ -1,0 +1,4 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classfreeling_1_1POS__tagger.html" title="The class POS_tagger is just an abstract class generalizing a PoS tagger." alt="" coords="7,83,148,112"/>
+<area shape="rect" id="node4" href="$classfreeling_1_1processor.html" title="Abstract class to define the common API of any FreeLing processing module." alt="" coords="13,5,141,35"/>
+</map>

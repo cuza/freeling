@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Dictionary Search Module</TITLE>
+<META NAME="description" CONTENT="Dictionary Search Module">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="next" HREF="node36.html">
+<LINK REL="previous" HREF="node31.html">
+<LINK REL="up" HREF="node18.html">
+<LINK REL="next" HREF="node33.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html659"
+  HREF="node33.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html655"
+  HREF="node18.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html649"
+  HREF="node31.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html657"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html660"
+  HREF="node33.html">Form Dictionary File</A>
+<B> Up:</B> <A NAME="tex2html656"
+  HREF="node18.html">Analysis Modules</A>
+<B> Previous:</B> <A NAME="tex2html650"
+  HREF="node31.html">Dates Detection Module</A>
+ &nbsp; <B>  <A NAME="tex2html658"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00490000000000000000"></A>
+<A NAME="file-dict"></A>
+<BR>
+Dictionary Search Module
+</H1>
+
+<P>
+The dictionary search module has two functions: Search the word forms
+in the dictionary to find out their lemmas and PoS tags, and apply
+affixation rules to find the same information in the cases in which
+the form is a derived form not included in the dictionary (e.g. the
+word <TT>quickly</TT> may not be in the dictionary, but a suffixation
+rule may state that removing <TT>-ly</TT> and searching for the obtained
+adjective is a valid way to form and adverb).
+
+<P>
+The decision of what is included in the dictionary and what is dealt
+with through affixation rules is left to the linguist building the 
+linguistic data resources.
+
+<P>
+The API for this module is the following:
+<PRE>
+class dictionary {
+  public:
+    /// Constructor
+    dictionary(const std::wstring &amp;, const std::wstring &amp;, 
+               bool, const std::wstring &amp;, bool invDic=false, bool retok=true);
+    /// Destructor
+    ~dictionary();
+
+    /// add analysis to dictionary entry (create entry if not there)
+    void add_analysis(const std::wstring &amp;, const analysis &amp;);
+    /// remove entry from dictionary
+    void remove_entry(const std::wstring &amp;);
+
+    /// Get dictionary entry for a given form, add to given analysis list.
+    void search_form(const std::wstring &amp;, std::list&lt;analysis&gt; &amp;) const;
+    /// Fills the analysis list of a word, checking for suffixes and contractions.
+    /// Returns true iff the form is a contraction.
+    bool annotate_word(word &amp;, std::list&lt;word&gt; &amp;, bool override=false) const;
+    /// Fills the analysis list of a word, checking for suffixes and contractions.
+    /// Never retokenizing contractions, nor returning component list.
+    /// It is just a convenience equivalent to "annotate_word(w,dummy,true)"
+    void annotate_word(word &amp;) const;
+    /// Get possible forms for a lemma+pos (only if created with invDic=true)
+    std::list&lt;std::wstring&gt; get_forms(const std::wstring &amp;, const std::wstring &amp;) const;
+
+    /// analyze given sentence.
+    void analyze(sentence &amp;) const;
+    /// analyze given sentences.
+    void analyze(std::list&lt;sentence&gt; &amp;) const;
+    /// return analyzed copy of given sentence
+    sentence analyze(const sentence &amp;) const;
+    /// return analyzed copy of given sentences
+    std::list&lt;sentence&gt; analyze(const std::list&lt;sentence&gt; &amp;) const;
+}
+</PRE>
+
+<P>
+The parameters of the constructor are:
+
+<UL>
+<LI>The language of the processed text. This is required by the
+   affixation submodule to properly handle graphical accent rules in
+   latin languages.
+</LI>
+<LI>The dictionary file name. See below for details.
+</LI>
+<LI>A boolean stating whether affixation analysis has to be
+   applied.
+</LI>
+<LI>The affixation rules file name (it may be an empty string if
+   the boolean above is set to false)
+</LI>
+<LI>An optional boolean (default: false) stating whether the dictionary
+   must be created with inverse access, to enable the use of <code>get_forms</code> 
+   to obtain form given lemma+pos.
+</LI>
+<LI>An optional boolean (default: true) stating whether the contractions found
+   in the dictionary must be retokenized right away, or left for later modules to
+   decide.
+ 
+</LI>
+</UL>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html661"
+  HREF="node33.html">Form Dictionary File</A>
+<LI><A NAME="tex2html662"
+  HREF="node34.html">Affixation Rules File</A>
+<LI><A NAME="tex2html663"
+  HREF="node35.html">Dictionary Management</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html659"
+  HREF="node33.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html655"
+  HREF="node18.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html649"
+  HREF="node31.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html657"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html660"
+  HREF="node33.html">Form Dictionary File</A>
+<B> Up:</B> <A NAME="tex2html656"
+  HREF="node18.html">Analysis Modules</A>
+<B> Previous:</B> <A NAME="tex2html650"
+  HREF="node31.html">Dates Detection Module</A>
+ &nbsp; <B>  <A NAME="tex2html658"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

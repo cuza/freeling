@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>User Map File</TITLE>
+<META NAME="description" CONTENT="User Map File">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="previous" HREF="node29.html">
+<LINK REL="up" HREF="node29.html">
+<LINK REL="next" HREF="node31.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html635"
+  HREF="node31.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html631"
+  HREF="node29.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html627"
+  HREF="node29.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html633"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html636"
+  HREF="node31.html">Dates Detection Module</A>
+<B> Up:</B> <A NAME="tex2html632"
+  HREF="node29.html">User Map Module</A>
+<B> Previous:</B> <A NAME="tex2html628"
+  HREF="node29.html">User Map Module</A>
+ &nbsp; <B>  <A NAME="tex2html634"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00471000000000000000">
+User Map File</A>
+</H2>
+
+<P>
+The format of the file containing the user map from regular
+ expression to pairs lemma-PoS is one regular expression per line,
+ each line with the format: <TT>regex lemma1 tag1 lemma2 tag2 ...</TT>.
+
+<P>
+The lemma may be any string literal, or <code>$$</code> meaning that the
+ string matching the regular expression is to be used as a
+ lemma.
+<BR>
+E.g.:
+<PRE>  
+   @[a-z][0-9] $$ NP00000
+   &lt;.*&gt; XMLTAG Fz
+   hulabee hulaboo JJS hulaboo NNS
+</PRE>
+
+<P>
+The first rule will recognize tokens such as <code>@john</code> or
+  <code>@peter4</code>, and assign them the tag <code>NP00000</code> (proper noun)
+  and the matching string as lemma.
+
+<P>
+The second rule will recognize tokens starting with ``<code>&lt;</code>'' and
+  ending with ``<code>&gt;</code>'' (such as <code>&lt;HTML&gt;</code> or <code>&lt;br/&gt;</code>) and
+  assign them the literal <code>XMLTAG</code> as lemma and the tag <code>Fz</code>
+  (punctuation:others) as PoS.
+
+<P>
+The third rule will assign the two pairs lemma-tag to each occurrence
+  of the word ``hulabee''. This is just an example, and if you want to
+  add a word to your dictionary, the dictionary module is the right place.
+
+<P>
+<BR><HR>
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

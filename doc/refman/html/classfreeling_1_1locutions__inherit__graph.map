@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classfreeling_1_1automat.html" title="freeling::automat\&lt; locutions_status \&gt;" alt="" coords="5,181,243,211"/>
+<area shape="rect" id="node4" href="$classfreeling_1_1processor.html" title="Abstract class to define the common API of any FreeLing processing module." alt="" coords="75,5,203,35"/>
+<area shape="rect" id="node6" href="$classfreeling_1_1automat.html" title="Abstract class to implement a Finite&#45;State Automaton which is used by modules recognizing multiwords ..." alt="" coords="140,85,289,115"/>
+</map>

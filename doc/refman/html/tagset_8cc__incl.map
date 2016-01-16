@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node5" href="$configfile_8h.html" title="freeling/morfo/configfile.h" alt="" coords="97,83,265,112"/>
+<area shape="rect" id="node14" href="$tagset_8h.html" title="freeling/morfo/tagset.h" alt="" coords="291,237,443,267"/>
+<area shape="rect" id="node22" href="$util_8h.html" title="freeling/morfo/util.h" alt="" coords="964,83,1097,112"/>
+<area shape="rect" id="node45" href="$traces_8h.html" title="freeling/morfo/traces.h" alt="" coords="665,160,817,189"/>
+<area shape="rect" id="node20" href="$windll_8h.html" title="freeling/windll.h" alt="" coords="500,315,612,344"/>
+<area shape="rect" id="node38" href="$regexp_8h.html" title="freeling/regexp.h" alt="" coords="1133,315,1251,344"/>
+<area shape="rect" id="node53" href="$language_8h.html" title="freeling/morfo/language.h" alt="" coords="752,237,920,267"/>
+<area shape="rect" id="node62" href="$tree_8h.html" title="freeling/tree.h" alt="" coords="768,315,869,344"/>
+</map>

@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseDbg|Win32">
+      <Configuration>ReleaseDbg</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C426684B-97DB-4178-BB0C-ECA30571D986}</ProjectGuid>
+    <RootNamespace>freeling</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectName>freeling</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CLRSupport>false</CLRSupport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDbg|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDbg|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='ReleaseDbg|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='ReleaseDbg|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='ReleaseDbg|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='ReleaseDbg|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='ReleaseDbg|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='ReleaseDbg|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../../src/include;../../../freeling_win_libraries/include;</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>BOOST_USE_WINDOWS_H;VERBOSE;BOOST_HAS_ICU;FL_EXPORTS;_DEBUG;_WINDOWS;WIN32;_UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level2</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>icuin.lib;icuuc.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../../../freeling_win_libraries/lib;</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDbg|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../../src/include;../../../freeling_win_libraries/include;</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>FL_EXPORTS;_DEBUG;_WINDOWS;WIN32;_UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <OpenMPSupport>false</OpenMPSupport>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>libboost_wserialization-vc100-mt-gd-1_44.lib;icuind.lib;icuucd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../../../freeling_win_libraries/lib;</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>../../../src/include;../../../freeling_win_libraries/include;</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>BOOST_USE_WINDOWS_H;_UNICODE;FL_EXPORTS;WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level2</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <StructMemberAlignment>Default</StructMemberAlignment>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>Full</Optimization>
+      <BrowseInformation>false</BrowseInformation>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>icuin.lib;icuuc.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../../../freeling_win_libraries/lib;</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+      <ForceSymbolReferences>
+      </ForceSymbolReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\libfreeling\alternatives.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\automat.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\bioner.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\configfile.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\coref\coref.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\coref\coref_fex.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\csr_kb.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\dates\dates_gl.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\dates\dates_pt.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\dates\dates_ru.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\database.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\dependency_parser.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\dep_rules.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\dependencies.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\dictionary.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\fex\nerc_features.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\foma_FSM.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\hmm_tagger.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\language.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\lexer.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\locutions.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\maco.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\maco_options.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\nec.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\ner.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\ner_module.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\np.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\numbers\numbers_cs.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\numbers\numbers_pt.cc">
+      <FloatingPointModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Fast</FloatingPointModel>
+      <FloatingPointModel Condition="'$(Configuration)|$(Platform)'=='ReleaseDbg|Win32'">Fast</FloatingPointModel>
+      <FloatingPointModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Fast</FloatingPointModel>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\omlet\classifier.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\phonetics.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\prefTree.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\probabilities.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\processor.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\punts.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\quantities\quantities_pt.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\quantities\quantities_ru.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\regexp.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\RE_map.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\semdb.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\senses.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\splitter.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\suffixes.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\tagger.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\tagset.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\tokenizer.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\traces.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\ukb.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\util.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\windll.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\numbers\numbers.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\numbers\numbers_ca.cc">
+      <FloatingPointModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Fast</FloatingPointModel>
+      <FloatingPointModel Condition="'$(Configuration)|$(Platform)'=='ReleaseDbg|Win32'">Fast</FloatingPointModel>
+      <FloatingPointModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Fast</FloatingPointModel>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\numbers\numbers_default.cc">
+      <FloatingPointModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Fast</FloatingPointModel>
+      <FloatingPointModel Condition="'$(Configuration)|$(Platform)'=='ReleaseDbg|Win32'">Fast</FloatingPointModel>
+      <FloatingPointModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Fast</FloatingPointModel>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\numbers\numbers_en.cc">
+      <FloatingPointModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Fast</FloatingPointModel>
+      <FloatingPointModel Condition="'$(Configuration)|$(Platform)'=='ReleaseDbg|Win32'">Fast</FloatingPointModel>
+      <FloatingPointModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Fast</FloatingPointModel>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\numbers\numbers_es.cc">
+      <FloatingPointModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Fast</FloatingPointModel>
+      <FloatingPointModel Condition="'$(Configuration)|$(Platform)'=='ReleaseDbg|Win32'">Fast</FloatingPointModel>
+      <FloatingPointModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Fast</FloatingPointModel>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\numbers\numbers_gl.cc">
+      <FloatingPointModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Fast</FloatingPointModel>
+      <FloatingPointModel Condition="'$(Configuration)|$(Platform)'=='ReleaseDbg|Win32'">Fast</FloatingPointModel>
+      <FloatingPointModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Fast</FloatingPointModel>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\numbers\numbers_it.cc">
+      <FloatingPointModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Fast</FloatingPointModel>
+      <FloatingPointModel Condition="'$(Configuration)|$(Platform)'=='ReleaseDbg|Win32'">Fast</FloatingPointModel>
+      <FloatingPointModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Fast</FloatingPointModel>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\numbers\numbers_ru.cc">
+      <FloatingPointModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Fast</FloatingPointModel>
+      <FloatingPointModel Condition="'$(Configuration)|$(Platform)'=='ReleaseDbg|Win32'">Fast</FloatingPointModel>
+      <FloatingPointModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Fast</FloatingPointModel>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\dates\dates.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\dates\dates_ca.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\dates\dates_default.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\dates\dates_en.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\dates\dates_es.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\accents\accents.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\accents\accents_default.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\accents\accents_es.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\accents\accents_gl.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\quantities\quantities.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\quantities\quantities_ca.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\quantities\quantities_default.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\quantities\quantities_en.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\quantities\quantities_es.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\quantities\quantities_gl.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\omlet\adaboost.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\omlet\dataset.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\omlet\example.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\omlet\libsvm.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\omlet\svm.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\omlet\viterbi.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\omlet\weakrule.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\fex\fex.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\fex\fex_lexicon.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\fex\fex_rule.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\relax_tagger\constraint_grammar.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\relax_tagger\relax.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\relax_tagger\relax_tagger.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\lang_ident\idioma.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\lang_ident\lang_ident.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\chart_parser\chart.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\chart_parser\chart_parser.cc" />
+    <ClCompile Include="..\..\..\src\libfreeling\chart_parser\grammar.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\alternatives.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\automat.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\configfile.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\csr_kb.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\database.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\dictionary.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\foma_FSM.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\grammar.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\language.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\locutions.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\ner.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\ner_module.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\prefTree.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\probabilities.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\processor.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\RE_map.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\tagset.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\ukb.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\omlet\adaboost.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\omlet\classifier.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\omlet\dataset.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\dates.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\dates_modules.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\disambiguator.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\omlet\example.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\hmm_tagger.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\omlet\libsvm.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\numbers.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\numbers_modules.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\quantities.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\quantities_modules.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\relax_tagger.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\splitter.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\omlet\svm.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\tagger.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\tokenizer.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\traces.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\util.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\omlet\viterbi.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\omlet\weakrule.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\regexp.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\safe_map.h" />
+    <ClInclude Include="..\..\..\src\include\freeling\windll.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\foma\foma.vcxproj">
+      <Project>{e4eff9d2-780c-4c2b-a6be-942fe0427090}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

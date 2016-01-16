@@ -1,0 +1,23 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$database_8cc.html" title="database.cc" alt="" coords="297,83,391,112"/>
+<area shape="rect" id="node5" href="$semdb_8h.html" title="semdb.h" alt="" coords="415,83,487,112"/>
+<area shape="rect" id="node32" href="$dictionary_8h.html" title="dictionary.h" alt="" coords="844,83,932,112"/>
+<area shape="rect" id="node49" href="$punts_8h.html" title="punts.h" alt="" coords="1068,83,1132,112"/>
+<area shape="rect" id="node7" href="$semdb_8cc.html" title="semdb.cc" alt="" coords="564,160,641,189"/>
+<area shape="rect" id="node9" href="$senses_8h.html" title="senses.h" alt="" coords="465,160,540,189"/>
+<area shape="rect" id="node13" href="$freeling_8h.html" title="freeling.h" alt="" coords="395,315,469,344"/>
+<area shape="rect" id="node16" href="$dependencies_8h.html" title="dependencies.h" alt="" coords="176,237,288,267"/>
+<area shape="rect" id="node21" href="$coref__fex_8h.html" title="coref_fex.h" alt="" coords="356,160,441,189"/>
+<area shape="rect" id="node26" href="$dep__rules_8h.html" title="dep_rules.h" alt="" coords="100,160,188,189"/>
+<area shape="rect" id="node11" href="$senses_8cc.html" title="senses.cc" alt="" coords="504,237,587,267"/>
+<area shape="rect" id="node18" href="$dependencies_8cc.html" title="dependencies.cc" alt="" coords="125,315,245,344"/>
+<area shape="rect" id="node23" href="$coref_8h.html" title="coref.h" alt="" coords="368,237,429,267"/>
+<area shape="rect" id="node28" href="$dep__rules_8cc.html" title="dep_rules.cc" alt="" coords="5,237,101,267"/>
+<area shape="rect" id="node34" href="$alternatives_8cc.html" title="alternatives.cc" alt="" coords="784,237,891,267"/>
+<area shape="rect" id="node36" href="$dictionary_8cc.html" title="dictionary.cc" alt="" coords="897,160,993,189"/>
+<area shape="rect" id="node38" href="$suffixes_8cc.html" title="suffixes.cc" alt="" coords="788,160,873,189"/>
+<area shape="rect" id="node40" href="$maco_8h.html" title="maco.h" alt="" coords="1068,160,1132,189"/>
+<area shape="rect" id="node45" href="$alternatives_8h.html" title="alternatives.h" alt="" coords="665,160,764,189"/>
+<area shape="rect" id="node42" href="$maco_8cc.html" title="maco.cc" alt="" coords="991,237,1063,267"/>
+<area shape="rect" id="node51" href="$punts_8cc.html" title="punts.cc" alt="" coords="1156,160,1228,189"/>
+</map>

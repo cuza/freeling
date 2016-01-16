@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Feature Rules Condition Syntax</TITLE>
+<META NAME="description" CONTENT="Feature Rules Condition Syntax">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="next" HREF="node80.html">
+<LINK REL="previous" HREF="node78.html">
+<LINK REL="up" HREF="node75.html">
+<LINK REL="next" HREF="node80.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1241"
+  HREF="node80.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1237"
+  HREF="node75.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1231"
+  HREF="node78.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1239"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1242"
+  HREF="node80.html">Adding custom feature functions</A>
+<B> Up:</B> <A NAME="tex2html1238"
+  HREF="node75.html">Feature Extraction Module</A>
+<B> Previous:</B> <A NAME="tex2html1232"
+  HREF="node78.html">Feature Name Pattern Syntax</A>
+ &nbsp; <B>  <A NAME="tex2html1240"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00544000000000000000"></A>
+<A NAME="s:fex-cond"></A>
+<BR>
+Feature Rules Condition Syntax
+</H2>
+
+<P>
+Conditions control the applicability of a rule or a rule package. 
+
+<P>
+A condition may be <TT>ALL</TT> which is satisfied by any word.  A
+   condition may be simple, or compund of several conditions, combined
+   with the logical operadors <TT>AND</TT> and <TT>OR</TT>. The operators in
+   a condition must be homogeneous (i.e. either all of them <TT>AND</TT>
+   or all of them <TT>OR</TT>), mixed conditions are not allowed (note
+   that an OR condition is equivalent to writing two rules that only
+   differ on the condition).
+
+<P>
+Single conditions consist of a word property, an operation, and an
+   argument.  Available word properties are:
+
+     <UL>
+<LI><TT>W</TT>: Word form, original casing.
+</LI>
+<LI><TT>w</TT>: Word form, lowercased.
+</LI>
+<LI><TT>l</TT>: Lemma of the analysis selected by the tagger.
+</LI>
+<LI><TT>t</TT>: PoS tag (short version) of the analysis selected by the tagger.
+</LI>
+<LI><TT>T</TT>: PoS tag (full version) of the analysis selected by the tagger.
+</LI>
+<LI><TT>pl</TT>: List of all possible lemmas for the word.
+</LI>
+<LI><TT>pt</TT>: List of all possible short PoS tags for the word.
+</LI>
+<LI><TT>pT</TT>: List of all possible full PoS tags for the word.
+</LI>
+<LI><TT>na</TT>: Number of analysis of the word. 
+</LI>
+<LI><TT>u.</TT><SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img11.png"
+ ALT="$i$"></SPAN>: <SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img11.png"
+ ALT="$i$"></SPAN>-th element of the word <TT>user</TT> field.
+   
+</LI>
+</UL>
+
+<P>
+Note that all word properties (including <TT>na</TT>) are either
+   strings or lists of strings.
+
+<P>
+The available primitive operations to build single conditions are
+   the following:
+
+     <OL>
+<LI><TT>&lt;property&gt; is &lt;string&gt;</TT> :  String identity.
+</LI>
+<LI><TT>&lt;property&gt; matches &lt;regexp&gt;</TT> : Regex match. If the
+       regex is parenthesized, (sub)expression matches <TT>$0</TT>, <TT>         $1</TT>, <TT>$2</TT>, etc. are stored and can be used in the
+       feature name pattern.
+</LI>
+<LI><TT>&lt;property-list&gt; any_in_set &lt;filename&gt;</TT>  (or simply <TT>in_set</TT>): True if any property in the list is found in the given file.
+</LI>
+<LI><TT>&lt;property-list&gt; all_in_set &lt;filename&gt;</TT> True if all properties in the list are found in the given file.
+</LI>
+<LI><TT>&lt;property-list&gt; some_in_set &lt;filename&gt;</TT> True if at least two properties in the list are found in the given file.
+   
+</LI>
+</OL>
+
+<P>
+Operators can be negated with the character <TT>!</TT>. 
+   E.g. <TT>!is</TT>, <TT>!matches</TT>, etc.
+
+<P>
+For file operators expecting lists, the property may be a single string (list of one element).
+
+<P>
+Some sample valid conditions:
+   <DL COMPACT>
+<DD></DD>
+<DT></DT>
+<DD><code>t is NC</code>&nbsp;&nbsp;&nbsp;true if the short version of the tag equals <TT>NC</TT>.
+   
+</DD>
+<DT></DT>
+<DD><code>T matches ^NC.S..</code>&nbsp;&nbsp;&nbsp;true if the long version of the tag matches the given regular expression.
+   
+</DD>
+<DT></DT>
+<DD><code>pl in\_set my/data/files/goodlemmas.dat</code>&nbsp;&nbsp;&nbsp;true if any possible lemma for the word is found in the given file.
+   
+</DD>
+<DT></DT>
+<DD><code>l !in\_set my/data/files/badlemmas.dat</code>&nbsp;&nbsp;&nbsp;true if selected lemma for the word is <I CLASS="slanted">not</I> found in the given file.
+   
+</DD>
+<DT></DT>
+<DD><code>w matches ...$</code>&nbsp;&nbsp;&nbsp;Always true. Will set the match variable <TT>$0</TT> to the last three characters of the word, so it can be used in the feature name pattern.
+   
+</DD>
+</DL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1241"
+  HREF="node80.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1237"
+  HREF="node75.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1231"
+  HREF="node78.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1239"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1242"
+  HREF="node80.html">Adding custom feature functions</A>
+<B> Up:</B> <A NAME="tex2html1238"
+  HREF="node75.html">Feature Extraction Module</A>
+<B> Previous:</B> <A NAME="tex2html1232"
+  HREF="node78.html">Feature Name Pattern Syntax</A>
+ &nbsp; <B>  <A NAME="tex2html1240"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

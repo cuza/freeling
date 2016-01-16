@@ -1,0 +1,20 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$alternatives_8cc.html" title="alternatives.cc" alt="" coords="5,83,112,112"/>
+<area shape="rect" id="node5" href="$bioner_8cc.html" title="bioner.cc" alt="" coords="136,83,211,112"/>
+<area shape="rect" id="node7" href="$configfile_8cc.html" title="configfile.cc" alt="" coords="235,83,325,112"/>
+<area shape="rect" id="node9" href="$dependencies_8cc.html" title="dependencies.cc" alt="" coords="349,83,469,112"/>
+<area shape="rect" id="node11" href="$dictionary_8cc.html" title="dictionary.cc" alt="" coords="493,83,589,112"/>
+<area shape="rect" id="node13" href="$hmm__tagger_8cc.html" title="hmm_tagger.cc" alt="" coords="613,83,725,112"/>
+<area shape="rect" id="node15" href="$nec_8cc.html" title="nec.cc" alt="" coords="749,83,811,112"/>
+<area shape="rect" id="node17" href="$ner_8cc.html" title="ner.cc" alt="" coords="835,83,893,112"/>
+<area shape="rect" id="node19" href="$ner__module_8cc.html" title="ner_module.cc" alt="" coords="917,83,1024,112"/>
+<area shape="rect" id="node21" href="$np_8cc.html" title="np.cc" alt="" coords="1048,83,1101,112"/>
+<area shape="rect" id="node23" href="$phonetics_8cc.html" title="phonetics.cc" alt="" coords="1125,83,1221,112"/>
+<area shape="rect" id="node25" href="$probabilities_8cc.html" title="probabilities.cc" alt="" coords="1245,83,1355,112"/>
+<area shape="rect" id="node27" href="$semdb_8cc.html" title="semdb.cc" alt="" coords="1379,83,1456,112"/>
+<area shape="rect" id="node29" href="$senses_8cc.html" title="senses.cc" alt="" coords="1480,83,1563,112"/>
+<area shape="rect" id="node31" href="$splitter_8cc.html" title="splitter.cc" alt="" coords="1587,83,1664,112"/>
+<area shape="rect" id="node33" href="$tagset_8cc.html" title="tagset.cc" alt="" coords="1688,83,1763,112"/>
+<area shape="rect" id="node35" href="$tokenizer_8cc.html" title="tokenizer.cc" alt="" coords="1787,83,1880,112"/>
+<area shape="rect" id="node37" href="$ukb_8cc.html" title="ukb.cc" alt="" coords="1904,83,1965,112"/>
+</map>

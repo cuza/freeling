@@ -1,0 +1,29 @@
+## configuration file for a language identifier
+## aware of a range of different languages
+<Languages>
+./bg.dat
+./ca.dat
+./cs.dat
+./de.dat
+./en.dat
+./es.dat
+./fr.dat
+./gl.dat
+./hi.dat
+./hr.dat
+./it.dat
+./ja.dat
+./pt.dat
+./ru.dat
+./sk.dat
+./sl.dat
+./sr.dat
+./zh.dat
+</Languages>
+<Threshold>
+0.4
+</Threshold>
+<ScaleFactor>
+5.0
+</ScaleFactor>
+

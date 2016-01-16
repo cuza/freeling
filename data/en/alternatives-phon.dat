@@ -1,0 +1,16 @@
+<General>
+Type phonetic
+PhoneticDictionary ./phonetic-dicc.src
+PhoneticRules ./phonetics.dat
+</General>
+
+<Distance>
+CostMatrix ../common/alternatives/cost-phon
+Threshold 2000
+MaxSizeDiff 3
+</Distance>
+
+<Target>
+UnknownWords yes
+KnownWords none
+</Target>

@@ -1,0 +1,13 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$nec_8h.html" title="nec.h" alt="" coords="5,83,59,112"/>
+<area shape="rect" id="node9" href="$adaboost_8h.html" title="adaboost.h" alt="" coords="165,83,251,112"/>
+<area shape="rect" id="node27" href="$svm_8h.html" title="svm.h" alt="" coords="83,83,141,112"/>
+<area shape="rect" id="node5" href="$nec_8cc.html" title="nec.cc" alt="" coords="81,160,143,189"/>
+<area shape="rect" id="node7" href="$freeling_8h.html" title="freeling.h" alt="" coords="287,315,361,344"/>
+<area shape="rect" id="node12" href="$coref_8h.html" title="coref.h" alt="" coords="287,160,348,189"/>
+<area shape="rect" id="node16" href="$bioner_8h.html" title="bioner.h" alt="" coords="171,160,237,189"/>
+<area shape="rect" id="node18" href="$bioner_8cc.html" title="bioner.cc" alt="" coords="76,237,151,267"/>
+<area shape="rect" id="node20" href="$ner_8cc.html" title="ner.cc" alt="" coords="175,237,233,267"/>
+<area shape="rect" id="node22" href="$maco_8h.html" title="maco.h" alt="" coords="257,237,321,267"/>
+<area shape="rect" id="node24" href="$maco_8cc.html" title="maco.cc" alt="" coords="191,315,263,344"/>
+</map>

@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Tagset Description File</TITLE>
+<META NAME="description" CONTENT="Tagset Description File">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="previous" HREF="node68.html">
+<LINK REL="up" HREF="node68.html">
+<LINK REL="next" HREF="node70.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1117"
+  HREF="node70.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1113"
+  HREF="node68.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1109"
+  HREF="node68.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1115"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1118"
+  HREF="node70.html">Semantic Database Module</A>
+<B> Up:</B> <A NAME="tex2html1114"
+  HREF="node68.html">Tag Set Managing Module</A>
+<B> Previous:</B> <A NAME="tex2html1110"
+  HREF="node68.html">Tag Set Managing Module</A>
+ &nbsp; <B>  <A NAME="tex2html1116"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00511000000000000000">
+Tagset Description File</A>
+</H2>
+
+<P>
+Tagset description file has two sections: <code>&lt;DecompositionRules&gt;</code> 
+  and <code>&lt;DirectTranslations&gt;</code>, which describe how tags are converted to their 
+  short version and decomposed into morphological feature-value pairs
+
+<P>
+
+<UL>
+<LI>Section <code>&lt;DirectTranslations&gt;</code> describes a direct mapping from a tag 
+    to its short version and to its feature-value pair list. Each line in the section
+    corresponds to a tag, and has the format: <code>tag  short-tag  feature-value-pairs</code>
+
+<P>
+For instance the line: <code>NCMS000 NC postype=common|gender=masc|number=sg</code>
+    states that the tag <code>NCMS000</code> is shortened as <code>NC</code> and that its list
+    of feature-value pairs is the one specified. 
+
+<P>
+This section has precedence over section
+    <code>&lt;DecompositionRules&gt;</code>, and can be used as an exception list.
+    If a tag is found in section <code>&lt;DirectTranslations&gt;</code>, the rule
+    is applied and any rule in section <code>&lt;DecompositionRules&gt;</code> for
+    this tag is ignored.
+
+<P>
+</LI>
+<LI>Section <code>&lt;DecompositionRules&gt;</code> encodes rules to compute the morphological features
+    from an EAGLES tag digits. The form of each line is:
+<PRE>
+tag short-tag-size digit-description-1 digit-description-2 ...
+</PRE>
+    where <code>tag</code> is the digit for the category in the EAGLES PoS
+    tag (i.e. the first digit: <code>N</code>, <code>V</code>, <code>A</code>, etc.),
+    and <code>short-tag-size</code> is an integer stating the length of the
+    short version of the tag (e.g. if the value is 2, the first two
+    digits of the EAGLES PoS tag will we used as short
+    version). Finally, fields <code>digit-description-n</code> contain
+    information on how to interpret each digit in the EAGLES PoS tag
+
+<P>
+There should be as many <code>digit-description</code> fields as digits
+    there are in the PoS tag for that category. Each
+    <code>digit-description</code> field has the format:
+<BR>    <code>feature/digit:value;digit:value;digit:value;...</code>
+<BR>
+That is: the name of the feature encoded by that digit, followed by a
+    slash, and then a semicolon-separated list of translation pairs
+    that, for each possible digit in that position give the feature
+    value.
+
+<P>
+For instance, the rule for Spanish noun PoS tags is (in a single line):
+<BR>    <code>N 2 postype/C:common;P:proper gen/F:f;M:m;C:c num/S:s;P:p;N:c</code>
+<BR>    <code>                         neclass/S:person;G:location;O:organization;V:other</code>
+<BR>    <code>                         grade/A:augmentative;D:diminutive</code>
+<BR>
+and states that any tag starting with <TT>N</TT> (unless it is 
+    found in section <code>&lt;DirectTranslations&gt;</code>) will be shortened
+    using its two first digits (e.g. <TT>NC</TT>, or <TT>NP</TT>). Then, the
+    description of each digit in the tag follows, encoding the information:
+    
+<OL>
+<LI><TT>postype/C:common;P:proper</TT> - second digit is the
+       subcategory (feature <TT>postype</TT>) and its possible values are <TT>C</TT>
+       (translated as <TT>common</TT>) and <TT>P</TT> (translated as <TT>         proper</TT>).
+</LI>
+<LI><TT>gen/F:f;M:m;C:c</TT> - third digit is the gender (feature <TT>gen</TT>) and 
+        its possible values are <TT>F</TT> (feminine, translated as <TT>f</TT>), <TT>M</TT> (masculine,
+        translated as <TT>m</TT>), and <TT>C</TT> (common/invariable, translated as <TT>c</TT>).
+</LI>
+<LI><TT>num/S:s;P:p;N:c</TT> - fourth digit is the number (feature <TT>num</TT>) and its 
+       possible values are <TT>S</TT> (singular, translated as <TT>s</TT>), <TT>P</TT> (plural,
+        translated as <TT>p</TT>), and <TT>C</TT> (common/invariable, translated as <TT>c</TT>).       
+</LI>
+<LI><TT>neclass/S:person;G:location;O:organization;V:other</TT> -
+       Fifth digit is the semantic class for proper nouns (feature
+       <TT>neclass</TT>), with possible values <TT>S</TT> (translated as
+       <TT>person</TT>), <TT>G</TT> (translated as <TT>location</TT>), <TT>O</TT>
+       (translated as <TT>organization</TT>), and <TT>V</TT> (translated as
+       <TT>other</TT>).
+</LI>
+<LI><TT>grade/A:augmentative;D:diminutive</TT> - sixth digit is
+       the grade (feature <TT>grade</TT>) with possible values <TT>A</TT>
+       (translated as <TT>augmentative</TT>), and <TT>D</TT> (translated as
+       <TT>diminutive</TT>).
+    
+</LI>
+</OL>
+
+<P>
+If a feature is underspecified or not appliable, a zero (<TT>0</TT>)
+    is expected in the appropriate position of the PoS tag.
+
+<P>
+With the example rule described above, the tag translations in table
+    <A HREF="#tr-tags">4.1.1</A> would take place:
+<BR><P></P>
+<DIV ALIGN="CENTER"><A NAME="1040"></A>
+<TABLE>
+<CAPTION><STRONG>Table 4.1:</STRONG>
+Example results for tagset managing module.</CAPTION>
+<TR><TD>
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="LEFT">EAGLES PoS tag</TD>
+<TD ALIGN="LEFT">short version</TD>
+<TD ALIGN="LEFT">morphological features</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><code>NCMS00</code></TD>
+<TD ALIGN="LEFT"><code>NC</code></TD>
+<TD ALIGN="LEFT"><code>postype=common|gen=m|num=s</code></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><code>NCFC00</code></TD>
+<TD ALIGN="LEFT"><code>NC</code></TD>
+<TD ALIGN="LEFT"><code>postype=common|gen=f|num=c</code></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><code>NCFP0A</code></TD>
+<TD ALIGN="LEFT"><code>NC</code></TD>
+<TD ALIGN="LEFT"><code>postype=common|gen=f|num=p|grade=augmentative</code></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><code>NP0000</code></TD>
+<TD ALIGN="LEFT"><code>NP</code></TD>
+<TD ALIGN="LEFT"><code>postype=proper</code></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><code>NP00G0</code></TD>
+<TD ALIGN="LEFT"><code>NP</code></TD>
+<TD ALIGN="LEFT"><code>postype=proper|neclass=location</code></TD>
+</TR>
+</TABLE>
+<A NAME="tr-tags"></A></TD></TR>
+</TABLE>
+</DIV><P></P>
+<BR>
+
+<P>
+</LI>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1117"
+  HREF="node70.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1113"
+  HREF="node68.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1109"
+  HREF="node68.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1115"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1118"
+  HREF="node70.html">Semantic Database Module</A>
+<B> Up:</B> <A NAME="tex2html1114"
+  HREF="node68.html">Tag Set Managing Module</A>
+<B> Previous:</B> <A NAME="tex2html1110"
+  HREF="node68.html">Tag Set Managing Module</A>
+ &nbsp; <B>  <A NAME="tex2html1116"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

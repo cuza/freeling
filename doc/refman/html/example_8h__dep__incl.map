@@ -1,0 +1,16 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$dataset_8h.html" title="dataset.h" alt="" coords="127,83,201,112"/>
+<area shape="rect" id="node11" href="$freeling_8h.html" title="freeling.h" alt="" coords="145,469,220,499"/>
+<area shape="rect" id="node31" href="$svm_8h.html" title="svm.h" alt="" coords="313,237,372,267"/>
+<area shape="rect" id="node36" href="$classifier_8h.html" title="classifier.h" alt="" coords="304,160,389,189"/>
+<area shape="rect" id="node5" href="$adaboost_8h.html" title="adaboost.h" alt="" coords="200,237,285,267"/>
+<area shape="rect" id="node26" href="$weakrule_8h.html" title="weakrule.h" alt="" coords="93,160,179,189"/>
+<area shape="rect" id="node7" href="$nec_8cc.html" title="nec.cc" alt="" coords="381,315,443,344"/>
+<area shape="rect" id="node9" href="$coref_8h.html" title="coref.h" alt="" coords="144,315,205,344"/>
+<area shape="rect" id="node14" href="$bioner_8h.html" title="bioner.h" alt="" coords="291,315,357,344"/>
+<area shape="rect" id="node16" href="$bioner_8cc.html" title="bioner.cc" alt="" coords="328,392,403,421"/>
+<area shape="rect" id="node18" href="$ner_8cc.html" title="ner.cc" alt="" coords="245,392,304,421"/>
+<area shape="rect" id="node20" href="$maco_8h.html" title="maco.h" alt="" coords="427,392,491,421"/>
+<area shape="rect" id="node22" href="$maco_8cc.html" title="maco.cc" alt="" coords="423,469,495,499"/>
+<area shape="rect" id="node38" href="$nec_8h.html" title="nec.h" alt="" coords="396,237,449,267"/>
+</map>

@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Semantic Database Module</TITLE>
+<META NAME="description" CONTENT="Semantic Database Module">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="next" HREF="node74.html">
+<LINK REL="previous" HREF="node68.html">
+<LINK REL="up" HREF="node67.html">
+<LINK REL="next" HREF="node71.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1129"
+  HREF="node71.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1125"
+  HREF="node67.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1119"
+  HREF="node69.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1127"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1130"
+  HREF="node71.html">PoS mapping rules</A>
+<B> Up:</B> <A NAME="tex2html1126"
+  HREF="node67.html">Other useful modules</A>
+<B> Previous:</B> <A NAME="tex2html1120"
+  HREF="node69.html">Tagset Description File</A>
+ &nbsp; <B>  <A NAME="tex2html1128"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00520000000000000000"></A>
+<A NAME="semdb"></A>
+<BR>
+Semantic Database Module
+</H1>
+
+<P>
+This module is not a main processor in the default analysis chain,
+  but it is used by the other modules that need access
+  to the semantic database: The sense annotator <TT>senses</TT>, the word sense 
+  disambiguator <TT>ukb_wrap</TT>, the
+  dependency parser <TT>dep_txala</TT>, and the coreference solver <TT>coref</TT>.
+
+<P>
+Moreover, this module can be used by the applications to enrich or 
+  post process the results of the analysis.
+
+<P>
+The API for this module is 
+
+<P>
+<PRE>
+class semanticDB {
+  public:
+    /// Constructor
+    semanticDB(const std::string &amp;); 
+
+    /// Compute list of lemma-pos to search in WN for given word,
+    /// according to mapping rules.
+    void get_WN_keys(const std::wstring &amp;, 
+                     const std::wstring &amp;, 
+                     const std::wstring &amp;,
+                     std::list&lt;std::pair&lt;std::wstring,std::wstring&gt; &gt; &amp;) const;
+
+    /// get list of words for a sense+pos
+    std::list&lt;std::string&gt; get_sense_words(const std::string &amp;, 
+                                           const std::string &amp;) const;
+
+    /// get list of senses for a lemma+pos
+    std::list&lt;std::string&gt; get_word_senses(const std::string &amp;, 
+                                           const std::string &amp;) const;
+
+    /// get sense info for a sensecode+pos
+    sense_info get_sense_info(const std::string &amp;, const std::string &amp;) const;
+};
+</PRE>
+
+<P>
+The constructor receives a configuration file, with the following contents:
+
+<UL>
+<LI>A section <code>&lt;WNPosMap&gt;</code> which establishes which PoS found
+   in the morphological dictionary should be mapped to each WN
+   part-of-speech. Rule format is described in section <A HREF="node71.html#wnmap">4.2.1</A>.
+
+<P>
+</LI>
+<LI>A section <code>&lt;DataFiles&gt;</code> specifying
+  the knowledge bases required by the algorithm.
+  This section may contain up to three keywords, with the format:
+  <PRE>
+    &lt;DataFiles&gt;
+    senseDictFile  ./senses30.src
+    wnFile  ../common/wn30.src
+    formDictFile  ./dicc.src
+    &lt;/DataFiles&gt;
+</PRE>
+
+<P>
+<code>senseDictFile</code> is the sense repository, with the format
+  described in section <A HREF="node72.html#file-sense">4.2.2</A>.
+
+<P>
+<code>wnFile</code> is a file stating hyperonymy relations and other semantic
+   information for each sense. The format is described in section <A HREF="node73.html#file-wn">4.2.3</A>.
+
+<P>
+<code>formDictFile</code> may be needed if mapping rules in
+  <code>&lt;WNPosMap&gt;</code> require it.  It is a regular form file with morphological information,
+   as described in section <A HREF="node32.html#file-dict">3.9</A>.
+</LI>
+</UL>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html1131"
+  HREF="node71.html">PoS mapping rules</A>
+<LI><A NAME="tex2html1132"
+  HREF="node72.html">Sense Dictionary File</A>
+<LI><A NAME="tex2html1133"
+  HREF="node73.html">WordNet file</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1129"
+  HREF="node71.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1125"
+  HREF="node67.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1119"
+  HREF="node69.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1127"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1130"
+  HREF="node71.html">PoS mapping rules</A>
+<B> Up:</B> <A NAME="tex2html1126"
+  HREF="node67.html">Other useful modules</A>
+<B> Previous:</B> <A NAME="tex2html1120"
+  HREF="node69.html">Tagset Description File</A>
+ &nbsp; <B>  <A NAME="tex2html1128"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

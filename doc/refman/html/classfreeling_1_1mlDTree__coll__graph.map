@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classfreeling_1_1weak__rule.html" title="Class weak_rule is an abstract class generalizing any kind of weak rule that adaboost can use..." alt="" coords="5,323,136,352"/>
+<area shape="rect" id="node4" href="$classfreeling_1_1tree.html" title="freeling::tree\&lt; dt_node \&gt;" alt="" coords="160,323,323,352"/>
+<area shape="rect" id="node6" href="$classfreeling_1_1tree.html" title="freeling::tree\&lt; T \&gt;" alt="" coords="111,129,236,159"/>
+<area shape="rect" id="node9" href="$classbool.html" title="bool" alt="" coords="59,5,104,35"/>
+<area shape="rect" id="node12" href="$classfreeling_1_1dt__node.html" title="Class dt_node stores the info in one node of the decision tree." alt="" coords="321,129,439,159"/>
+<area shape="rect" id="node14" href="$classint.html" title="int" alt="" coords="468,5,505,35"/>
+<area shape="rect" id="node17" href="$classfreeling_1_1mlDTree__params.html" title="Class mlDTree_params stores the set of params for this kind of weak rules." alt="" coords="401,323,572,352"/>
+<area shape="rect" id="node19" href="$classfreeling_1_1wr__params.html" title="Class wr_params is a dummy class used to derive the set of parameters of each WR type." alt="" coords="580,129,716,159"/>
+</map>

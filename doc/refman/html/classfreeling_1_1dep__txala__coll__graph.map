@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classfreeling_1_1dependency__parser.html" title="The class dependency_parser is just an abstract class generalizing any dependency parser..." alt="" coords="5,440,189,469"/>
+<area shape="rect" id="node4" href="$classfreeling_1_1processor.html" title="Abstract class to define the common API of any FreeLing processing module." alt="" coords="33,344,161,373"/>
+<area shape="rect" id="node6" href="$classfreeling_1_1depLabeler.html" title="depLabeler is class to set labels into a dependency tree" alt="" coords="213,440,347,469"/>
+<area shape="rect" id="node8" href="$classfreeling_1_1semanticDB.html" title="Class semanticDB implements a semantic DB interface." alt="" coords="208,344,352,373"/>
+<area shape="rect" id="node10" href="$classfreeling_1_1database.html" title="Class to wrap a berkeley DB database and unify access." alt="" coords="217,213,343,243"/>
+<area shape="rect" id="node12" href="$classint.html" title="int" alt="" coords="221,117,259,147"/>
+<area shape="rect" id="node14" href="$classfreeling_1_1PrefTree.html" title="freeling::PrefTree" alt="" coords="283,117,405,147"/>
+<area shape="rect" id="node16" href="$classfreeling_1_1List.html" title="freeling::List" alt="" coords="389,5,483,35"/>
+<area shape="rect" id="node18" href="$structfreeling_1_1List_1_1ListRecBase.html" title="freeling::List::ListRecBase" alt="" coords="429,117,605,147"/>
+<area shape="rect" id="node22" href="$classfreeling_1_1completer.html" title="The class completer implements a parse tree completer, which given a partial parse tree (chunker outp..." alt="" coords="371,440,499,469"/>
+</map>

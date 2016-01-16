@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classfreeling_1_1tree.html" title="freeling::tree\&lt; node \&gt;" alt="" coords="5,101,152,131"/>
+<area shape="rect" id="node7" href="$classfreeling_1_1tree.html" title="freeling::tree\&lt; depnode \&gt;" alt="" coords="176,101,341,131"/>
+<area shape="rect" id="node11" href="$classfreeling_1_1tree.html" title="freeling::tree\&lt; dt_node \&gt;" alt="" coords="365,101,528,131"/>
+<area shape="rect" id="node5" href="$classfreeling_1_1parse__tree.html" title="Class parse tree is used to store the results of parsing." alt="" coords="12,181,145,211"/>
+<area shape="rect" id="node9" href="$classfreeling_1_1dep__tree.html" title="class dep_tree stores a dependency tree" alt="" coords="197,181,320,211"/>
+</map>

@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Dictionary Management</TITLE>
+<META NAME="description" CONTENT="Dictionary Management">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="previous" HREF="node34.html">
+<LINK REL="up" HREF="node32.html">
+<LINK REL="next" HREF="node36.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html696"
+  HREF="node36.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html692"
+  HREF="node32.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html688"
+  HREF="node34.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html694"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html697"
+  HREF="node36.html">Multiword Recognition Module</A>
+<B> Up:</B> <A NAME="tex2html693"
+  HREF="node32.html">Dictionary Search Module</A>
+<B> Previous:</B> <A NAME="tex2html689"
+  HREF="node34.html">Affixation Rules File</A>
+ &nbsp; <B>  <A NAME="tex2html695"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00493000000000000000">
+Dictionary Management</A>
+</H2>
+
+<P>
+In many NLP applications you want to deal with text in a particular domain, 
+which contain words or expressions (terminology, proper nouns, etc.) 
+that are specific or have a particular meaning in that domain.
+
+<P>
+Thus, you may want to extend you dictionary to include such
+ words. There are two main ways of doing this:
+
+<UL>
+<LI><SPAN  CLASS="textbf">Extend your dictionary:</SPAN> Dictionaries are created at
+  installation time from sources in the directory
+  <TT>data/XX/dictionary</TT> (where XX is the language code).  Those
+  files contain one triplet word-lemma-tag per line, and are fused in
+  a single dictionary at installation time.
+
+<P>
+The script in <TT>src/utilities/dicc-management/bin/build-dict.sh</TT>
+will read the given files and build a dictionary with all
+them.<A NAME="tex2html3"
+  HREF="footnode.html#foot1777"><SUP><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">1</SPAN></SUP></A> Thus, if
+you have a domain dictionary with a list of triplets word-lemma-tag,
+you can build a new dictionary fusing the original FreeLing entries
+with your domain entries. The resulting file can be given to the
+constructor of the dictionary class.
+
+<P>
+</LI>
+<LI><SPAN  CLASS="textbf">Instantiate more than one dictionary module:</SPAN> Another
+  option is to instatiate several dictionary modules (creating each
+  one with a different dictionary file), and run the text through each
+  of them sequentially. When the word is found in one dictionary along
+  the chain, the following dictionary modules will ignore it and will
+  not attempt to look it up.
+</LI>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html696"
+  HREF="node36.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html692"
+  HREF="node32.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html688"
+  HREF="node34.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html694"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html697"
+  HREF="node36.html">Multiword Recognition Module</A>
+<B> Up:</B> <A NAME="tex2html693"
+  HREF="node32.html">Dictionary Search Module</A>
+<B> Previous:</B> <A NAME="tex2html689"
+  HREF="node34.html">Affixation Rules File</A>
+ &nbsp; <B>  <A NAME="tex2html695"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

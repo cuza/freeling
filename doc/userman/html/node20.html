@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Language Identifier Options File</TITLE>
+<META NAME="description" CONTENT="Language Identifier Options File">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="previous" HREF="node19.html">
+<LINK REL="up" HREF="node19.html">
+<LINK REL="next" HREF="node21.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html519"
+  HREF="node21.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html515"
+  HREF="node19.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html511"
+  HREF="node19.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html517"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html520"
+  HREF="node21.html">Tokenizer Module</A>
+<B> Up:</B> <A NAME="tex2html516"
+  HREF="node19.html">Language Identifier Module</A>
+<B> Previous:</B> <A NAME="tex2html512"
+  HREF="node19.html">Language Identifier Module</A>
+ &nbsp; <B>  <A NAME="tex2html518"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00411000000000000000">
+Language Identifier Options File</A>
+</H2>
+
+<P>
+The language identifier options file is divided in three sections:
+  <code>&lt;Languages&gt;</code>, <code>&lt;Threshold&gt;</code>, and <code>&lt;ScaleFactor&gt;</code>,
+  which are closed by <code>&lt;/Languages&gt;</code>, <code>&lt;/Threshold&gt;</code>, and
+  <code>&lt;/ScaleFactor&gt;</code>, respectively.
+
+<P>
+Section <code>&lt;Languages&gt;</code> contains a list of filenames, one per
+  line. Each filename contains a language model (generated with the
+  <code>train_language</code> method). The filenames may be absolute or
+  relative. If relative, they are considered to be relative to the
+  location of the identifier options file.
+
+<P>
+Section <code>&lt;Threshold&gt;</code> and <code>&lt;ScaleFactor&gt;</code> contain one
+  single line each, consisting of a real number in both cases.
+
+<P>
+The identifier uses a 4-gram visible Markov model to compute the
+  probability of the text in each candidate language. Since the
+  probabilitity of a sequence depends on its length, the result is
+  divided by the text length to obtain a per-char ``averaged''
+  probability. Even in this way, the resulting probability is usually
+  low and unintuitive. The parameter <code>ScaleFactor</code> multiplies
+  this result to enlarge the difference between languages and to give
+  probabilities in a more human scale.  The parameter <code>Threshold</code>
+  states minimun value that a language must achive to be considered a
+  possible result. If no language reaches the threshold, the
+  <code>identify_language</code> method will return <TT>none</TT>.
+
+<P>
+Note that this scaling is artificial, and doesn't change the
+  results, only makes them more readable. The results with <TT>    ScaleFactor=1.0</TT> and <TT>Threshold=0.04</TT> would be the same than
+  with <TT>ScaleFactor=5.0</TT> and <TT>Threshold=0.2</TT>.
+
+<P>
+An example of a language identifier option file is:
+<PRE>
+   &lt;Languages&gt;
+   ./es.dat
+   ./ca.dat
+   ./it.dat
+   ./pt.dat
+   &lt;/Languages&gt;
+   &lt;Threshold&gt;
+   0.2
+   &lt;/Threshold&gt;
+   &lt;ScaleFactor&gt;
+   5.0
+   &lt;/ScaleFactor&gt;
+</PRE>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html519"
+  HREF="node21.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html515"
+  HREF="node19.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html511"
+  HREF="node19.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html517"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html520"
+  HREF="node21.html">Tokenizer Module</A>
+<B> Up:</B> <A NAME="tex2html516"
+  HREF="node19.html">Language Identifier Module</A>
+<B> Previous:</B> <A NAME="tex2html512"
+  HREF="node19.html">Language Identifier Module</A>
+ &nbsp; <B>  <A NAME="tex2html518"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

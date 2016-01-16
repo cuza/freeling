@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Stand-alone mode</TITLE>
+<META NAME="description" CONTENT="Stand-alone mode">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="next" HREF="node89.html">
+<LINK REL="previous" HREF="node87.html">
+<LINK REL="up" HREF="node87.html">
+<LINK REL="next" HREF="node89.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1359"
+  HREF="node89.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1355"
+  HREF="node87.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1349"
+  HREF="node87.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1357"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1360"
+  HREF="node89.html">Client/server mode</A>
+<B> Up:</B> <A NAME="tex2html1356"
+  HREF="node87.html">The easy way: Using</A>
+<B> Previous:</B> <A NAME="tex2html1350"
+  HREF="node87.html">The easy way: Using</A>
+ &nbsp; <B>  <A NAME="tex2html1358"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00711000000000000000">
+Stand-alone mode</A>
+</H2>
+
+<P>
+The default mode will launch a stand-alone analyzer, which will load
+ the configuration, read input from stdin, write results to stdout,
+ and exit.
+<BR>
+E.g.:
+<PRE>
+ analyze -f en.cfg  &lt;myinput  &gt;myoutput
+</PRE>
+
+<P>
+When the input file ends, the analyzer will stop and it will have to be
+  reloaded again to process a new file.
+
+<P>
+The above command is equivalent to:
+
+<OL>
+<LI>Define <TT>FREELINGSHARE</TT> variable to point to a directory with
+  FreeLing data
+<BR>(e.g. <TT>/usr/local/share/freeling</TT>).
+</LI>
+<LI>Make sure the <code>LD_LIBRARY_PATH</code> variable contains the
+  directory where FreeLing libraries are installed (e.g. <TT>    /usr/local/lib</TT>).
+</LI>
+<LI>Locate the given configuration file in the current directory or in
+ the FreeLing installation directories (e.g. <TT>/usr/local/share/freeling/config</TT>).
+</LI>
+<LI>Run the <TT>analyzer</TT> (final <TT>r</TT>) program:
+<BR>      <code>analyzer -f /usr/local/share/freeling/config/en.cfg &lt;myinput &gt;myoutput</code>
+</LI>
+</OL>
+
+<P>
+<BR><HR>
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

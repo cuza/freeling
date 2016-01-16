@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Named Entity Recognition Module</TITLE>
+<META NAME="description" CONTENT="Named Entity Recognition Module">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="next" HREF="node41.html">
+<LINK REL="previous" HREF="node36.html">
+<LINK REL="up" HREF="node18.html">
+<LINK REL="next" HREF="node39.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html731"
+  HREF="node39.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html727"
+  HREF="node18.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html721"
+  HREF="node37.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html729"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html732"
+  HREF="node39.html">Basic NER module (np)</A>
+<B> Up:</B> <A NAME="tex2html728"
+  HREF="node18.html">Analysis Modules</A>
+<B> Previous:</B> <A NAME="tex2html722"
+  HREF="node37.html">Multiword Definition File</A>
+ &nbsp; <B>  <A NAME="tex2html730"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION004110000000000000000"></A>
+<A NAME="file-ner"></A>
+<BR>
+Named Entity Recognition Module
+</H1>
+
+<P>
+There are two different modules able to perform NE recognition. 
+  They can be instantiated directly, or via a wrapper that will create
+  the right module depending on the configuration file.
+
+<P>
+The API for the wrapper is the following:
+<PRE>
+class WINDLL ner {
+  public:
+    /// Constructor
+    ner(const std::wstring &amp;);
+    /// Destructor
+    ~ner();
+
+    /// analyze given sentence
+    void analyze(sentence &amp;) const;
+    /// analyze given sentences
+    void analyze(std::list&lt;sentence&gt; &amp;) const;
+    /// analyze sentence, return analyzed copy
+    sentence analyze(const sentence &amp;) const;
+    /// analyze sentences, return analyzed copy
+    std::list&lt;sentence&gt; analyze(const std::list&lt;sentence&gt; &amp;) const;
+};
+</PRE>
+
+<P>
+The parameter to the constructor is the absolute name of a
+  configuration file, which must contain the desired module type
+  (<code>basic</code> or <code>bio</code>) in a line enclosed by the tags
+  <code>&lt;Type&gt;</code> and <code>&lt;/Type&gt;</code>.
+
+<P>
+The rest of the file must contain the configuration options specific
+  for the selected NER type, described below.
+
+<P>
+The <TT>basic</TT> module is simple and fast, and easy to adapt for use
+  in new languages, provided capitalization is the basic clue for NE
+  detection in the target language. The estimated performance of this
+  module is about 85% correctly recognized named entities.
+
+<P>
+The <TT>bio</TT> module, is based on machine learning algorithms.  It
+  has a higher precision (over 90%), but it is remarkably slower than
+  <TT>basic</TT>, and adaptation to new languages requires a training
+  corpus plus some feature engineering.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html733"
+  HREF="node39.html">Basic NER module (<TT>np</TT>) </A>
+<LI><A NAME="tex2html734"
+  HREF="node40.html"><EM>BIO</EM> NER module (<TT>bioner</TT>)</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html731"
+  HREF="node39.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html727"
+  HREF="node18.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html721"
+  HREF="node37.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html729"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html732"
+  HREF="node39.html">Basic NER module (np)</A>
+<B> Up:</B> <A NAME="tex2html728"
+  HREF="node18.html">Analysis Modules</A>
+<B> Previous:</B> <A NAME="tex2html722"
+  HREF="node37.html">Multiword Definition File</A>
+ &nbsp; <B>  <A NAME="tex2html730"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

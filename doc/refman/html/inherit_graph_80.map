@@ -1,0 +1,13 @@
+<map id="G" name="G">
+<area shape="rect" id="node1" href="$classfreeling_1_1classifier.html" title="The class classifier is an abstract class that implements a general ML classifier." alt="" coords="7,32,129,61"/>
+<area shape="rect" id="node3" href="$classfreeling_1_1adaboost.html" title="Class AdaBoost implement a generic AB learner/classifier, which may be based on any kind of weak rule..." alt="" coords="181,59,307,88"/>
+<area shape="rect" id="node5" href="$classfreeling_1_1svm.html" title="Class svm implements a bianry SVM classifier." alt="" coords="196,5,292,35"/>
+<area shape="rect" id="node6" href="$classstd_1_1list.html" title="list" alt="" coords="49,245,87,275"/>
+<area shape="rect" id="node9" href="$classfreeling_1_1cell.html" title="Class cell stores all information in a chart cell." alt="" coords="199,112,289,141"/>
+<area shape="rect" id="node11" href="$classfreeling_1_1dataset.html" title="Class dataset stores a set of examples uset to train adaboost models." alt="" coords="187,165,301,195"/>
+<area shape="rect" id="node13" href="$classfreeling_1_1document.html" title="Class document is a list of paragraphs." alt="" coords="180,219,308,248"/>
+<area shape="rect" id="node15" href="$classfreeling_1_1paragraph.html" title="Class paragraph is just a list of sentences that someone has validated it as a paragraph." alt="" coords="180,272,308,301"/>
+<area shape="rect" id="node17" href="$classfreeling_1_1ruleCG.html" title="Class rule implements a rule of a CG." alt="" coords="188,325,300,355"/>
+<area shape="rect" id="node19" href="$classfreeling_1_1sentence.html" title="Class sentence is just a list of words that someone (the splitter) has validated it as a complete sen..." alt="" coords="181,379,307,408"/>
+<area shape="rect" id="node21" href="$classfreeling_1_1word.html" title="Class word stores all info related to a word: form, list of analysis, list of tokens (if multiword)..." alt="" coords="195,432,293,461"/>
+</map>

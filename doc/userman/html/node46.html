@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Sense Labelling Module</TITLE>
+<META NAME="description" CONTENT="Sense Labelling Module">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="next" HREF="node47.html">
+<LINK REL="previous" HREF="node45.html">
+<LINK REL="up" HREF="node18.html">
+<LINK REL="next" HREF="node47.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html825"
+  HREF="node47.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html821"
+  HREF="node18.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html815"
+  HREF="node45.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html823"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html826"
+  HREF="node47.html">Word Sense Disambiguation Module</A>
+<B> Up:</B> <A NAME="tex2html822"
+  HREF="node18.html">Analysis Modules</A>
+<B> Previous:</B> <A NAME="tex2html816"
+  HREF="node45.html">Alternatives Suggestion Module</A>
+ &nbsp; <B>  <A NAME="tex2html824"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION004150000000000000000"></A>
+<A NAME="mod-sense"></A>
+<BR>
+Sense Labelling Module
+</H1>
+
+<P>
+This module searches the lemma of each analysis in a sense dictionary,
+  and enriches the analysis with the list of senses found there.
+
+<P>
+Note that this is not disambiguation, all senses for the lemma are returned. 
+
+<P>
+The module receives a file containing several configuration options, which
+  specify the sense dictionary to be used, and some mapping rules that can be 
+  used to adapt FreeLing PoS tags to those used in the sense dictionary.
+
+<P>
+FreeLing provides WordNet-based [<A
+ HREF="node110.html#fellbaum98">Fel98</A>,<A
+ HREF="node110.html#vossen98a">Vos98</A>]
+  dictionaries, but the results of this module can be changed to any
+  other sense catalogue simply providing a different sense dictionary
+  file.
+
+<P>
+<PRE>
+class senses {
+  public:
+    /// Constructor: receives the name of the configuration file
+    senses(const std::string &amp;); 
+ 
+    /// analyze given sentence.
+    void analyze(sentence &amp;) const;
+    /// analyze given sentences.
+    void analyze(std::list&lt;sentence&gt; &amp;) const;
+    /// return analyzed copy of given sentence
+    sentence analyze(const sentence &amp;) const;
+    /// return analyzed copy of given sentences
+    std::list&lt;sentence&gt; analyze(const std::list&lt;sentence&gt; &amp;) const;
+};
+</PRE>
+
+<P>
+The constructor of this class receives the name of a configuration file
+ which is expected to contain the following sections:
+
+<UL>
+<LI>A section <code>&lt;WNposMap&gt;</code> with the mapping rules of FreeLing PoS tags to
+   sense dictionary PoS tags. See details in section <A HREF="node70.html#semdb">4.2</A>.
+
+<P>
+</LI>
+<LI>A section <code>&lt;DataFiles&gt;</code> containing at least the keyword <code>SenseDictFile</code>
+   defined to a valid sense dictionary file name. E.g.:
+  <PRE>
+    &lt;DataFiles&gt;
+    SenseDictFile  ./senses30.src
+    &lt;/DataFiles&gt;
+</PRE>
+    The sense dictionary must follow the format described in section <A HREF="node72.html#file-sense">4.2.2</A>.
+
+<P>
+If the mapping rules <code>&lt;WNposMap&gt;</code> require a form dictionary, a keyword
+   <code>formDictFile</code> with the dictionary to use must be provided in this section.
+    More details are given in section <A HREF="node70.html#semdb">4.2</A>.
+
+<P>
+</LI>
+<LI>A section <code>&lt;DuplicateAnalysis&gt;</code> containing a single line
+  with either <code>yes</code> or <code>no</code>, stating whether the analysis
+  with more than one senses must be duplicated. If this section is
+  ommitted, <code>no</code> is used as default value.
+    The effect of activating this option is described in the following example:
+
+<P>
+For instance, the word <EM>crane</EM> has the follwing analysis:
+ <PRE>
+    crane 
+       crane NN  0.833
+       crane VB  0.083
+       crane VBP 0.083
+</PRE>
+
+<P>
+If the list of senses is simply added to each of them (that is,
+  <TT>DuplicateAnalysis</TT> is set to <TT>false</TT>), you will get:
+ <PRE>
+    crane 
+       crane NN  0.833  02516101:01524724
+       crane VB  0.083  00019686
+       crane VBP 0.083  00019686
+</PRE>
+
+<P>
+But if you set <TT>DuplicateAnalysis</TT> to true, the <TT>NN</TT>
+   analysis will be duplicated for each of its possible senses:
+ <PRE>
+    crane 
+       crane NN  0.416  02516101
+       crane NN  0.416  01524724
+       crane VB  0.083  00019686
+       crane VBP 0.083  00019686
+</PRE>
+</LI>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html825"
+  HREF="node47.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html821"
+  HREF="node18.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html815"
+  HREF="node45.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html823"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html826"
+  HREF="node47.html">Word Sense Disambiguation Module</A>
+<B> Up:</B> <A NAME="tex2html822"
+  HREF="node18.html">Analysis Modules</A>
+<B> Previous:</B> <A NAME="tex2html816"
+  HREF="node45.html">Alternatives Suggestion Module</A>
+ &nbsp; <B>  <A NAME="tex2html824"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Affixed forms search</TITLE>
+<META NAME="description" CONTENT="Affixed forms search">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="next" HREF="node104.html">
+<LINK REL="previous" HREF="node102.html">
+<LINK REL="up" HREF="node97.html">
+<LINK REL="next" HREF="node104.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1556"
+  HREF="node104.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1552"
+  HREF="node97.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1546"
+  HREF="node102.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1554"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1557"
+  HREF="node104.html">Probability assignment</A>
+<B> Up:</B> <A NAME="tex2html1553"
+  HREF="node97.html">Morphological analyzer</A>
+<B> Previous:</B> <A NAME="tex2html1547"
+  HREF="node102.html">Dictionary search</A>
+ &nbsp; <B>  <A NAME="tex2html1555"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00826000000000000000">
+Affixed forms search</A>
+</H2> 
+    Forms not found in dictionary may be submitted to an affix
+    analysis to devise whether they are derived forms. The valid
+    affixes and their application contexts are defined in the 
+    affix rule file referred by AffixFile configuration option. 
+    See section&nbsp;<A HREF="node34.html#file-suf">3.9.2</A> for details on affixation rules
+    format.
+
+<P>
+If your language has ortographic accentuation (such as Spanish,
+    Catalan, and many other roman languages), the suffixation rules
+    may have to deal with accent restoration when rebuilding the
+    original roots. To do this, you have to to program a <EM>    accents_mylanguage</EM> class derived from abstract class <EM>    accents_module</EM>, which provides the service of restoring
+    (according to the accentuation rules in your languages)
+    accentuation in a root obtained after removing a given suffix.
+
+<P>
+A good idea to start with this issue is having a look at the 
+    <EM>accents_es</EM> class.
+
+<P>
+<BR><HR>
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

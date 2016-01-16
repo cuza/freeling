@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Word Sense Disambiguation Module</TITLE>
+<META NAME="description" CONTENT="Word Sense Disambiguation Module">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="next" HREF="node48.html">
+<LINK REL="previous" HREF="node46.html">
+<LINK REL="up" HREF="node18.html">
+<LINK REL="next" HREF="node48.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html837"
+  HREF="node48.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html833"
+  HREF="node18.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html827"
+  HREF="node46.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html835"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html838"
+  HREF="node48.html">Part-of-Speech Tagger Module</A>
+<B> Up:</B> <A NAME="tex2html834"
+  HREF="node18.html">Analysis Modules</A>
+<B> Previous:</B> <A NAME="tex2html828"
+  HREF="node46.html">Sense Labelling Module</A>
+ &nbsp; <B>  <A NAME="tex2html836"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION004160000000000000000"></A>
+<A NAME="mod-ukb"></A>
+<BR>
+Word Sense Disambiguation Module
+</H1>
+
+<P>
+This module performs word-sense-disambiguation on content words in
+  given sentences. 
+  This module is to be used if word sense disambiguation (WSD) is
+  desired.  If no disambiguation (or basic most-frequent-sense
+  disambiguation) is needed, the senses module described in section
+  <A HREF="node46.html#mod-sense">3.15</A> is a lighter and faster option.
+
+<P>
+The module is an implementation of UKB algorithm [<A
+ HREF="node110.html#agirre09">AS09</A>].
+  UKB relies on a semantic relation network (in this case,
+  WN and XWN) to disambiguate the most likely senses for words in a
+  text using PageRank algorithm. See [<A
+ HREF="node110.html#agirre09">AS09</A>] for details on the
+  algorithm.
+
+<P>
+The module expects the input words to have been annotated with a list 
+  of candidate senses by the senses module (section <A HREF="node46.html#mod-sense">3.15</A>)
+  It ranks the candidate senses and sorts the list, according to the 
+  PageRank for each sense. The rank value is also provided in the result.
+
+<P>
+The API of the class is the following:
+<PRE>
+class ukb {
+  public:
+    /// Constructor. Receives a relation file for UKB, a sense dictionary,
+    /// and two UKB parameters: epsilon and max iteration number.
+    ukb(const std::string &amp;);
+ 
+    /// analyze given sentence.
+    void analyze(sentence &amp;) const;
+    /// analyze given sentences.
+    void analyze(std::list&lt;sentence&gt; &amp;) const;
+    /// return analyzed copy of given sentence
+    sentence analyze(const sentence &amp;) const;
+    /// return analyzed copy of given sentences
+    std::list&lt;sentence&gt; analyze(const std::list&lt;sentence&gt; &amp;const);
+};
+</PRE>
+
+<P>
+The constructor receives a file name where module configuration
+  options are found.  The contents of the configuration files are the
+  following:
+
+<P>
+
+<UL>
+<LI>A section <code>&lt;PageRankParameters&gt;</code> specifying values for UKB 
+      stopping criteria. E.g.:
+<PRE>
+    &lt;PageRankParameters&gt;
+    Epsilon 0.03
+    MaxIterations 10 
+    Damping 0.85
+    &lt;/PageRankParameters&gt;
+</PRE>
+    These parameters are UKB parameters: The an <I CLASS="slanted">    epsilon</I> float value that controls the precision with with the end
+    of PageRank iterations is decided, and a <I CLASS="slanted">MaxIterations</I>
+    integer, that controls the maximum number of PageRank iterations,
+    even is no convergence is reached. The <I CLASS="slanted">Damping</I> parameter is 
+    the standard parameter in PageRank algorithm.
+
+<P>
+</LI>
+<LI>A section <code>&lt;RelationFile&gt;</code> specifying
+  the knowledge base required by the algorithm.
+  This section must one lines, with the path to a 
+  file containing a list of relations between senses.
+  <PRE>
+    &lt;RelationFile&gt;
+    ../common/xwn.dat
+    &lt;/RelationFile&gt;
+</PRE>
+  The path may be absolute, or relative to the position of the 
+  ukb module configuration file.
+
+<P>
+The <I CLASS="slanted">RelationFile</I> contains the semantic relationship graph to
+ load. It is a text filecontaining pairs of related senses (WN synsets
+ in this case). Relations are not labelled nor directed.
+
+<P>
+An example of the content of this file is:
+ <PRE>
+   00003431-v 14877585-n
+   00003483-r 00104099-r
+   00003483-r 00890351-a
+</PRE>
+
+<P>
+</LI>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html837"
+  HREF="node48.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html833"
+  HREF="node18.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html827"
+  HREF="node46.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html835"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html838"
+  HREF="node48.html">Part-of-Speech Tagger Module</A>
+<B> Up:</B> <A NAME="tex2html834"
+  HREF="node18.html">Analysis Modules</A>
+<B> Previous:</B> <A NAME="tex2html828"
+  HREF="node46.html">Sense Labelling Module</A>
+ &nbsp; <B>  <A NAME="tex2html836"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

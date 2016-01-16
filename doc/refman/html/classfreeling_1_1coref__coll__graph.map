@@ -1,0 +1,13 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classfreeling_1_1coref__fex.html" title="Class for the feature extractor." alt="" coords="143,440,268,469"/>
+<area shape="rect" id="node4" href="$classint.html" title="int" alt="" coords="189,117,227,147"/>
+<area shape="rect" id="node8" href="$classfreeling_1_1database.html" title="Class to wrap a berkeley DB database and unify access." alt="" coords="145,213,271,243"/>
+<area shape="rect" id="node20" href="$classfreeling_1_1adaboost.html" title="Class AdaBoost implement a generic AB learner/classifier, which may be based on any kind of weak rule..." alt="" coords="381,213,507,243"/>
+<area shape="rect" id="node6" href="$classfreeling_1_1semanticDB.html" title="Class semanticDB implements a semantic DB interface." alt="" coords="133,344,277,373"/>
+<area shape="rect" id="node11" href="$classfreeling_1_1PrefTree.html" title="freeling::PrefTree" alt="" coords="5,117,128,147"/>
+<area shape="rect" id="node13" href="$classfreeling_1_1List.html" title="freeling::List" alt="" coords="623,5,716,35"/>
+<area shape="rect" id="node15" href="$structfreeling_1_1List_1_1ListRecBase.html" title="freeling::List::ListRecBase" alt="" coords="648,117,824,147"/>
+<area shape="rect" id="node22" href="$classstd_1_1list.html" title="std::list\&lt; weak_rule * \&gt;" alt="" coords="251,117,408,147"/>
+<area shape="rect" id="node24" href="$classfreeling_1_1classifier.html" title="The class classifier is an abstract class that implements a general ML classifier." alt="" coords="432,117,555,147"/>
+<area shape="rect" id="node27" href="$classbool.html" title="bool" alt="" coords="579,117,624,147"/>
+</map>

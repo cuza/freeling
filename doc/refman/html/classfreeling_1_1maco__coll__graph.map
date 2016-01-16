@@ -1,0 +1,39 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classfreeling_1_1processor.html" title="Abstract class to define the common API of any FreeLing processing module." alt="" coords="25,401,153,431"/>
+<area shape="rect" id="node10" href="$classfreeling_1_1automat.html" title="freeling::automat\&lt; ner_status \&gt;" alt="" coords="655,680,857,709"/>
+<area shape="rect" id="node15" href="$classfreeling_1_1automat.html" title="Abstract class to implement a Finite&#45;State Automaton which is used by modules recognizing multiwords ..." alt="" coords="296,553,445,583"/>
+<area shape="rect" id="node24" href="$classfreeling_1_1punts.html" title="Class numbers implements a punctuation sign recognizer." alt="" coords="1100,964,1204,993"/>
+<area shape="rect" id="node44" href="$classfreeling_1_1automat.html" title="freeling::automat\&lt; quantities_status \&gt;" alt="" coords="635,527,877,556"/>
+<area shape="rect" id="node51" href="$classfreeling_1_1automat.html" title="freeling::automat\&lt; locutions_status \&gt;" alt="" coords="637,607,875,636"/>
+<area shape="rect" id="node57" href="$classfreeling_1_1RE__map.html" title="Class tag_map implements a mapping from a regexps to an associated data string." alt="" coords="485,72,608,101"/>
+<area shape="rect" id="node60" href="$classfreeling_1_1dictionary.html" title="The class dictionary implements dictionary search and suffix analysis for word forms." alt="" coords="1088,1105,1216,1135"/>
+<area shape="rect" id="node78" href="$classfreeling_1_1automat.html" title="freeling::automat\&lt; dates_status \&gt;" alt="" coords="647,327,865,356"/>
+<area shape="rect" id="node86" href="$classfreeling_1_1probabilities.html" title="Class probabilities sets lexical probabilities for each PoS tag of each word in a sentence..." alt="" coords="1081,187,1223,216"/>
+<area shape="rect" id="node103" href="$classfreeling_1_1automat.html" title="freeling::automat\&lt; numbers_status \&gt;" alt="" coords="639,423,873,452"/>
+<area shape="rect" id="node4" href="$classfreeling_1_1ner.html" title="Class ner implements a wrapper to transparently create and access a ner_module named entity recognize..." alt="" coords="2112,553,2203,583"/>
+<area shape="rect" id="node6" href="$classfreeling_1_1factory.html" title="freeling::factory\&lt; ner_module \&gt;" alt="" coords="1820,553,2023,583"/>
+<area shape="rect" id="node8" href="$classfreeling_1_1ner__module.html" title="The class ner is an abstract class that implements a general NE Recognizer." alt="" coords="1083,653,1221,683"/>
+<area shape="rect" id="node13" href="$classint.html" title="int" alt="" coords="71,947,108,976"/>
+<area shape="rect" id="node26" href="$classfreeling_1_1database.html" title="Class to wrap a berkeley DB database and unify access." alt="" coords="693,1161,819,1191"/>
+<area shape="rect" id="node65" href="$classfreeling_1_1affixes.html" title="Class suffixes implements suffixation rules and dictionary search for suffixed word forms..." alt="" coords="701,1243,811,1272"/>
+<area shape="rect" id="node20" href="$classbool.html" title="bool" alt="" coords="733,883,779,912"/>
+<area shape="rect" id="node94" href="$classfreeling_1_1maco__options.html" title="Class maco_options implements a set of specific options of the morphological analyzer." alt="" coords="1263,871,1415,900"/>
+<area shape="rect" id="node22" href="$classfreeling_1_1factory.html" title="This template is used by numbers, quantities, dates, and ner classes to dinamycally create the approp..." alt="" coords="1457,471,1601,500"/>
+<area shape="rect" id="node40" href="$classfreeling_1_1factory.html" title="freeling::factory\&lt; quantities_module \&gt;" alt="" coords="1801,500,2041,529"/>
+<area shape="rect" id="node74" href="$classfreeling_1_1factory.html" title="freeling::factory\&lt; dates_module \&gt;" alt="" coords="1813,393,2029,423"/>
+<area shape="rect" id="node99" href="$classfreeling_1_1factory.html" title="freeling::factory\&lt; numbers_module \&gt;" alt="" coords="1804,447,2039,476"/>
+<area shape="rect" id="node29" href="$classfreeling_1_1PrefTree.html" title="freeling::PrefTree" alt="" coords="309,1359,432,1388"/>
+<area shape="rect" id="node31" href="$classfreeling_1_1List.html" title="freeling::List" alt="" coords="43,1407,136,1436"/>
+<area shape="rect" id="node33" href="$structfreeling_1_1List_1_1ListRecBase.html" title="freeling::List::ListRecBase" alt="" coords="283,1463,459,1492"/>
+<area shape="rect" id="node38" href="$classfreeling_1_1quantities.html" title="Class quantities implements a wrapper to transparently create and access a quantities_module monetary..." alt="" coords="2093,500,2221,529"/>
+<area shape="rect" id="node42" href="$classfreeling_1_1quantities__module.html" title="The abstract class quantities_module generalizes a percentage, ratios, and currency expression recogn..." alt="" coords="1441,576,1617,605"/>
+<area shape="rect" id="node49" href="$classfreeling_1_1locutions.html" title="Class locutions recognizes multiwords belonging to a list obtained from a configuration file..." alt="" coords="1091,587,1213,616"/>
+<area shape="rect" id="node67" href="$classfreeling_1_1accents.html" title="The class accents provides a wrapper to transparently create and access an accents_module to handle a..." alt="" coords="312,1305,429,1335"/>
+<area shape="rect" id="node69" href="$classfreeling_1_1accents__module.html" title="The abstract class accents_module generalizes accentuation rules for different languages." alt="" coords="7,1305,172,1335"/>
+<area shape="rect" id="node72" href="$classfreeling_1_1dates.html" title="The class dates provides a wrapper to transparently create and access a dates_module, a temporal expression recognizer for the appropriate language." alt="" coords="2105,393,2209,423"/>
+<area shape="rect" id="node76" href="$classfreeling_1_1dates__module.html" title="The abstract class dates_module generalizes temporal expression recognizer for different languages..." alt="" coords="1076,296,1228,325"/>
+<area shape="rect" id="node83" href="$classfreeling_1_1regexp.html" title="freeling::regexp" alt="" coords="701,273,811,303"/>
+<area shape="rect" id="node101" href="$classfreeling_1_1numbers__module.html" title="The abstract class numbers_module generalizes nummeric expression recognizer for different languages..." alt="" coords="1067,369,1237,399"/>
+<area shape="rect" id="node91" href="$classfreeling_1_1tagset.html" title="The class tagset handles PoS tags long to short conversion and morphosintactic feature decomposition..." alt="" coords="703,97,809,127"/>
+<area shape="rect" id="node97" href="$classfreeling_1_1numbers.html" title="Class numbers implements a wrapper to transparently create and access a numbers_module number recogni..." alt="" coords="2096,447,2219,476"/>
+</map>

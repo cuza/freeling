@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>WordNet file</TITLE>
+<META NAME="description" CONTENT="WordNet file">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="previous" HREF="node72.html">
+<LINK REL="up" HREF="node70.html">
+<LINK REL="next" HREF="node74.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1166"
+  HREF="node74.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1162"
+  HREF="node70.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1158"
+  HREF="node72.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1164"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1167"
+  HREF="node74.html">Approximate search dictionary</A>
+<B> Up:</B> <A NAME="tex2html1163"
+  HREF="node70.html">Semantic Database Module</A>
+<B> Previous:</B> <A NAME="tex2html1159"
+  HREF="node72.html">Sense Dictionary File</A>
+ &nbsp; <B>  <A NAME="tex2html1165"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00523000000000000000"></A>
+<A NAME="file-wn"></A>
+<BR>
+WordNet file
+</H2>
+
+<P>
+This source file (e.g. <TT>wn30.src</TT> provided with FreeLing)
+  must contain at each line the information relative to a sense, 
+  with the following format:
+<PRE>
+sense hypern:hypern:...:hypern  semfile  TopOnto:TopOnto:...:TopOnto  sumo  cyc
+</PRE>
+
+<P>
+That is: the first field is the sense code.
+ The following fields are:
+ 
+<UL>
+<LI>A colon-separated list of hypernym synsets.
+</LI>
+<LI>WN semantic file the synset belongs to.
+</LI>
+<LI>A colon-separated list of EuroWN TopOntology codes valid for the synset.
+</LI>
+<LI>A code for an equivalent (or near) concept in SUMO ontology.  
+        See SUMO documentation for a description of the code syntax.
+</LI>
+<LI>A code for an equivalent concept in CyC ontology.
+  
+</LI>
+</UL>
+
+<P>
+Note that the only WN relation encoded here is hypernymy. Note also that
+  semantic codes such as WN semantic file or EWN TopOntology features
+  are simply (lists of) strings. Thus, you can include in this file any
+  ontological or semantic information you need, just substituing the
+  WN-related codes by your own semantic categories.
+
+<P>
+<BR><HR>
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

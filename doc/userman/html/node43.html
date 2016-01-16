@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Probability Assignment and Unkown Word Guesser Module</TITLE>
+<META NAME="description" CONTENT="Probability Assignment and Unkown Word Guesser Module">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="next" HREF="node45.html">
+<LINK REL="previous" HREF="node41.html">
+<LINK REL="up" HREF="node18.html">
+<LINK REL="next" HREF="node44.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html790"
+  HREF="node44.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html786"
+  HREF="node18.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html780"
+  HREF="node42.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html788"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html791"
+  HREF="node44.html">Lexical Probabilities File</A>
+<B> Up:</B> <A NAME="tex2html787"
+  HREF="node18.html">Analysis Modules</A>
+<B> Previous:</B> <A NAME="tex2html781"
+  HREF="node42.html">Quantity Recognition Data File</A>
+ &nbsp; <B>  <A NAME="tex2html789"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION004130000000000000000"></A>
+<A NAME="file-prob"></A>
+<BR>
+Probability Assignment and Unkown Word Guesser Module
+</H1>
+
+<P>
+This class ends the morphological analysis subchain, and has two
+ functions: first, it assigns an <EM>a priori</EM> probability to each
+ analysis of each word. These probablities will be needed for the PoS
+ tagger later. Second, if a word has no analysis (none of the previously
+ applied modules succeeded to analyze it), this module tries to guess
+ which are its possible PoS tags, based on the word ending.
+<PRE>
+class probabilities {
+  public:
+    /// Constructor: receives the name of the file
+    // containing probabilities, and a threshold.
+    probabilities(const std::string &amp;, double);
+
+    /// Assign probabilities for each analysis of given word
+    void annotate_word(word &amp;) const;
+    /// Turn guesser on/of
+    void set_activate_guesser(bool);
+
+    /// analyze given sentence.
+    void analyze(sentence &amp;) const;
+    /// analyze given sentences.
+    void analyze(std::list&lt;sentence&gt; &amp;) const;
+    /// return analyzed copy of given sentence
+    sentence analyze(const sentence &amp;) const;
+    /// return analyzed copy of given sentences
+    std::list&lt;sentence&gt; analyze(const std::list&lt;sentence&gt; &amp;) const;
+};
+</PRE>
+
+<P>
+The method <code>set_activate_guesser</code> will turn on/off the guessing
+ of likely PoS tags for words with no analysis. Note that the guesser
+ is turned on/off for any thread using the same probabilities instance.
+
+<P>
+The constructor receives:
+
+<UL>
+<LI>The probabilities file name: The file that contains all needed
+  configuration and statistical information. This file can be
+  generated from a tagged training corpus using the scripts in <TT>    src/utilities</TT>. Its format is described below.
+</LI>
+<LI>A threshold: This is used for unknown words, when the
+  probability of each possible tag has been estimated by the guesser
+  according to word endings, tags with a value lower than this
+  threshold are discarded.
+</LI>
+</UL>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html792"
+  HREF="node44.html">Lexical Probabilities File</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html790"
+  HREF="node44.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html786"
+  HREF="node18.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html780"
+  HREF="node42.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html788"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html791"
+  HREF="node44.html">Lexical Probabilities File</A>
+<B> Up:</B> <A NAME="tex2html787"
+  HREF="node18.html">Analysis Modules</A>
+<B> Previous:</B> <A NAME="tex2html781"
+  HREF="node42.html">Quantity Recognition Data File</A>
+ &nbsp; <B>  <A NAME="tex2html789"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

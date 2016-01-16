@@ -1,0 +1,240 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Phonetic Encoding Module</TITLE>
+<META NAME="description" CONTENT="Phonetic Encoding Module">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="next" HREF="node55.html">
+<LINK REL="previous" HREF="node48.html">
+<LINK REL="up" HREF="node18.html">
+<LINK REL="next" HREF="node55.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html925"
+  HREF="node55.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html921"
+  HREF="node18.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html915"
+  HREF="node53.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html923"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html926"
+  HREF="node55.html">Named Entity Classification Module</A>
+<B> Up:</B> <A NAME="tex2html922"
+  HREF="node18.html">Analysis Modules</A>
+<B> Previous:</B> <A NAME="tex2html916"
+  HREF="node53.html">Examples</A>
+ &nbsp; <B>  <A NAME="tex2html924"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION004180000000000000000"></A>
+<A NAME="file-phon"></A>
+<BR>
+Phonetic Encoding Module
+</H1>
+
+<P>
+The phonetic encoding module enriches words with their SAMPA<A NAME="tex2html4"
+  HREF="footnode.html#foot1781"><SUP><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">2</SPAN></SUP></A> phonetic codification.
+
+<P>
+The module applies a set of rules to transform the written form to
+ the output phonetic form, thus the rules can be changed to get the
+ output in any other phonetic alphabet. The module can also use an
+ exception dictionary to handle forms that do not follow the default
+ rules, or for languages with highly irregular ortography.
+
+<P>
+The API of the module is the following:
+
+<P>
+<PRE>
+class phonetics {
+  
+ public:
+  /// Constructor, given config file
+  phonetics(const std::wstring&amp;);
+  
+  /// Returns the phonetic sound of the word
+  std::wstring get_sound(const std::wstring &amp;) const;
+
+  /// analyze given sentence, enriching words with phonetic encoding
+  void analyze(sentence &amp;) const;
+  /// analyze given sentences
+  void analyze(std::list&lt;sentence&gt; &amp;) const;
+  /// analyze sentence, return analyzed copy
+  sentence analyze(const sentence &amp;) const;
+  /// analyze sentences, return analyzed copy
+  std::list&lt;sentence&gt; analyze(const std::list&lt;sentence&gt; &amp;) const;
+};
+</PRE>
+
+<P>
+The constructor receives a configuration file that contains the
+ transformation rules to apply and the exception dictionary.
+
+<P>
+The module can be used to transform a single string (method
+ <code>get_sound</code>) or to enrich all words in a sentence (or sentence
+ list) with their phonetic information.
+
+<P>
+The phonetic encoding is stored in the word object and can be retrieved
+ with the method <code>word::get_ph_form</code>.
+
+<P>
+The format of the configuration file is the following:
+
+<P>
+There can be at most one exception dictionary, delimited by
+ <code>&lt;Exceptions&gt;</code> and <code>&lt;/Exceptions&gt;</code>.  Each entry in the
+ dictionary contains two fields: a lowercase word form and the output
+ phonetic encoding. E.g.:
+<PRE>
+addition @dISIn
+varieties B@raIItiz
+worcester wUst@r
+</PRE>
+
+<P>
+If a word form is found in the exceptions dictionary, the corresponding
+phonetic string is returned and no transformation rules are applied.
+
+<P>
+There can be one or more rulesets delimited by <code>&lt;Rules&gt;</code> and
+ <code>&lt;/Rules&gt;</code>.  Rulesets are applied in the order they are
+ defined. Each ruleset is applied on the result of the previous.
+
+<P>
+Rulesets can contain two kind of lines:  Category definitions and rules.
+
+<P>
+Category definitions are of the form <code>X=abcde</code> and define a set of
+ characters under a single name. Category names must have exactly one character,
+ which should not be part of the input or output alphabet to avoid ambiguities. 
+ e.g.: 
+<PRE>
+U=aeiou
+V=aeiouäëïöüâêîôûùò@
+L=äëïöüäëïöüäëïöüùò@
+S=âêîôûâêîôûâêîôûùò@
+A=aâä
+E=eêë
+</PRE>
+
+<P>
+Categories are only active for rules in the same ruleset where the category is defined.
+
+<P>
+Rules are of the form <code>source/target/context</code>. Both
+ <code>source</code> and <code>target</code> may be either a category name or a
+ terminal string. 
+
+<P>
+Simple string rules replace the first string with the second if and
+ only if it occurs in the given context. Contexts must contain a "_"
+ symbol indicating where the source string is located. They may also
+ contain characters, categories, and the symbols&nbsp;(word beginning),
+ or $ (word end). The empty context "_" is always satisfied.
+
+<P>
+Rules can only change terminal strings to terminal strings, or
+ categories to categories (i.e. both <code>source</code> and <code>target</code>
+ have to be of the same type).  If a category is to be changed to
+ another category, they should contain the same number of
+ characters. Otherwise the second category will have its last letter
+ repeated until it has the same length as the first (if it is
+ shorter), or characters in the second category that don't match
+ characters in the first will be ignored.
+
+<P>
+Some example rules for English:
+<PRE>
+qu/kw/_
+h//^r_
+a/ò/_lmV$
+U/L/C_CV
+</PRE>
+
+<P>
+First rule <code>qu/kw/_</code> replaces string <code>qu</code> with <code>kw</code> in
+ any context. 
+<BR>
+Second rule <code>h//^r_</code> removes character <code>h</code>
+ when it is preceeded by <code>r</code> at word beginning.
+<BR>
+Rule <code>a/ò/_lmV$</code> replaces <code>a</code> with <code>ò</code> when followed by
+ <code>l</code>, <code>m</code>, any character in category <code>V</code> and the end of
+ the word.
+<BR>
+Rule <code>U/L/C_CV</code> replaces any character in category
+ <code>U</code> with the character in the same position in category
+ <code>L</code>, when preceeded by any character in category <code>C</code> and
+ followed by any character in category <code>C</code> and any character in 
+ category <code>V</code>. 
+
+<P>
+Note that uppercase characters for categories is just a convention.
+ An uppercase letter may be a terminal symbol, and a lowercase may be
+ a category name. Non-alphabetical characters are also allowed.
+ If a character is not defined as a category name, it will be considered 
+ a terminal character.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html925"
+  HREF="node55.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html921"
+  HREF="node18.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html915"
+  HREF="node53.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html923"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html926"
+  HREF="node55.html">Named Entity Classification Module</A>
+<B> Up:</B> <A NAME="tex2html922"
+  HREF="node18.html">Analysis Modules</A>
+<B> Previous:</B> <A NAME="tex2html916"
+  HREF="node53.html">Examples</A>
+ &nbsp; <B>  <A NAME="tex2html924"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

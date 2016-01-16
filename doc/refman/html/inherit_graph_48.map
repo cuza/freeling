@@ -1,0 +1,56 @@
+<map id="G" name="G">
+<area shape="rect" id="node1" href="$classfreeling_1_1database.html" title="Class to wrap a berkeley DB database and unify access." alt="" coords="8,465,133,495"/>
+<area shape="rect" id="node3" href="$classfreeling_1_1punts.html" title="Class numbers implements a punctuation sign recognizer." alt="" coords="253,465,357,495"/>
+<area shape="rect" id="node4" href="$classfreeling_1_1processor.html" title="Abstract class to define the common API of any FreeLing processing module." alt="" coords="7,945,135,975"/>
+<area shape="rect" id="node6" href="$classfreeling_1_1automat.html" title="freeling::automat\&lt; dates_status \&gt;" alt="" coords="196,519,415,548"/>
+<area shape="rect" id="node24" href="$classfreeling_1_1automat.html" title="freeling::automat\&lt; locutions_status \&gt;" alt="" coords="187,572,424,601"/>
+<area shape="rect" id="node28" href="$classfreeling_1_1automat.html" title="freeling::automat\&lt; ner_status \&gt;" alt="" coords="204,625,407,655"/>
+<area shape="rect" id="node36" href="$classfreeling_1_1automat.html" title="freeling::automat\&lt; numbers_status \&gt;" alt="" coords="188,679,423,708"/>
+<area shape="rect" id="node58" href="$classfreeling_1_1automat.html" title="freeling::automat\&lt; quantities_status \&gt;" alt="" coords="184,732,427,761"/>
+<area shape="rect" id="node76" href="$classfreeling_1_1alternatives.html" title="Class alternatives suggests words that are orthogrphically/phonetically similar to input word..." alt="" coords="236,785,375,815"/>
+<area shape="rect" id="node78" href="$classfreeling_1_1automat.html" title="Abstract class to implement a Finite&#45;State Automaton which is used by modules recognizing multiwords ..." alt="" coords="231,839,380,868"/>
+<area shape="rect" id="node80" href="$classfreeling_1_1chart__parser.html" title="Class chart_parser implements a chart parser." alt="" coords="233,892,377,921"/>
+<area shape="rect" id="node82" href="$classfreeling_1_1dependency__parser.html" title="The class dependency_parser is just an abstract class generalizing any dependency parser..." alt="" coords="213,945,397,975"/>
+<area shape="rect" id="node86" href="$classfreeling_1_1dictionary.html" title="The class dictionary implements dictionary search and suffix analysis for word forms." alt="" coords="241,999,369,1028"/>
+<area shape="rect" id="node88" href="$classfreeling_1_1maco.html" title="Class maco implements the morphological analyzer, which uses all the specific analyzers: dates..." alt="" coords="253,1052,357,1081"/>
+<area shape="rect" id="node90" href="$classfreeling_1_1nec.html" title="The class nec implements a ML&#45;based NE classificator." alt="" coords="259,1105,352,1135"/>
+<area shape="rect" id="node92" href="$classfreeling_1_1phonetics.html" title="This class is a will calculate the phonetic translation of a word." alt="" coords="241,1159,369,1188"/>
+<area shape="rect" id="node94" href="$classfreeling_1_1POS__tagger.html" title="The class POS_tagger is just an abstract class generalizing a PoS tagger." alt="" coords="235,1212,376,1241"/>
+<area shape="rect" id="node100" href="$classfreeling_1_1probabilities.html" title="Class probabilities sets lexical probabilities for each PoS tag of each word in a sentence..." alt="" coords="235,1265,376,1295"/>
+<area shape="rect" id="node103" href="$classfreeling_1_1RE__map.html" title="Class tag_map implements a mapping from a regexps to an associated data string." alt="" coords="244,1319,367,1348"/>
+<area shape="rect" id="node105" href="$classfreeling_1_1senses.html" title="Class senses implements a sense annotator." alt="" coords="248,1372,363,1401"/>
+<area shape="rect" id="node107" href="$classfreeling_1_1ukb.html" title="freeling::ukb" alt="" coords="259,1425,352,1455"/>
+<area shape="rect" id="node8" href="$classfreeling_1_1dates__module.html" title="The abstract class dates_module generalizes temporal expression recognizer for different languages..." alt="" coords="488,192,640,221"/>
+<area shape="rect" id="node10" href="$classfreeling_1_1dates__ca.html" title="The derived class dates_ca implements a Catalan date/time recognizer." alt="" coords="727,5,852,35"/>
+<area shape="rect" id="node12" href="$classfreeling_1_1dates__default.html" title="The derived class dates_default implements a default date/time recognizer (only simple patterns are r..." alt="" coords="715,59,864,88"/>
+<area shape="rect" id="node14" href="$classfreeling_1_1dates__en.html" title="The derived class dates_en implements an English date/time recognizer." alt="" coords="727,112,852,141"/>
+<area shape="rect" id="node16" href="$classfreeling_1_1dates__es.html" title="The derived class dates_es implements a Spanish date/time recognizer." alt="" coords="727,165,852,195"/>
+<area shape="rect" id="node18" href="$classfreeling_1_1dates__gl.html" title="The derived class dates_gl implements a Galician date/time recognizer." alt="" coords="729,219,849,248"/>
+<area shape="rect" id="node20" href="$classfreeling_1_1dates__pt.html" title="The derived class dates_pt implements a Portuguese date/time recognizer." alt="" coords="728,272,851,301"/>
+<area shape="rect" id="node22" href="$classfreeling_1_1dates__ru.html" title="The derived class dates_ru implements Russian date/time recognizer." alt="" coords="728,325,851,355"/>
+<area shape="rect" id="node26" href="$classfreeling_1_1locutions.html" title="Class locutions recognizes multiwords belonging to a list obtained from a configuration file..." alt="" coords="503,479,625,508"/>
+<area shape="rect" id="node30" href="$classfreeling_1_1ner__module.html" title="The class ner is an abstract class that implements a general NE Recognizer." alt="" coords="495,532,633,561"/>
+<area shape="rect" id="node32" href="$classfreeling_1_1bioner.html" title="The class bioner implements an AdaBoost&#45;Based NE recognizer." alt="" coords="736,379,843,408"/>
+<area shape="rect" id="node34" href="$classfreeling_1_1np.html" title="The class np implements a simple proper noun recognizer." alt="" coords="747,432,832,461"/>
+<area shape="rect" id="node38" href="$classfreeling_1_1numbers__module.html" title="The abstract class numbers_module generalizes nummeric expression recognizer for different languages..." alt="" coords="479,685,649,715"/>
+<area shape="rect" id="node40" href="$classfreeling_1_1numbers__ca.html" title="The derived class numbers_ca implements a Catalan number recognizer." alt="" coords="719,485,860,515"/>
+<area shape="rect" id="node42" href="$classfreeling_1_1numbers__cs.html" title="The derived class numbers_cs implements a Czeck number recognizer." alt="" coords="719,539,860,568"/>
+<area shape="rect" id="node44" href="$classfreeling_1_1numbers__default.html" title="The derived class numbers_default implements a default number recognizer (only numbers in digits are ..." alt="" coords="705,592,873,621"/>
+<area shape="rect" id="node46" href="$classfreeling_1_1numbers__en.html" title="The derived class numbers_en implements an English number recognizer." alt="" coords="719,645,860,675"/>
+<area shape="rect" id="node48" href="$classfreeling_1_1numbers__es.html" title="The derived class numbers_es implements a Spanish number recognizer." alt="" coords="719,699,860,728"/>
+<area shape="rect" id="node50" href="$classfreeling_1_1numbers__gl.html" title="The derived class numbers_gl implements a Galician number recognizer." alt="" coords="720,752,859,781"/>
+<area shape="rect" id="node52" href="$classfreeling_1_1numbers__it.html" title="The derived class numbers_it implements a Italian number recognizer." alt="" coords="721,805,857,835"/>
+<area shape="rect" id="node54" href="$classfreeling_1_1numbers__pt.html" title="The derived class numbers_pt implements a Portuguese number recognizer." alt="" coords="720,859,859,888"/>
+<area shape="rect" id="node56" href="$classfreeling_1_1numbers__ru.html" title="The derived class numbers_ru implements an Russian number recognizer." alt="" coords="720,912,859,941"/>
+<area shape="rect" id="node60" href="$classfreeling_1_1quantities__module.html" title="The abstract class quantities_module generalizes a percentage, ratios, and currency expression recogn..." alt="" coords="476,1072,652,1101"/>
+<area shape="rect" id="node62" href="$classfreeling_1_1quantities__ca.html" title="The derived class quantities_ca implements a Catalan quantities recognizer." alt="" coords="715,965,864,995"/>
+<area shape="rect" id="node64" href="$classfreeling_1_1quantities__default.html" title="The derived class quantities_default implements a default quantities recognizer (only percentages are..." alt="" coords="703,1019,876,1048"/>
+<area shape="rect" id="node66" href="$classfreeling_1_1quantities__en.html" title="The derived class quantities_en implements an English quantities recognizer." alt="" coords="715,1072,864,1101"/>
+<area shape="rect" id="node68" href="$classfreeling_1_1quantities__es.html" title="The derived class quantities_es implements a Spanish quantities recognizer." alt="" coords="715,1125,864,1155"/>
+<area shape="rect" id="node70" href="$classfreeling_1_1quantities__gl.html" title="The derived class quantities_gl implements a Galician quantities recognizer." alt="" coords="717,1179,861,1208"/>
+<area shape="rect" id="node72" href="$classfreeling_1_1quantities__pt.html" title="The derived class quantities_pt implements a Portuguese quantities recognizer." alt="" coords="716,1232,863,1261"/>
+<area shape="rect" id="node74" href="$classfreeling_1_1quantities__ru.html" title="The derived class quantities_ru implements a Russian quantities recognizer." alt="" coords="716,1285,863,1315"/>
+<area shape="rect" id="node84" href="$classfreeling_1_1dep__txala.html" title="dependencyMaker is a class for obtaining a dependency tree from chunks." alt="" coords="500,1125,628,1155"/>
+<area shape="rect" id="node96" href="$classfreeling_1_1hmm__tagger.html" title="The class hmm_tagger implements the syntactic analyzer and is the main class, which uses all the othe..." alt="" coords="492,1205,636,1235"/>
+<area shape="rect" id="node98" href="$classfreeling_1_1relax__tagger.html" title="The class relax_tagger implements a PoS tagger based on relaxation labelling algorithm." alt="" coords="493,1259,635,1288"/>
+</map>

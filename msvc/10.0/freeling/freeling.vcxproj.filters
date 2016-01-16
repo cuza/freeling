@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Source Files\accents">
+      <UniqueIdentifier>{864e0a96-a6d4-4cb7-9b04-544ed3c602f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dates">
+      <UniqueIdentifier>{404e3c9b-9dea-40cd-963c-f5889cae94a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\numbers">
+      <UniqueIdentifier>{f5626f34-b6da-4ad4-9978-d8d355098b2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\quantities">
+      <UniqueIdentifier>{ab49aac0-7cc8-4de2-a31d-10d6e534bc28}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\libfreeling\bioner.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\database.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\dep_rules.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\dependencies.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\dictionary.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\hmm_tagger.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\language.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\lexer.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\maco.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\maco_options.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\nec.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\np.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\probabilities.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\punts.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\RE_map.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\semdb.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\senses.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\splitter.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\suffixes.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\tagger.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\tokenizer.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\traces.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\util.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\windll.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\omlet\adaboost.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\omlet\dataset.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\omlet\example.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\omlet\libsvm.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\omlet\svm.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\omlet\viterbi.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\omlet\weakrule.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\fex\fex.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\fex\fex_lexicon.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\fex\fex_rule.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\relax_tagger\constraint_grammar.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\relax_tagger\relax.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\relax_tagger\relax_tagger.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\lang_ident\idioma.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\lang_ident\lang_ident.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\chart_parser\chart.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\chart_parser\chart_parser.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\chart_parser\grammar.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\fex\nerc_features.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\dates\dates.cc">
+      <Filter>Source Files\dates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\dates\dates_es.cc">
+      <Filter>Source Files\dates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\dates\dates_ca.cc">
+      <Filter>Source Files\dates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\dates\dates_default.cc">
+      <Filter>Source Files\dates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\dates\dates_en.cc">
+      <Filter>Source Files\dates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\numbers\numbers.cc">
+      <Filter>Source Files\numbers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\numbers\numbers_ru.cc">
+      <Filter>Source Files\numbers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\numbers\numbers_ca.cc">
+      <Filter>Source Files\numbers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\numbers\numbers_default.cc">
+      <Filter>Source Files\numbers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\numbers\numbers_en.cc">
+      <Filter>Source Files\numbers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\numbers\numbers_es.cc">
+      <Filter>Source Files\numbers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\numbers\numbers_gl.cc">
+      <Filter>Source Files\numbers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\numbers\numbers_it.cc">
+      <Filter>Source Files\numbers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\quantities\quantities.cc">
+      <Filter>Source Files\quantities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\quantities\quantities_gl.cc">
+      <Filter>Source Files\quantities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\quantities\quantities_ca.cc">
+      <Filter>Source Files\quantities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\quantities\quantities_default.cc">
+      <Filter>Source Files\quantities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\quantities\quantities_en.cc">
+      <Filter>Source Files\quantities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\quantities\quantities_es.cc">
+      <Filter>Source Files\quantities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\accents\accents.cc">
+      <Filter>Source Files\accents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\accents\accents_gl.cc">
+      <Filter>Source Files\accents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\accents\accents_default.cc">
+      <Filter>Source Files\accents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\accents\accents_es.cc">
+      <Filter>Source Files\accents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\dates\dates_ru.cc">
+      <Filter>Source Files\dates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\ner.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\quantities\quantities_ru.cc">
+      <Filter>Source Files\quantities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\dates\dates_pt.cc">
+      <Filter>Source Files\dates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\dates\dates_gl.cc">
+      <Filter>Source Files\dates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\numbers\numbers_pt.cc">
+      <Filter>Source Files\numbers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\omlet\classifier.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\quantities\quantities_pt.cc">
+      <Filter>Source Files\quantities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\prefTree.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\coref\coref.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\coref\coref_fex.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\ner_module.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\processor.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\dependency_parser.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\phonetics.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\tagset.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\regexp.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\numbers\numbers_cs.cc">
+      <Filter>Source Files\numbers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\locutions.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\automat.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\csr_kb.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\ukb.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\configfile.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\alternatives.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\libfreeling\foma_FSM.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\include\freeling\omlet\adaboost.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\omlet\classifier.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\omlet\dataset.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\dates.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\dates_modules.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\disambiguator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\omlet\example.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\hmm_tagger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\omlet\libsvm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\numbers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\numbers_modules.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\quantities.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\quantities_modules.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\relax_tagger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\splitter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\omlet\svm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\tagger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\tokenizer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\traces.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\util.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\omlet\viterbi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\omlet\weakrule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\probabilities.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\windll.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\database.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\dictionary.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\prefTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\ner_module.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\processor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\grammar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\language.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\tagset.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\locutions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\RE_map.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\regexp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\safe_map.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\csr_kb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\ukb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\automat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\ner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\configfile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\foma_FSM.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\include\freeling\morfo\alternatives.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

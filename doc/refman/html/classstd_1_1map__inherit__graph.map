@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classfreeling_1_1example.html" title="Class example is a vector of real&#45;valued features, each identified by an integer label, plus info about to which classes the example belongs to, and with prediction storage functionalities." alt="" coords="147,5,352,35"/>
+<area shape="rect" id="node5" href="$classfreeling_1_1fex__lexicon.html" title="Feature lexicon." alt="" coords="104,59,395,88"/>
+<area shape="rect" id="node7" href="$classsafe__map.html" title="This class provides a map with thread_safe writing acces." alt="" coords="179,183,320,212"/>
+<area shape="rect" id="node9" href="$classsafe__map.html" title="safe_map\&lt; std::wstring, const feature_function * \&gt;" alt="" coords="685,135,1003,164"/>
+<area shape="rect" id="node11" href="$classsafe__map.html" title="safe_map\&lt; std::wstring, WR_constructor \&gt;" alt="" coords="707,209,981,239"/>
+<area shape="rect" id="node13" href="$classsafe__map.html" title="safe_map\&lt; std::wstring, double \&gt;" alt="" coords="736,304,952,333"/>
+</map>

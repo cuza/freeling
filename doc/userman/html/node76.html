@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Feature Extraction Rule File</TITLE>
+<META NAME="description" CONTENT="Feature Extraction Rule File">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="next" HREF="node77.html">
+<LINK REL="previous" HREF="node75.html">
+<LINK REL="up" HREF="node75.html">
+<LINK REL="next" HREF="node77.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1205"
+  HREF="node77.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1201"
+  HREF="node75.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1195"
+  HREF="node75.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1203"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1206"
+  HREF="node77.html">Rule Syntax</A>
+<B> Up:</B> <A NAME="tex2html1202"
+  HREF="node75.html">Feature Extraction Module</A>
+<B> Previous:</B> <A NAME="tex2html1196"
+  HREF="node75.html">Feature Extraction Module</A>
+ &nbsp; <B>  <A NAME="tex2html1204"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00541000000000000000"></A>
+<A NAME="fex-file"></A>
+<BR>
+Feature Extraction Rule File
+</H2>
+
+<P>
+Feature extraction rules are defined in a <TT>.rgf</TT> file. This
+  section describes the format of the file. The syntax of the
+  rules is described in section <A HREF="node77.html#s:fex-rules">4.4.2</A>
+
+<P>
+Rules are grouped in packages. Begin and end of a package is marked
+  with the keywords <code>RULES</code> and <code>ENDRULES</code>.
+  Packages are useful to simplify the rules, and to speed up
+  feature computation avoiding computing the same features several
+  times.
+
+<P>
+A line with format <code>TAGSET filename</code> may precede the rule
+  packages definition. The given <code>filename</code> will be interpreted
+  as a relative path (based on the <TT>.rgf</TT> location) to a tagset
+  definition file (see section <A HREF="node68.html#file-tagset">4.1</A>) that will be used to
+  obtain short versions of PoS tags. The <code>TAGSET</code> line is 
+  needed only if the short tag property <TT>t</TT> is used in some
+  rule (see section <A HREF="node79.html#s:fex-cond">4.4.4</A> below).
+
+<P>
+The <code>RULES</code> package starting keyword must be followed by a 
+  <SPAN  CLASS="textit">condition</SPAN> (see section <A HREF="node79.html#s:fex-cond">4.4.4</A>).
+
+<P>
+The rules in a package will onlly be applied to those words matching 
+  the package condition, thus avoiding unnecessary tests.
+
+<P>
+For instance, the rules in the package:
+<PRE> 
+RULES t matches ^NP
+ ...
+ENDRULES
+</PRE> 
+  will be applied only for words with a PoS tag (<TT>t</TT>)
+  starting with <TT>NP</TT>. The same result could have been obtained
+  without the package if the same condition was added to each rule,
+  but then, applicability tests for each rule on each word would be
+  needed, resulting in a higher computational cost.
+
+<P>
+The package condition may be <TT>ALL</TT>. In this case, rules
+  contained in the package will be checked for all words in the
+  sentence.  This condition has also an extra effect: the features
+  extracted by rules in this package are cached, in order to avoid
+  repeating computations if a rule uses a window to get features from
+  neighbour words.
+
+<P>
+For instance, the rule:
+<PRE> 
+RULES ALL
+ punct_mark@   [-2,2]   t matches ^F
+ENDRULES
+</PRE> 
+ will generate, for each word, features indicating which words in 
+  the surrounding two words (left and right) are punctuation symbols.
+
+<P>
+With this rule applied to the sentence <SPAN  CLASS="textit">Hi ! , said John .</SPAN>,
+  the word <SPAN  CLASS="textit">said</SPAN> would get the features
+  <TT>punct_mark@-1</TT>, <TT>punct_mark@-2</TT>, and
+  <TT>punct_mark@2</TT>. The word <SPAN  CLASS="textit">John</SPAN> would get the
+  features <TT>punct_mark@-2</TT> and <TT>punct_mark@1</TT>.  Since
+  the package has condition <TT>ALL</TT>, the features are computed
+  once per word, and then reused (that is, the fact that the comma is a 
+  punctuation sign will be checked only once, regardless of the size of the 
+  sentence and the size of the windows in the rules).
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1205"
+  HREF="node77.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1201"
+  HREF="node75.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1195"
+  HREF="node75.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1203"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1206"
+  HREF="node77.html">Rule Syntax</A>
+<B> Up:</B> <A NAME="tex2html1202"
+  HREF="node75.html">Feature Extraction Module</A>
+<B> Previous:</B> <A NAME="tex2html1196"
+  HREF="node75.html">Feature Extraction Module</A>
+ &nbsp; <B>  <A NAME="tex2html1204"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classint.html" title="int" alt="" coords="5,85,43,115"/>
+<area shape="rect" id="node4" href="$classbool.html" title="bool" alt="" coords="144,85,189,115"/>
+<area shape="rect" id="node6" href="$classfreeling_1_1sentence.html" title="Class sentence is just a list of words that someone (the splitter) has validated it as a complete sen..." alt="" coords="309,85,435,115"/>
+<area shape="rect" id="node8" href="$classstd_1_1list.html" title="std::list\&lt; word \&gt;" alt="" coords="313,5,431,35"/>
+</map>

@@ -1,0 +1,21 @@
+# archivos basura creados por mac y windows
+*~
+*.o
+*.out
+.nfs*
+tags
+CVS
+.svn
+.git
+.DS_Store
+._*
+Thumbs.db
+
+# archivos creados por los IDEs Eclipse, Zend Studio, Netbeans, PHPStorm y TextMate2
+.buildpath
+.project
+.settings
+nbproject
+.idea
+.tm_properties
+*.iml

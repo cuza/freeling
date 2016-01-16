@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Requirements</TITLE>
+<META NAME="description" CONTENT="Requirements">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="next" HREF="node10.html">
+<LINK REL="previous" HREF="node8.html">
+<LINK REL="up" HREF="node8.html">
+<LINK REL="next" HREF="node10.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html339"
+  HREF="node10.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html335"
+  HREF="node8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html329"
+  HREF="node8.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html337"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html340"
+  HREF="node10.html">Installation</A>
+<B> Up:</B> <A NAME="tex2html336"
+  HREF="node8.html">Getting it to work</A>
+<B> Previous:</B> <A NAME="tex2html330"
+  HREF="node8.html">Getting it to work</A>
+ &nbsp; <B>  <A NAME="tex2html338"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00310000000000000000"></A>
+<A NAME="sec-requirements"></A>
+<BR>
+Requirements
+</H1>
+
+<P>
+To install FreeLing you'll need:
+
+<P>
+
+<DL COMPACT>
+<DT>
+<DD>A typical Linux box with usual development tools:
+
+    <DL COMPACT>
+<DT>
+<DD>bash
+    <DT>
+<DD>make
+    <DT>
+<DD>C++ compiler with basic STL support
+    
+</DD>
+</DL>
+
+<P>
+<DT>
+<DD>Enough hard disk space (1.3 Gb for source and compilation
+   files, plus 600Mb for final installation)
+
+<P>
+<DT>
+<DD>Some external libraries are required to compile FreeLing:
+
+    <DL COMPACT>
+<DT>
+<DD><TT>libboost &amp; libicu</TT> 
+<BR>
+Boost library. Included in all Linux distributions. You
+       probably <B>do not</B> have all neeeded components
+       installed. Make sure to install <B>both</B> runtime and
+       development packages for:
+
+       <DL COMPACT>
+<DT>
+<DD>libicu
+         <DT>
+<DD>libboost-regex
+         <DT>
+<DD>libboost-system
+         <DT>
+<DD>libboost-thread
+         <DT>
+<DD>libboost-program-options
+         <DT>
+<DD>libboost-locale (only required for MacOSX or FreeBSD, not required in Linux)
+      
+</DD>
+</DL>
+
+<P>
+<DT>
+<DD><TT>libz</TT> 
+<BR>
+Compression library. Included in all Linux distributions. You
+       probably <B>do not</B> have all neeeded components
+       installed. Make sure to install <B>both</B> runtime and
+       development packages for:
+
+       <DL COMPACT>
+<DT>
+<DD>zlib
+      
+</DD>
+</DL>
+</DD>
+</DL>
+
+<P>
+<I CLASS="slanted">Orientative package names</I> (check the package manager in 
+      your system):
+
+       <DL COMPACT>
+<DT>
+<DD>Ubuntu/Debian: <TT>libboost-dev libboost-regex-dev libicu-dev libboost-system-dev libboost-program-options-dev libboost-thread-dev zlib1g-dev</TT>
+       <DT>
+<DD>OpenSuse/Fedora/Mandriva: <TT>boost-devel boost-regex-devel libicu-devel boost-system-devel boost-program-options-devel boost-thread-dev zlib-devel</TT>
+       <DT>
+<DD>Slackware: <TT>boost icu4c zlib</TT>
+       
+</DD>
+</DL>
+
+<P>
+Note that you need to install both the binary libraries and the
+      development packages (usually sufixed as <TT>-dev</TT> or
+      <TT>-devel</TT>).
+
+<P>
+Most package managers will install both binary and development
+      packages when the <TT>-dev</TT> package is required.  If this is
+      not your case, you'll need to manually select both packages.
+
+<P>
+</DD>
+</DL>
+
+<P>
+See details on the installation procedure in section <A HREF="node10.html#sec-installation">2.2</A>.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html339"
+  HREF="node10.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html335"
+  HREF="node8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html329"
+  HREF="node8.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html337"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html340"
+  HREF="node10.html">Installation</A>
+<B> Up:</B> <A NAME="tex2html336"
+  HREF="node8.html">Getting it to work</A>
+<B> Previous:</B> <A NAME="tex2html330"
+  HREF="node8.html">Getting it to work</A>
+ &nbsp; <B>  <A NAME="tex2html338"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

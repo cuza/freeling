@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$dependency__parser_8h.html" title="freeling/morfo/dependency_parser.h" alt="" coords="249,83,479,112"/>
+<area shape="rect" id="node34" href="$traces_8h.html" title="freeling/morfo/traces.h" alt="" coords="585,160,737,189"/>
+<area shape="rect" id="node7" href="$windll_8h.html" title="freeling/windll.h" alt="" coords="5,315,117,344"/>
+<area shape="rect" id="node9" href="$processor_8h.html" title="freeling/morfo/processor.h" alt="" coords="141,160,315,189"/>
+<area shape="rect" id="node14" href="$language_8h.html" title="freeling/morfo/language.h" alt="" coords="280,237,448,267"/>
+<area shape="rect" id="node24" href="$regexp_8h.html" title="freeling/regexp.h" alt="" coords="381,315,499,344"/>
+<area shape="rect" id="node31" href="$tree_8h.html" title="freeling/tree.h" alt="" coords="205,315,307,344"/>
+</map>

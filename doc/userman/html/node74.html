@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Approximate search dictionary</TITLE>
+<META NAME="description" CONTENT="Approximate search dictionary">
+<META NAME="keywords" CONTENT="userman">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="userman.css">
+
+<LINK REL="next" HREF="node75.html">
+<LINK REL="previous" HREF="node70.html">
+<LINK REL="up" HREF="node67.html">
+<LINK REL="next" HREF="node75.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1178"
+  HREF="node75.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1174"
+  HREF="node67.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1168"
+  HREF="node73.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1176"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1179"
+  HREF="node75.html">Feature Extraction Module</A>
+<B> Up:</B> <A NAME="tex2html1175"
+  HREF="node67.html">Other useful modules</A>
+<B> Previous:</B> <A NAME="tex2html1169"
+  HREF="node73.html">WordNet file</A>
+ &nbsp; <B>  <A NAME="tex2html1177"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00530000000000000000"></A>
+<A NAME="sec-foma"></A>
+<BR>
+Approximate search dictionary
+</H1>
+
+<P>
+This class wraps a <TT>libfoma</TT> FSM and allows fast retrieval of similar 
+words via string edit distance based search.
+
+<P>
+The API of the class is the following:
+<PRE>
+class foma_FSM {
+
+  public:
+    /// build automaton from a file
+    foma_FSM(const std::wstring &amp;, const std::wstring &amp;mcost=L""); 
+    /// delete FSM
+    ~foma_FSM();
+
+    /// Use automata to obtain closest matches to given form, and 
+    //add them to given list.
+    void get_similar_words(const std::wstring &amp;, 
+                           std::list&lt;std::pair&lt;std::wstring,int&gt; &gt; &amp;) const;    
+    /// set maximum edit distance of desired results
+    void set_cutoff_threshold(int);
+    /// set maximum number of desired results
+    void set_num_matches(int);
+    /// Set default cost for basic SED operations
+    void set_basic_operation_cost(int);
+  };
+</PRE>
+
+<P>
+The constructor of the module requests one parameter stating the
+  file to load, and a second optional parameter stating a file with
+  the cost matrix for SED operations.  If the cost matrix is not 
+  given, all operations default to a cost of 1 (or to the value set 
+  with the method <code>set_basic_operation_cost</code>).
+
+<P>
+The automata file may have extension <code>.src</code> or  <code>.bin</code>.
+  If the extension is <code>.src</code>, the file is intepreted as a text
+  file with one word per line. The FSM is built to recognize the 
+  vocabulary contained in the file.
+
+<P>
+If the extension is <code>.bin</code>, the file is intepreted as a binary
+  <TT>libfoma</TT> FSM.  To compile such a binary file, FOMA command
+  line front-end must be used.  The front-end is not included in
+  FreeLing. You will need to install FOMA if you want to create binary
+  FSM files. See <TT>http://code.google.com/p/foma</TT> for details.
+
+<P>
+A cost matrix for SED operations may be specified <SPAN  CLASS="textit">only</SPAN> for 
+  text FSMs (i.e., for <code>.src</code> files). 
+  To use a cost matrix with a <code>.bin</code> file, you can compile
+  it into the automata using FOMA front-end.
+
+<P>
+The format of the cost matrix must comply with FOMA formats.  See
+  FOMA documentation, or examples provided in
+  <code>data/common/alternatives</code> in FreeLing tarball.
+
+<P>
+The method <code>get_similar_words</code> will receive a string and 
+  return a list of entries in the FSM vocabulary sorted by string 
+  edit distance to the input string.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1178"
+  HREF="node75.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1174"
+  HREF="node67.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1168"
+  HREF="node73.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1176"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1179"
+  HREF="node75.html">Feature Extraction Module</A>
+<B> Up:</B> <A NAME="tex2html1175"
+  HREF="node67.html">Other useful modules</A>
+<B> Previous:</B> <A NAME="tex2html1169"
+  HREF="node73.html">WordNet file</A>
+ &nbsp; <B>  <A NAME="tex2html1177"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Lluís Padró
+2013-09-09
+</ADDRESS>
+</BODY>
+</HTML>

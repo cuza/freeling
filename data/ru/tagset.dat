@@ -1,0 +1,29 @@
+<DecompositionRules>
+A 2 case/N:nominative;G:genitive;D:dative;F:accusative;C:instrumental;O:prepositional;P:partitive;L:locative;V:vocative num/S:singular;P:plural gen/M:m;F:f;N:n;C:c animate/A:yes;I:no form/F:full;S:short degree/E:superlative;C:comparative;P:positive other/P:transition;D:difficult;V:corrupted;R:predicative;I:spoken;A:uncommon;B:abbreviation;E:outdated obscene/H:yes
+B 2 other/P:transition;D:difficult;V:corrupted;R:predicative;I:spoken;A:uncommon;B:abbreviation;E:outdated
+C 2 other/P:transition;D:difficult;V:corrupted;R:predicative;I:spoken;A:uncommon;B:abbreviation;E:outdated
+D 3 degree/E:superlative;C:comparative;P:positive other/P:transition;D:difficult;V:corrupted;R:predicative;I:spoken;A:uncommon;B:abbreviation;E:outdated obscene/H:yes
+E 2 case/N:nominative;G:genitive;D:dative;F:accusative;C:instrumental;O:prepositional;P:partitive;L:locative;V:vocative num/S:singular;P:plural gen/M:m;F:f;N:n;C:c animate/A:yes;I:no person/1:1;2:2;3:3 other/P:transition;D:difficult;V:corrupted;R:predicative;I:spoken;A:uncommon;B:abbreviation;E:outdated
+J 2 other/P:transition;D:difficult;V:corrupted;R:predicative;I:spoken;A:uncommon;B:abbreviation;E:outdated obscene/H:yes
+M 2 other/P:transition;D:difficult;V:corrupted;R:predicative;I:spoken;A:uncommon;B:abbreviation;E:outdated
+N 3 postype/C:common;P:proper case/N:nominative;G:genitive;D:dative;F:accusative;C:instrumental;O:prepositional;P:partitive;L:locative;V:vocative num/S:singular;P:plural gen/M:m;F:f;N:n;C:c animate/A:yes;I:no info/G:geographical;N:name;S:patronymic;F:surname other/P:transition;D:difficult;V:corrupted;R:predicative;I:spoken;A:uncommon;B:abbreviation;E:outdated obscene/H:yes neclass/S:person;G:location;O:organization;V:other 
+P 2 other/P:transition;D:difficult;V:corrupted;R:predicative;I:spoken;A:uncommon;B:abbreviation;E:outdated
+Q 2 mood/G:gerund;I:infinitive;D:indicative;M:imperative num/S:singular;P:plural gen/M:m;F:f;N:n;C:c tense/P:present;F:future;S:past person/1:1;2:2;3:3 aspect/F:perfective;N:imperfective voice/A:active;P:passive transitive/M:yes;A:no other/P:transition;D:difficult;V:corrupted;R:predicative;I:spoken;A:uncommon;B:abbreviation;E:outdated obscene/H:yes
+R 2 case/N:nominative;G:genitive;D:dative;F:accusative;C:instrumental;O:prepositional;P:partitive;L:locative;V:vocative num/S:singular;P:plural gen/M:m;F:f;N:n;C:c animate/A:yes;I:no other/P:transition;D:difficult;V:corrupted;R:predicative;I:spoken;A:uncommon;B:abbreviation;E:outdated
+T 2 other/P:transition;D:difficult;V:corrupted;R:predicative;I:spoken;A:uncommon;B:abbreviation;E:outdated
+V 3 mood/G:gerund;I:infinitive;D:indicative;M:imperative num/S:singular;P:plural gen/M:m;F:f;N:n;C:c tense/P:present;F:future;S:past person/1:1;2:2;3:3 aspect/F:perfective;N:imperfective voice/A:active;P:passive transitive/M:yes;A:no other/P:transition;D:difficult;V:corrupted;R:predicative;I:spoken;A:uncommon;B:abbreviation;E:outdated obscene/H:yes
+Y 2 case/N:nominative;G:genitive;D:dative;F:accusative;C:instrumental;O:prepositional;P:partitive;L:locative;V:vocative num/S:singular;P:plural gen/M:m;F:f;N:n;C:c animate/A:yes;I:no
+Z 2 case/N:nominative;G:genitive;D:dative;F:accusative;C:instrumental;O:prepositional;P:partitive;L:locative;V:vocative num/S:singular;P:plural gen/M:m;F:f;N:n;C:c animate/A:yes;I:no other/P:transition;D:difficult;V:corrupted;R:predicative;I:spoken;A:uncommon;B:abbreviation;E:outdated
+F 0 punct/c:comma;s:etc;d:colon;x:semicolon;g:hyphen;e:quotation;h:slash;p:period;i:questionmark;a:exclamationmark;t:percent;l:curlybracket;q:squarebracket;r:roundbracket;z:other punctenclose/a:open;t:close
+W 0
+I 0
+</DecompositionRules>
+<DirectTranslations>
+Fpa Fpa punct=parenthesis|punctenclose=open
+Fpt Fpt punct=parenthesis|punctenclose=close
+Fca Fca punct=squarebracket|punctenclose=open
+Fct Fct punct=squarebracket|punctenclose=close
+Fra Fra punct=quotation|punctenclose=open
+Frc Frc punct=quotation|punctenclose=close
+</DirectTranslations>
+

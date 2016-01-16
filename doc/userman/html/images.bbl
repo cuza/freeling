@@ -1,0 +1,66 @@
+\begin{thebibliography}{KVHA95}
+
+\bibitem[ACM05]{atserias05}
+Jordi Atserias, Elisabet Comelles, and Aingeru Mayor.
+\newblock Txala: un analizador libre de dependencias para el castellano.
+\newblock {\em Procesamiento del Lenguaje Natural}, (35):455--456, September
+  2005.
+
+\bibitem[AS09]{agirre09}
+Eneko Agirre and Aitor Soroa.
+\newblock Personalizing pagerank for word sense disambiguation.
+\newblock In {\em Proceedings of the 12th conference of the European chapter of
+  the Association for Computational Linguistics (EACL-2009)}, Athens, Greece,
+  2009.
+
+\bibitem[Bra00]{brants00}
+Thorsten Brants.
+\newblock Tnt: A statistical part-of-speech tagger.
+\newblock In {\em Proceedings of the 6th Conference on Applied Natural Language
+  Processing, ANLP}. ACL, 2000.
+
+\bibitem[CL11]{chang11}
+Chih-Chung Chang and Chih-Jen Lin.
+\newblock {LIBSVM}: A library for support vector machines.
+\newblock {\em ACM Transactions on Intelligent Systems and Technology},
+  2:27:1--27:27, 2011.
+\newblock Software available at {\tt http://www.csie.ntu.edu.tw/\~{
+  }cjlin/libsvm}.
+
+\bibitem[CMP03]{carreras03}
+Xavier Carreras, Llu\'{\i}s M\`arquez, and Llu\'is Padr\'o.
+\newblock A simple named entity extractor using adaboost.
+\newblock In {\em Proceedings of CoNLL-2003 Shared Task}, Edmonton, Canada,
+  June 2003.
+
+\bibitem[Fel98]{fellbaum98}
+Christiane Fellbaum, editor.
+\newblock {\em WordNet. An Electronic Lexical Database}.
+\newblock Language, Speech, and Communication. The MIT Press, 1998.
+
+\bibitem[KVHA95]{karlsson95}
+F.~Karlsson, Atro Voutilainen, J.~Heikkila, and A.~Anttila, editors.
+\newblock {\em Constraint Grammar: A Language--Independent System for Parsing
+  Unrestricted Text}.
+\newblock Mouton de Gruyter, Berlin and New York, 1995.
+
+\bibitem[Pad98]{padro98a}
+Llu\'{\i}s Padr\'o.
+\newblock {\em A Hybrid Environment for Syntax--Semantic Tagging}.
+\newblock PhD thesis, Dept. Llenguatges i Sistemes Inform\`atics. Universitat
+  Polit\`ecnica de Catalunya, February 1998.
+\newblock http://www.lsi.upc.edu/\~{ }padro.
+
+\bibitem[SNL01]{soon01}
+W.~M. Soon, H.~T. Ng, and D.~C.~Y. Lim.
+\newblock A machine learning approach to coreference resolution of noun
+  phrases.
+\newblock {\em Computational Linguistics}, 27(4):521--544, 2001.
+
+\bibitem[Vos98]{vossen98a}
+Piek Vossen, editor.
+\newblock {\em EuroWordNet: A Multilingual Database with Lexical Semantic
+  Networks}.
+\newblock Kluwer Academic Publishers, Dordrecht, 1998.
+
+\end{thebibliography}

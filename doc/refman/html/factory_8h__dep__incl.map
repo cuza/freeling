@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$dates_8h.html" title="dates.h" alt="" coords="5,83,69,112"/>
+<area shape="rect" id="node11" href="$ner_8h.html" title="ner.h" alt="" coords="312,83,363,112"/>
+<area shape="rect" id="node16" href="$numbers_8h.html" title="numbers.h" alt="" coords="93,83,176,112"/>
+<area shape="rect" id="node19" href="$quantities_8h.html" title="quantities.h" alt="" coords="200,83,288,112"/>
+<area shape="rect" id="node5" href="$maco_8h.html" title="maco.h" alt="" coords="157,160,221,189"/>
+<area shape="rect" id="node7" href="$maco_8cc.html" title="maco.cc" alt="" coords="105,237,177,267"/>
+<area shape="rect" id="node9" href="$freeling_8h.html" title="freeling.h" alt="" coords="201,237,276,267"/>
+<area shape="rect" id="node13" href="$ner_8cc.html" title="ner.cc" alt="" coords="308,160,367,189"/>
+</map>
