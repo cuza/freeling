@@ -1,9 +1,9 @@
 
-  # Java API for Freeling
+# Java API for Freeling
 
   This directory contains instructions to generate a java API for FreeLing.
 
- ### HOW TO BUILD THE API IN Linux/MacOS
+### HOW TO BUILD THE API IN Linux/MacOS
 
     1.- Install FreeLing 
 
@@ -18,7 +18,7 @@
     4.- Run 'make' to build the java API
 
 
- ### HOW TO USE THE API FROM A JAVA PROGRAM IN Linux/MacOS
+### HOW TO USE THE API FROM A JAVA PROGRAM IN Linux/MacOS
  
     1.- Make sure that the directory contanining libfreeling.so
         ($FREELINGDIR/lib) is in your LD_LIBRARY_PATH
@@ -37,7 +37,7 @@
 
 -------
 
- ### HOW TO BUILD THE API IN WINDOWS, USING MSVC
+### HOW TO BUILD THE API IN WINDOWS, USING MSVC
 
     1. Install java (JDK 6. The API might work with Java 7, but it is untested).
 

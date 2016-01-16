@@ -1,5 +1,5 @@
 
-  ##### Perl API for FreeLing  (experimental)
+##### Perl API for FreeLing  (experimental)
 
   INSTALLATION
 
