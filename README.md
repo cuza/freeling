@@ -1,6 +1,4 @@
-
- FreeLing: Natural language analysis libraries
- =============================================
+# FreeLing: Natural language analysis libraries
 
  The FreeLing package consists of a library providing language analysis
  services (such as morfological analysis, date recognition, PoS
