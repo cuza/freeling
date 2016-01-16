@@ -13,8 +13,7 @@ the README there.
 The rest of this file is about how to compile FreeLing in Windows with MSVC 10.
 
 
-A. PRE-REQUISITES:
-==================
+# A. PRE-REQUISITES:
 
   You will need libicu and libboost (and zlib for FreeLing >= 3.1),
   which do not provide suitable windows binaries.
@@ -27,8 +26,7 @@ A. PRE-REQUISITES:
   2) Compile them yourself, following the instructions below
 
 
-  OPTION 1: Download freeling_win_libraries.zip
-  ---------------------------------------------
+ ## OPTION 1: Download freeling_win_libraries.zip
 
    - Go to download section in FreeLing webpage.
    - Download the binary package freeling_win_libraries.zip
@@ -36,8 +34,7 @@ A. PRE-REQUISITES:
      libraries installed.    
  
 
-  OPTION 2: Compile libicu and libboost (and zlib for FreeLing > 3.1)
-  -------------------------------------------------------------------
+ ## OPTION 2: Compile libicu and libboost (and zlib for FreeLing > 3.1)
 
   2a) Download ICU, http://site.icu-project.org/ -> ICU4C Download (now testing on icu49)
 
@@ -68,8 +65,7 @@ A. PRE-REQUISITES:
       and build it.
 
 
-B. INSTALLING FREELING FROM BINARY PACKAGES
-===========================================
+# B. INSTALLING FREELING FROM BINARY PACKAGES
 
    - Install pre-requisite libraries as described above (only for FreeLing >= 3.1)
    - Go to download section in FreeLing webpage.
@@ -88,8 +84,7 @@ B. INSTALLING FREELING FROM BINARY PACKAGES
   that provided in the binary), see COMPILING FREELING below.
 
 
-C. COMPILING FREELING:
-======================
+# C. COMPILING FREELING:
 
   Before compiling FreeLing, make sure you installed the required libraries, following
   one of the options in section PRE-REQUISITES above.  

@@ -1,5 +1,5 @@
 
-  ##### Python API for FreeLing    ######
+  ##### Python API for FreeLing
 
 
   INSTALLATION

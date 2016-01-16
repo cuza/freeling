@@ -1,6 +1,5 @@
 
-  Documentation for FreeLing
-  ==========================
+  # Documentation for FreeLing
 
   This directory contains FreeLing documentation.  
 
@@ -21,8 +20,7 @@
    described below to generate it.
         
 
-  DOCUMENTATION DIRECTORIES
-  -------------------------
+ ## DOCUMENTATION DIRECTORIES
 
   diagrams - Diagrams for FSA implemented in the dates, numbers, quantities, and np modules.
 

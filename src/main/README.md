@@ -1,6 +1,5 @@
 
-  README for FreeLing sample main programs and scripts
-  ----------------------------------------------------
+ ## README for FreeLing sample main programs and scripts
 
   This directoy contains several main programs provided with FreeLing 
  as samples of library usage, and some scripts used to call these 
